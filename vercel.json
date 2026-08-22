@@ -1,5 +1,14 @@
 {
-  "buildCommand": "cd web && npm run build",
-  "installCommand": "cd web && npm install",
-  "devCommand": "cd web && npm run dev"
+  "builds": [
+    {
+      "src": "web/package.json",
+      "use": "@vercel/next"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "web/$1"
+    }
+  ]
 }
