@@ -106,7 +106,7 @@ Trayon Sequencer Architecture:
 
 ---
 
-## 🔐 Protocolo de Consenso
+##  Protocolo de Consenso
 
 ### Trayon BFT (Modified PBFT)
 
@@ -589,7 +589,7 @@ class PriceForecaster:
 
 ---
 
-## 📊 Database Schema
+##  Database Schema
 
 ### PostgreSQL Tables
 

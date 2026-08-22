@@ -815,11 +815,11 @@ Governance:
 
 ```
 Priority Points (MUST HAVE):
-├─ ✅ Revenue share/pricing structure
-├─ ✅ Term length (minimum 2 years)
-├─ ✅ Service Level Agreement (99.99% uptime)
-├─ ✅ Data security & confidentiality
-└─ ✅ Governance rights
+├─  Revenue share/pricing structure
+├─  Term length (minimum 2 years)
+├─  Service Level Agreement (99.99% uptime)
+├─  Data security & confidentiality
+└─  Governance rights
 
 Flexible Points (CAN NEGOTIATE):
 ├─ 🟡 Price escalation rate (3-5% range)
@@ -836,11 +836,11 @@ Trade-offs:
 └─ "If larger volume commitment, then deeper discount"
 
 Walk-Away Points (DO NOT COMPROMISE):
-├─ ❌ IP ownership (Trayon keeps core code)
-├─ ❌ Non-compete clause (partner can't build competing product)
-├─ ❌ Audit rights (Trayon must be able to verify claims)
-├─ ❌ Regulatory compliance (must maintain compliance posture)
-└─ ❌ Insurance requirements (must maintain minimum coverage)
+├─  IP ownership (Trayon keeps core code)
+├─  Non-compete clause (partner can't build competing product)
+├─  Audit rights (Trayon must be able to verify claims)
+├─  Regulatory compliance (must maintain compliance posture)
+└─  Insurance requirements (must maintain minimum coverage)
 ```
 
 ---
@@ -1008,7 +1008,7 @@ Next Steps:
    └─ Project kicked off
 
 Contact Trayon Partnerships:
-✉️ Email: partnerships@trayon.org
+✉ Email: partnerships@trayon.org
 📱 Phone: [Phone number]
 🌐 Website: trayon.org
 🐙 GitHub: github.com/trayon

@@ -4,20 +4,20 @@
 
 ---
 
-## 🎯 Objetivo: 2 horas, 5 passos
+##  Objetivo: 2 horas, 5 passos
 
 ```
 By end of this guide:
-✅ GitHub repos created & organized
-✅ Smart contract template ready
-✅ Local environment setup
-✅ First code committed
-✅ CI/CD pipeline working
+ GitHub repos created & organized
+ Smart contract template ready
+ Local environment setup
+ First code committed
+ CI/CD pipeline working
 ```
 
 ---
 
-## ✅ PASSO 1: GitHub Organization (15 min)
+##  PASSO 1: GitHub Organization (15 min)
 
 ### 1.1 Create GitHub Organization
 ```bash
@@ -52,13 +52,13 @@ trayon-infra: "Infrastructure, Docker, Kubernetes deployment"
 ```
 
 **After 15 min:**
-- ✅ 4 repos created in GitHub organization
-- ✅ All public
-- ✅ Ready to clone
+-  4 repos created in GitHub organization
+-  All public
+-  Ready to clone
 
 ---
 
-## ✅ PASSO 2: Local Repository Setup (20 min)
+##  PASSO 2: Local Repository Setup (20 min)
 
 ### 2.1 Create Working Directory
 ```bash
@@ -159,13 +159,13 @@ EOF
 ```
 
 **After 20 min:**
-- ✅ 4 local repos cloned
-- ✅ README files created
-- ✅ Initial commits pushed
+-  4 local repos cloned
+-  README files created
+-  Initial commits pushed
 
 ---
 
-## ✅ PASSO 3: Smart Contracts Environment (40 min)
+##  PASSO 3: Smart Contracts Environment (40 min)
 
 ### 3.1 Install Foundry
 ```bash
@@ -343,14 +343,14 @@ forge test
 ```
 
 **After 40 min:**
-- ✅ Foundry installed & configured
-- ✅ TrayonToken contract created
-- ✅ Tests written & passing
-- ✅ All code committed & pushed
+-  Foundry installed & configured
+-  TrayonToken contract created
+-  Tests written & passing
+-  All code committed & pushed
 
 ---
 
-## ✅ PASSO 4: CI/CD Pipeline (20 min)
+##  PASSO 4: CI/CD Pipeline (20 min)
 
 ### 4.1 Create GitHub Actions Workflow
 ```bash
@@ -402,26 +402,26 @@ git push
 ```bash
 # Go to: https://github.com/trayon/trayon-contracts/actions
 # You should see workflow running
-# After ~2 min: ✅ All checks passing
+# After ~2 min:  All checks passing
 ```
 
 **After 20 min:**
-- ✅ CI/CD pipeline configured
-- ✅ Tests run automatically on every push
-- ✅ Coverage tracked
+-  CI/CD pipeline configured
+-  Tests run automatically on every push
+-  Coverage tracked
 
 ---
 
-## ✅ PASSO 5: Verify Everything (25 min)
+##  PASSO 5: Verify Everything (25 min)
 
 ### 5.1 Check GitHub repos
 ```bash
 # Go to: https://github.com/trayon
 # Verify:
-# ✅ trayon-contracts - with smart contract code
-# ✅ trayon-oracle - with README
-# ✅ trayon-infra - with README
-# ✅ trayon.org - with all documentation
+#  trayon-contracts - with smart contract code
+#  trayon-oracle - with README
+#  trayon-infra - with README
+#  trayon.org - with all documentation
 ```
 
 ### 5.2 Check Local repos
@@ -454,23 +454,23 @@ git log --oneline
 cd ~/trayon-dev/trayon-contracts
 forge test
 
-# Should pass all tests ✅
+# Should pass all tests 
 ```
 
 ---
 
-## 📊 Status After 2 Hours
+##  Status After 2 Hours
 
 ```
 COMPLETED:
-✅ GitHub organization created
-✅ 4 repositories initialized
-✅ Foundry installed & configured
-✅ TrayonToken.sol written (50 lines)
-✅ Tests written & passing (3 tests)
-✅ CI/CD pipeline setup
-✅ All code pushed to GitHub
-✅ Documentation linked
+ GitHub organization created
+ 4 repositories initialized
+ Foundry installed & configured
+ TrayonToken.sol written (50 lines)
+ Tests written & passing (3 tests)
+ CI/CD pipeline setup
+ All code pushed to GitHub
+ Documentation linked
 
 READY FOR:
 → More smart contracts (ValidatorRegistry, TrayonOracle)
@@ -530,7 +530,7 @@ You now have:
 - 🔗 Smart contracts infrastructure
 - 🧪 Automated testing pipeline
 - 📝 Documentation linked
-- 🚀 Ready for Phase 2
+-  Ready for Phase 2
 
 **Next:**
 Choose one:
@@ -539,7 +539,7 @@ Choose one:
 3. **Start partnership outreach** (30 min) - Send first RFPs
 4. **Deploy to testnet** (45 min) - Make contracts live
 
-**What's next?** Let me know! 🚀
+**What's next?** Let me know! 
 
 ---
 

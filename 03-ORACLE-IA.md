@@ -13,7 +13,7 @@ O **Trayon Oracle** é uma rede descentralizada de agentes de inteligência arti
 
 ---
 
-## 🔄 Arquitetura do Sistema
+##  Arquitetura do Sistema
 
 ```
 ┌──────────────────────────────────────────────────────┐
@@ -364,7 +364,7 @@ print(f"Fraude score: {fraud_score:.2%}")  # Output: 87.3%
 
 ---
 
-## ✅ Camada de Validação & Consenso
+##  Camada de Validação & Consenso
 
 ### 1. Processo de Consenso em 3 Fases
 
@@ -489,7 +489,7 @@ function verifyData(
 
 ---
 
-## 🔐 Proteção Contra Manipulação
+##  Proteção Contra Manipulação
 
 ### 1. Adversarial Robustness
 
@@ -540,7 +540,7 @@ Benefício:
 
 ---
 
-## 🎯 Casos de Uso Práticos
+##  Casos de Uso Práticos
 
 ### Caso 1: Auditoria de Inflação Real
 
@@ -594,7 +594,7 @@ Trimestre:
 
 ---
 
-## 📊 Métricas de Performance
+##  Métricas de Performance
 
 | Métrica | Especificação |
 |--------|--------------|
@@ -606,7 +606,7 @@ Trimestre:
 
 ---
 
-## 🚀 Roadmap do Oracle
+##  Roadmap do Oracle
 
 ```
 Q3 2026: MVP Oracle (apenas inflação/câmbio)

@@ -77,7 +77,7 @@ E: [Partner Name]
 
 ---
 
-## 🏛️ NÍVEL 1: Parcerias Governamentais
+## 🏛 NÍVEL 1: Parcerias Governamentais
 
 ### 1.1 Banco Central do Brasil
 
@@ -319,7 +319,7 @@ Resultado: $100M-500M em receita em Ano 3
 
 ---
 
-## 💰 NÍVEL 3: Parcerias Financeiras
+##  NÍVEL 3: Parcerias Financeiras
 
 ### 3.1 Bancos Globais
 
@@ -500,7 +500,7 @@ Criei arquivo separado: **PARTNERSHIP-RFP-TEMPLATE.md**
 
 ---
 
-## 🎯 Timeline de Partnerships (Roadmap)
+##  Timeline de Partnerships (Roadmap)
 
 ```
 2026:
@@ -536,12 +536,12 @@ Criei arquivo separado: **PARTNERSHIP-RFP-TEMPLATE.md**
 
 ```
 Critérios para Partner Ideal:
-├─ ✅ Interesse em inovação/transparência
-├─ ✅ Relevância com dados críticos
-├─ ✅ Capacidade de investimento ($1M+)
-├─ ✅ Distribuição em 10+ países
-├─ ✅ Credibilidade institucional
-└─ ✅ Alinhamento com compliance
+├─  Interesse em inovação/transparência
+├─  Relevância com dados críticos
+├─  Capacidade de investimento ($1M+)
+├─  Distribuição em 10+ países
+├─  Credibilidade institucional
+└─  Alinhamento com compliance
 
 Processo:
 1. LinkedIn research (funções-chave)
@@ -555,11 +555,11 @@ Processo:
 
 ```
 Elementos de Pitch:
-├─ 📊 Problem statement (atual pain point)
-├─ 🎯 Trayon solution (diferenciação)
-├─ 💰 ROI demonstrado (números)
+├─  Problem statement (atual pain point)
+├─  Trayon solution (diferenciação)
+├─  ROI demonstrado (números)
 ├─ 🤝 How partnership works
-├─ 📈 Success metrics (KPIs)
+├─  Success metrics (KPIs)
 └─ ⏰ Timeline & next steps
 
 Deck (PowerPoint):
@@ -599,11 +599,11 @@ Leverage Points:
 └─ "Governo vai obrigar compliance"
 
 Red Flags:
-├─ ❌ Querer percentual > 50%
-├─ ❌ Exclusividade sem payment
-├─ ❌ Recusar SLAs
-├─ ❌ Exigir propriedade intelectual
-└─ ❌ Muito hesitante/slow
+├─  Querer percentual > 50%
+├─  Exclusividade sem payment
+├─  Recusar SLAs
+├─  Exigir propriedade intelectual
+└─  Muito hesitante/slow
 ```
 
 ### Fase 4: Legal & Execution
@@ -732,7 +732,7 @@ SILVER Partners (Growing base):
 
 ---
 
-## 📊 Partnership Success Metrics
+##  Partnership Success Metrics
 
 ```
 KPIs para Medir:

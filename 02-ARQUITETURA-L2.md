@@ -10,7 +10,7 @@ Trayon é uma **Layer 2 descentralizada** desenvolvida com **Polygon CDK (Chain 
 
 ---
 
-## 🏗️ Arquitetura de Camadas
+## 🏗 Arquitetura de Camadas
 
 ```
 ┌─────────────────────────────────────────────────┐
@@ -95,7 +95,7 @@ contract GasToken is ERC20 {
 
 ---
 
-## ⚙️ Funcionamento dos Nós Validadores
+## ⚙ Funcionamento dos Nós Validadores
 
 ### Arquitetura de Validadores
 
@@ -158,7 +158,7 @@ Trayon Validator Node
 
 ---
 
-## 🔐 Mecanismo de Staking & Slashing
+##  Mecanismo de Staking & Slashing
 
 ### Staking
 Validadores trancam TRAY para:
@@ -284,7 +284,7 @@ Opção 3: Hybrid (recomendado)
 
 ---
 
-## 📊 Performance & Scalability
+##  Performance & Scalability
 
 ### Capacidade da Trayon L2
 
@@ -412,7 +412,7 @@ contract TrayonOracle {
 
 ---
 
-## 🛡️ Segurança & Auditoria
+## 🛡 Segurança & Auditoria
 
 ### Auditorias Planejadas
 

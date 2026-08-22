@@ -4,13 +4,13 @@
 
 ---
 
-## 🎯 Trayon em Uma Frase
+##  Trayon em Uma Frase
 
 **Trayon é a infraestrutura de integridade de dados descentralizada que torna impossível manipulação, fraude e corrupção em governos, corporações, mercados e justiça — disponível globalmente em blockchain com IA.**
 
 ---
 
-## 📊 Oportunidade de Mercado
+##  Oportunidade de Mercado
 
 ### Problema Global Crítico
 
@@ -32,28 +32,28 @@ A crise de confiança é estrutural. Trilhões em fraudes anuais, corrupção de
 
 ---
 
-## 🚀 Solução Trayon
+##  Solução Trayon
 
 ### Como Funciona (Simplificado)
 
 ```
-1️⃣ Dados Capturados
+1⃣ Dados Capturados
    └─ APIs oficiais, portais públicos, fontes primárias
       (sem intermediários humanos manipuláveis)
 
-2️⃣ Processados por IA
+2⃣ Processados por IA
    └─ Rede descentralizada de agentes inteligentes
       (detecção de anomalias, fraude, padrões)
 
-3️⃣ Validados por Consenso
+3⃣ Validados por Consenso
    └─ 1.000+ validadores independentes globalmente
       (2/3 devem concordar = impossível manipular)
 
-4️⃣ Gravados em Blockchain
+4⃣ Gravados em Blockchain
    └─ Imutáveis, auditáveis, públicos
       (qualquer pessoa pode verificar)
 
-5️⃣ Accessíveis Globalmente
+5⃣ Accessíveis Globalmente
    └─ APIs simples para governos, empresas, investidores
       (transparência radical)
 ```
@@ -71,7 +71,7 @@ A crise de confiança é estrutural. Trilhões em fraudes anuais, corrupção de
 
 ---
 
-## 💰 Modelo de Negócio
+##  Modelo de Negócio
 
 ### Receita Streams
 
@@ -127,7 +127,7 @@ Margem Operacional: 99%+ (acelerador de negócio)
 
 ---
 
-## 🌍 Estratégia de Globalização
+##  Estratégia de Globalização
 
 ### Fases de Expansão
 
@@ -164,7 +164,7 @@ Abordagem proativa:
 
 ---
 
-## 📈 Métricas de Sucesso
+##  Métricas de Sucesso
 
 ### Ano 1 (2026-2027)
 ```
@@ -284,7 +284,7 @@ Ano 5: $3B+
 
 ---
 
-## 🎯 Go-to-Market
+##  Go-to-Market
 
 ### Fases de Lançamento
 
@@ -394,25 +394,25 @@ Head of Business Development:
 ## 🏆 Por Que Trayon Vence
 
 ### 1. Timing Perfeito
-- ✅ Crise de confiança é peak
-- ✅ Blockchain é maduro
-- ✅ IA é commodity
-- ✅ Reguladores estão abertos
+-  Crise de confiança é peak
+-  Blockchain é maduro
+-  IA é commodity
+-  Reguladores estão abertos
 
 ### 2. Escopo Único
-- ✅ Primeira infraestrutura que cobre Governo + Corporativo + Judiciário + Mercados
-- ✅ Verdadeira descentralização (não é centralizado)
-- ✅ IA auditável (não é black-box)
+-  Primeira infraestrutura que cobre Governo + Corporativo + Judiciário + Mercados
+-  Verdadeira descentralização (não é centralizado)
+-  IA auditável (não é black-box)
 
 ### 3. Defesa contra Competição
-- ✅ Efeito de rede (1.000 validadores depois é hard demais)
-- ✅ Compliance lead (primeira a fazer direito)
-- ✅ Brand (confiança é tudo)
+-  Efeito de rede (1.000 validadores depois é hard demais)
+-  Compliance lead (primeira a fazer direito)
+-  Brand (confiança é tudo)
 
 ### 4. Potencial de Upside
-- ✅ $100B market addressable
-- ✅ Padrão internacional (como TCP/IP)
-- ✅ Valor acumulado: $50B+ em 5-10 anos
+-  $100B market addressable
+-  Padrão internacional (como TCP/IP)
+-  Valor acumulado: $50B+ em 5-10 anos
 
 ---
 
@@ -420,31 +420,31 @@ Head of Business Development:
 
 ### Para Investidores
 ```
-✅ Participar da Private Round (Série Seed)
+ Participar da Private Round (Série Seed)
    └─ Valuation: $50M, levantando: $5M
 
-✅ Due diligence: Whitepaper técnico + código
+ Due diligence: Whitepaper técnico + código
    └─ Código: GitHub (open source)
 
-✅ Timeline: Mainnet Ano 2, rentabilidade Ano 3
+ Timeline: Mainnet Ano 2, rentabilidade Ano 3
    └─ ROI projetado: 10-100x em 5 anos
 ```
 
 ### Para Reguladores
 ```
-✅ Engajamento early: Ajudar a desenhar compliance
+ Engajamento early: Ajudar a desenhar compliance
    └─ Trayon quer ser aprovado, não evitar
 
-✅ Benefício público: Reduzir corrupção/fraude
+ Benefício público: Reduzir corrupção/fraude
    └─ Alinhado com metas de transparência
 ```
 
 ### Para Empresas & Governo
 ```
-✅ Fase pilot: Testar em ambiente controlado
+ Fase pilot: Testar em ambiente controlado
    └─ ROI immediate (reduzir fraude, aumentar eficiência)
 
-✅ Adoção early: Vantagem competitiva
+ Adoção early: Vantagem competitiva
    └─ Padrão será Trayon em 3 anos
 ```
 
@@ -482,6 +482,6 @@ Código:
 
 **Trayon: The Global Layer of Data Integrity**
 
-🌍 Governo | 🏢 Corporativo | ⚖️ Judiciário | 📈 Mercados | 🤖 IA | ⛓️ Blockchain
+ Governo | 🏢 Corporativo | ⚖ Judiciário |  Mercados | 🤖 IA | ⛓ Blockchain
 
 **Versão:** Executive Summary 1.0 | **Data:** 22/08/2026 | **Status:** Pronto para Investidores

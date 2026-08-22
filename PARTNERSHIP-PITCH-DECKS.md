@@ -4,7 +4,7 @@
 
 ---
 
-## 📊 DECK 1: Central Bank Pitch (5-Minute Version)
+##  DECK 1: Central Bank Pitch (5-Minute Version)
 
 ### Slide 1: Title
 ```
@@ -27,11 +27,11 @@
 CENTRAL BANK CHALLENGES TODAY
 
 Current Reality:
-├─ 📊 Economic data arrives with delays (monthly/quarterly)
+├─  Economic data arrives with delays (monthly/quarterly)
 ├─ 🚨 Manipulated data in the system (hard to detect)
-├─ ❌ Limited transparency to public (trust erosion)
-├─ 🔄 Manual verification processes (slow, expensive)
-└─ 🌍 International coordination is complex
+├─  Limited transparency to public (trust erosion)
+├─  Manual verification processes (slow, expensive)
+└─  International coordination is complex
 
 Impact on CB:
 ├─ Crisis response slow (data arrives late)
@@ -49,16 +49,16 @@ Question for CB: "How much is data distortion costing Brazil?"
 REAL-TIME VERIFIED DATA ON BLOCKCHAIN
 
 How Trayon Works:
-1️⃣ CB integrates data (exchange rate, inflation, etc.)
+1⃣ CB integrates data (exchange rate, inflation, etc.)
    └─ Direct from official sources → Trayon
 
-2️⃣ AI validators verify instantly
+2⃣ AI validators verify instantly
    └─ 1.000 decentralized validators process in parallel
 
-3️⃣ Consensus reached (impossible to manipulate)
+3⃣ Consensus reached (impossible to manipulate)
    └─ 2/3 + 1 validators must agree
 
-4️⃣ Immutable record on blockchain
+4⃣ Immutable record on blockchain
    └─ Public can verify anytime, anywhere
 
 Result: Tamper-proof economic data globally accessible
@@ -75,13 +75,13 @@ Benefits:
 ├─ 🌟 Credibility boost
 │  └─ International investors trust Brazilian data
 │
-├─ 💰 Lower borrowing costs
+├─  Lower borrowing costs
 │  └─ Risk premium reduced (data is verified)
 │
 ├─ 🏅 Policy effectiveness improved
 │  └─ Better decisions based on real-time data
 │
-├─ 🚀 Tech leadership
+├─  Tech leadership
 │  └─ Brazil pioneer of CB transparency globally
 │
 └─ 🔒 Corruption detection
@@ -138,22 +138,22 @@ Why This is a No-Brainer:
 ```
 WHY CENTRAL BANKS CHOOSE TRAYON
 
-✅ Proven Technology
+ Proven Technology
 ├─ Polygon CDK (battle-tested Layer 2)
 ├─ BLS signatures (cryptographic standard)
 └─ AI consensus (1.000 validators = Byzantine fault tolerant)
 
-✅ Regulatory-First Approach
+ Regulatory-First Approach
 ├─ Work with regulators (not against)
 ├─ Compliance built-in (GDPR, eIDAS, AML/CFT)
 └─ Big 4 Audit firm involvement
 
-✅ Decentralized (Not Centralized)
+ Decentralized (Not Centralized)
 ├─ No single point of failure
 ├─ True validation (not fake consensus)
 └─ Transparent code (open source)
 
-✅ Global Network Effect
+ Global Network Effect
 ├─ Other CBs joining → 50+ by Yr 3
 ├─ Data interoperable across borders
 └─ International standard emerging
@@ -166,19 +166,19 @@ LET'S MAKE BRASIL THE TRANSPARENCY LEADER
 
 Proposed Next Steps:
 
-1️⃣  Week 1-2: Executive briefing with CB leadership
+1⃣  Week 1-2: Executive briefing with CB leadership
     └─ 30-min call with Governor + Deputy CTO
     └─ Deck walkthrough + Q&A
 
-2️⃣  Week 3-4: Technical deep dive
+2⃣  Week 3-4: Technical deep dive
     └─ 2-hour session with CB technology team
     └─ Architecture review, security, SLA
 
-3️⃣  Week 5-6: Pilot agreement signed
+3⃣  Week 5-6: Pilot agreement signed
     └─ NDA + Statement of Work
     └─ Development begins immediately
 
-4️⃣  Month 2-7: 6-month implementation
+4⃣  Month 2-7: 6-month implementation
     └─ Defined milestones & deliverables
     └─ Weekly status updates
 
@@ -378,22 +378,22 @@ STRATEGIC BENEFITS
 ```
 TRAYON CREDENTIALS
 
-✅ Technology Proven
+ Technology Proven
 ├─ Polygon CDK (enterprise-grade Layer 2)
 ├─ 1.000 validators (Byzantine fault tolerant)
 └─ 99.99% uptime guarantee
 
-✅ Compliance First
+ Compliance First
 ├─ GDPR compliant (data residency)
 ├─ ISO 27001 certified
 ├─ Big 4 already engaged
 
-✅ Not a Competitor
+ Not a Competitor
 ├─ Trayon = infrastructure (not audit firm)
 ├─ PwC gets white-label rights
 ├─ Trayon doesn't audit (doesn't compete with PwC)
 
-✅ Global Ready
+ Global Ready
 ├─ Supporting 150+ countries (roadmap)
 ├─ Multi-currency support
 ├─ Regulatory coordination happening
@@ -457,11 +457,11 @@ THE SOLUTION:
 └─ Speed: Sub-second response
 
 BENEFITS FOR YOUR BANK:
-├─ 💰 Cost reduction: 80-90%
+├─  Cost reduction: 80-90%
 ├─ ⚡ Speed improvement: 100x faster
-├─ ✅ Compliance certainty: 99.99% accuracy
-├─ 📊 Real-time dashboard & reporting
-└─ 🌍 Global data access (150+ countries)
+├─  Compliance certainty: 99.99% accuracy
+├─  Real-time dashboard & reporting
+└─  Global data access (150+ countries)
 
 IMPLEMENTATION:
 ├─ API integration: 2 weeks
@@ -500,11 +500,11 @@ Real-Time Budget Audit & Transparency
 MISSION: Make government spending transparent and fraud-proof
 
 USE CASES:
-├─ 💰 Budget Audit: Real-time verification of public spending
-├─ 🏗️ Infrastructure Projects: Transparent progress & payments
+├─  Budget Audit: Real-time verification of public spending
+├─ 🏗 Infrastructure Projects: Transparent progress & payments
 ├─ 🎓 Education Fund: Verify teachers' salaries are paid
 ├─ 🚑 Healthcare Budget: Track drug procurement
-├─ ⚖️ Judicial System: Verify case management spending
+├─ ⚖ Judicial System: Verify case management spending
 
 BENEFITS:
 ├─ Detect fraud: 30-50% reduction in corruption
@@ -547,8 +547,8 @@ USE CASES:
 ├─ 🚨 AML/CFT: Instant sanctions screening
 ├─ 📋 KYC: Automated customer verification
 ├─ 💳 Transaction Monitoring: Real-time anomaly detection
-├─ 📊 Risk Analytics: Counterparty risk on-demand
-└─ ⚖️ Regulatory Reporting: Automatic compliance evidence
+├─  Risk Analytics: Counterparty risk on-demand
+└─ ⚖ Regulatory Reporting: Automatic compliance evidence
 
 BENEFITS:
 ├─ Cost reduction: 80-90% vs manual compliance
@@ -585,10 +585,10 @@ Oracle-Backed Liquidity & Price Feed
 MISSION: List TRAY with oracle-verified price feed
 
 USE CASES:
-├─ 📈 TRAY Trading Pairs: BTC, ETH, USD, EUR, BRL, etc.
+├─  TRAY Trading Pairs: BTC, ETH, USD, EUR, BRL, etc.
 ├─ 🔗 Price Feed: Real-time oracle data to your platform
 ├─ 💧 Liquidity: Deep liquidity from Trayon ecosystem
-├─ 🎖️ Oracle Credibility: "Oracle-backed asset"
+├─ 🎖 Oracle Credibility: "Oracle-backed asset"
 └─ 🤝 Revenue Share: Earn from Trayon activity
 
 BENEFITS FOR EXCHANGE:
@@ -646,7 +646,7 @@ trayon.org | partnerships@trayon.org
 
 ---
 
-## 📊 CUSTOM PITCH BUILDER
+##  CUSTOM PITCH BUILDER
 
 **Use this template to build custom pitches:**
 

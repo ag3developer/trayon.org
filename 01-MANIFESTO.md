@@ -1,10 +1,10 @@
 # 1. Manifesto e Propósito - Trayon
 
-## 🎯 Missão
+##  Missão
 
 **Construir a camada global de integridade de dados — pública e privada — eliminando manipulação, fraude e opacidade através da convergência de Inteligência Artificial descentralizada e segurança Blockchain.**
 
-## 👁️ Visão de 5 Anos
+## 👁 Visão de 5 Anos
 
 Ser o **protocolo universal de auditoria e veracidade de dados** que transforma a confiança digital, garantindo que:
 
@@ -64,9 +64,9 @@ O token TRAY não é especulação — é **infraestrutura de custo**:
 
 ---
 
-## 🌍 Áreas de Atuação Estratégicas
+##  Áreas de Atuação Estratégicas
 
-### 1️⃣ Governo & Setor Público (GovTech)
+### 1⃣ Governo & Setor Público (GovTech)
 **Problema:** Gastos públicos ocultos, licitações fraudulentas, dados macroeconômicos falsificados  
 **Solução Trayon:**
 - Auditoria on-chain de licitações e contratos públicos
@@ -77,7 +77,7 @@ O token TRAY não é especulação — é **infraestrutura de custo**:
 
 ---
 
-### 2️⃣ Corporativo & Contábil
+### 2⃣ Corporativo & Contábil
 **Problema:** Fraudes em balanços, insolvências escondidas, maquiagem contábil  
 **Solução Trayon:**
 - Feed de dados contábeis real-time auditados
@@ -89,7 +89,7 @@ O token TRAY não é especulação — é **infraestrutura de custo**:
 
 ---
 
-### 3️⃣ Judiciário & Processual
+### 3⃣ Judiciário & Processual
 **Problema:** Provas digitais alteráveis, jurisprudência inconsistente, decisões sem auditoria  
 **Solução Trayon:**
 - Imutabilidade de provas digitais via blockchain
@@ -101,7 +101,7 @@ O token TRAY não é especulação — é **infraestrutura de custo**:
 
 ---
 
-### 4️⃣ Mercados & Finanças
+### 4⃣ Mercados & Finanças
 **Problema:** Manipulação de preços, oráculos envenenados, flash loans  
 **Solução Trayon:**
 - Oráculos de preços com consenso de IA (antimanipulação)
@@ -112,7 +112,7 @@ O token TRAY não é especulação — é **infraestrutura de custo**:
 
 ---
 
-## 💡 Diferencial Competitivo
+##  Diferencial Competitivo
 
 | Aspecto | Concorrentes | Trayon |
 |--------|-------------|---------|
@@ -124,63 +124,63 @@ O token TRAY não é especulação — é **infraestrutura de custo**:
 
 ---
 
-## 📈 Métricas de Sucesso (3 e 5 Anos)
+##  Métricas de Sucesso (3 e 5 Anos)
 
 ### Ano 3
-- ✅ 50+ instituições públicas em 15+ países usando Trayon Oracle
-- ✅ 5.000+ empresas com dados auditados (múltiplas regiões)
-- ✅ 100.000 validadores de IA staking TRAY (distribuídos globalmente)
-- ✅ $500M em valor total trancado (TVL)
-- ✅ 99.99% uptime com redundância geo-distribuída
-- ✅ Suporte multi-idioma (10+ línguas)
-- ✅ Conformidade regulatória em 20+ jurisdições
+-  50+ instituições públicas em 15+ países usando Trayon Oracle
+-  5.000+ empresas com dados auditados (múltiplas regiões)
+-  100.000 validadores de IA staking TRAY (distribuídos globalmente)
+-  $500M em valor total trancado (TVL)
+-  99.99% uptime com redundância geo-distribuída
+-  Suporte multi-idioma (10+ línguas)
+-  Conformidade regulatória em 20+ jurisdições
 
 ### Ano 5
-- ✅ 200+ governos/jurisdições usando GovTech Trayon
-- ✅ 50.000+ empresas certificadas globalmente
-- ✅ 1M+ validadores descentralizados em 100+ países
-- ✅ $5B+ em TVL
-- ✅ Padrão de fato para auditoria on-chain (ISO standard)
-- ✅ Integração com principais organismos internacionais (UN, IMF, World Bank)
-- ✅ Adoção em jurisdições que representam 80%+ do PIB global
+-  200+ governos/jurisdições usando GovTech Trayon
+-  50.000+ empresas certificadas globalmente
+-  1M+ validadores descentralizados em 100+ países
+-  $5B+ em TVL
+-  Padrão de fato para auditoria on-chain (ISO standard)
+-  Integração com principais organismos internacionais (UN, IMF, World Bank)
+-  Adoção em jurisdições que representam 80%+ do PIB global
 
 ---
 
 ## 🤝 Stakeholders Alvo (Global)
 
-### 1️⃣ Governos & Organismos Públicos (Multilateral)
+### 1⃣ Governos & Organismos Públicos (Multilateral)
 - **Tesouro Nacional / Finance Ministries** (todos os países)
 - **Auditorias Externas** (GAO-USA, NAO-UK, Cour des Comptes-France, TCU-Brasil, AGD-Argentina, etc.)
 - **Bancos Centrais** (FED, ECB, Banco de Brasil, Banco Central Argentina, etc.)
 - **Agências Anti-Corrupção** (UNODC, TI Transparency International, GRECO-EU)
 
-### 2️⃣ Empresas Listadas & Auditoras (Global)
+### 2⃣ Empresas Listadas & Auditoras (Global)
 - **Big 4 Auditoria** (Deloitte, PWC, KPMG, EY) - operações em 150+ países
 - **Bolsas de Valores** (NYSE, NASDAQ, Euronext, B3, Bolsa de Madrid, TSX, NSE)
 - **Empresas Multinacionais** (Fortune 500, FTSE 100, DAX 40, etc.)
 - **Pequenas e Médias Empresas** (startups, PMEs em todas regiões)
 
-### 3️⃣ Instituições Financeiras (Tier 1 Global)
+### 3⃣ Instituições Financeiras (Tier 1 Global)
 - **Bancos Globais** (JP Morgan, Goldman Sachs, HSBC, Deutsche Bank, Santander, Bradesco, Itaú, etc.)
 - **Corretoras** (major brokerages em cada região)
 - **Seguradoras** (global reinsurers, local players)
 - **Fundos de Investimento** (BlackRock, Vanguard, Fidelity, State Street)
 - **Fintechs & Crypro** (exchanges, lending platforms, payment processors)
 
-### 4️⃣ Operadores Judiciais & Legal (International)
+### 4⃣ Operadores Judiciais & Legal (International)
 - **Cortes Supremas** (US Supreme Court, European Court of Justice, ICJ-The Hague, STF-Brasil, Tribunal Constitucional-España, etc.)
 - **Tribunais de Instâncias** (centenas de cortes em cada país)
 - **Ministérios Públicos** (DOJ-USA, Procuradorias em 195 países)
 - **Organismos Internacionais** (ICC, Interpol, FATF para AML/CFT compliance)
 - **Arbitragem Comercial** (ICC, LCIA, UNCITRAL centers)
 
-### 5️⃣ Investidores & Traders (Retail & Institutional)
+### 5⃣ Investidores & Traders (Retail & Institutional)
 - **Investidores Institucionais** (pension funds, hedge funds, asset managers)
 - **Traders & Retail** (individual investors, market participants)
 - **Venture Capital & Private Equity** (due diligence, portfolio monitoring)
 - **Comunidade Crypto** (exchanges, protocols, DAOs)
 
-### 6️⃣ Cidadãos & Sociedade Civil (Democracia Participativa)
+### 6⃣ Cidadãos & Sociedade Civil (Democracia Participativa)
 - **Sociedade Civil Organizada** (NGOs, think tanks, advocacy groups globalmente)
 - **Jornalistas & Media** (investigative journalism, transparency reporting)
 - **Acadêmicos & Pesquisadores** (universities, research institutions)
@@ -189,7 +189,7 @@ O token TRAY não é especulação — é **infraestrutura de custo**:
 
 ---
 
-## 🔐 Princípios de Governança
+##  Princípios de Governança
 
 ### Transparência Radical
 - Todo código é open-source

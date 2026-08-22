@@ -1,6 +1,6 @@
 # 4. Tokenomics & Economia Circular - TRAY
 
-## 📊 Visão Geral do Token TRAY
+##  Visão Geral do Token TRAY
 
 O **TRAY** é o token nativo da infraestrutura Trayon com utilidade real, não especulação:
 
@@ -15,7 +15,7 @@ O **TRAY** é o token nativo da infraestrutura Trayon com utilidade real, não e
 
 ---
 
-## 🎯 Casos de Uso do Token
+##  Casos de Uso do Token
 
 ### 1. **Pagamento de Gás (Native Gas Token)**
 ```
@@ -110,7 +110,7 @@ Mecanismo: Quadratic voting
 
 ---
 
-## 💰 Distribuição de Supply Inicial
+##  Distribuição de Supply Inicial
 
 ### Alocação de 1 Bilhão TRAY
 
@@ -167,7 +167,7 @@ Remaining locked: 500M TRAY (governance power)
 
 ---
 
-## 📈 Modelo de Preço & Demanda
+##  Modelo de Preço & Demanda
 
 ### Drivers de Preço
 
@@ -239,7 +239,7 @@ print(f"Annual burn Year 1: {annual_burn:,.0f} TRAY")
 
 ---
 
-## 🎖️ Incentivos de Adoção Antecipada
+## 🎖 Incentivos de Adoção Antecipada
 
 ### Fase 1: Validadores Iniciais
 ```
@@ -285,33 +285,33 @@ Objetivo: Construir comunidade engajada
 
 ---
 
-## 🔄 Economia Circular Exemplar
+##  Economia Circular Exemplar
 
 ### Ciclo Completo do TRAY
 
 ```
-1️⃣ Investidor compra 10.000 TRAY na IDO
+1⃣ Investidor compra 10.000 TRAY na IDO
    └─ Preço: $0.01/TRAY = $100 investido
 
-2️⃣ Monta nó validador (stake 32.000 TRAY)
+2⃣ Monta nó validador (stake 32.000 TRAY)
    └─ APY: 8% = 2.560 TRAY/ano
 
-3️⃣ Após 2 anos
+3⃣ Após 2 anos
    ├─ TRAY acumulado: 5.120
    ├─ Novo total: 15.120 TRAY
    └─ Pode unstake e reinvestir
 
-4️⃣ Empresa ABC paga 1M TRAY para auditoria
+4⃣ Empresa ABC paga 1M TRAY para auditoria
    ├─ 200k TRAY queimado
    ├─ 700k TRAY para validadores (distribuído)
    └─ 100k TRAY para treasury
 
-5️⃣ Deflação de supply
+5⃣ Deflação de supply
    ├─ Menos TRAY em circulação
    ├─ Pressão de preço: $0.01 → $0.15
    └─ Seu stake agora vale $2.268
 
-6️⃣ Resultado
+6⃣ Resultado
    ├─ Investimento inicial: $100
    ├─ Após 2 anos: $2.268 (22.7x)
    ├─ Retorno: 1.068%
@@ -320,7 +320,7 @@ Objetivo: Construir comunidade engajada
 
 ---
 
-## 📊 Comparativo com Outros Tokens
+##  Comparativo com Outros Tokens
 
 | Aspecto | TRAY | ETH | Polygon | Uniswap |
 |--------|------|-----|---------|---------|
@@ -332,7 +332,7 @@ Objetivo: Construir comunidade engajada
 
 ---
 
-## 🛡️ Proteções Contra Manipulação
+## 🛡 Proteções Contra Manipulação
 
 ### Anti-Whale Mechanics
 
@@ -429,7 +429,7 @@ BEAR CASE (Adoção limitada):
 
 ---
 
-## 🚀 Roadmap de Tokenomics
+##  Roadmap de Tokenomics
 
 ```
 Q3 2026: Privada Round ($5M)

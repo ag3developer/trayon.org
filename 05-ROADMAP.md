@@ -1,6 +1,6 @@
 # 5. Roadmap Estratégico - Fases de Implementação
 
-## 🎯 Visão de 5 Anos (2026-2031)
+##  Visão de 5 Anos (2026-2031)
 
 ```
 Timeline do Trayon:
@@ -15,7 +15,7 @@ Testnet       Beta Mainnet     Produção Full  Integrações   Dominância de
 
 ---
 
-## 🚀 FASE 1: Testnet, MVP & Infraestrutura Base (Q3-Q4 2026)
+##  FASE 1: Testnet, MVP & Infraestrutura Base (Q3-Q4 2026)
 
 ### Objetivo
 Validar tecnologia, construir MVP do Oracle, preparar comunidade inicial.
@@ -329,7 +329,7 @@ Universidade:
 
 ---
 
-## 🌍 FASE 3: Mainnet Completo & Escala de Produção (Q3-Q4 2027)
+##  FASE 3: Mainnet Completo & Escala de Produção (Q3-Q4 2027)
 
 ### Objetivo
 Rede completamente descentralizada, adoção corporativa/governamental, mercado de predições.
@@ -503,7 +503,7 @@ Objetivo: Confiança institucional
 
 ---
 
-## 🚀 FASE 4: Integração Global & Mercados Institucionais (2028-2030)
+##  FASE 4: Integração Global & Mercados Institucionais (2028-2030)
 
 ### Objetivo
 Padrão de fato para auditoria on-chain, adoção global, integração com finanças tradicionais.
@@ -640,7 +640,7 @@ Acordos de nível mundial:
 
 ---
 
-## 📊 Linha do Tempo Consolidada
+##  Linha do Tempo Consolidada
 
 ```
 2026
@@ -677,7 +677,7 @@ Acordos de nível mundial:
 
 ---
 
-## 💰 Budget de Desenvolvimento (Fases 1-4)
+##  Budget de Desenvolvimento (Fases 1-4)
 
 ```
 Fase 1 (Q3-Q4 2026):

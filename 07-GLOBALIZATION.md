@@ -1,12 +1,12 @@
 # 7. Estratégia de Globalização - Trayon Protocol
 
-## 🌍 Visão Global de Cobertura
+##  Visão Global de Cobertura
 
 Trayon não é apenas um protocolo brasileiro — é uma **infraestrutura de integridade de dados para o mundo**. Este documento detalha a estratégia de globalização.
 
 ---
 
-## 🗺️ Regiões Prioritárias & Fases de Expansão
+## 🗺 Regiões Prioritárias & Fases de Expansão
 
 ### Fase 1: Mercados Validadores (2026-2027)
 
@@ -289,7 +289,7 @@ Localizações principais:
 
 ---
 
-## 🗣️ Multi-Idioma & Localização
+## 🗣 Multi-Idioma & Localização
 
 ### Suporte de Idiomas (MVP)
 
@@ -422,7 +422,7 @@ FATF (Financial Action Task Force)
 
 ---
 
-## 📊 Métricas de Globalização
+##  Métricas de Globalização
 
 ### Ano 1 (2026-2027)
 ```
@@ -460,7 +460,7 @@ Padrão: ISO/international standard
 
 ---
 
-## 🔐 Conformidade Regulatória Global
+##  Conformidade Regulatória Global
 
 ### Framework de Compliance
 
@@ -507,7 +507,7 @@ Tier 3 (Estratégico):
 
 ---
 
-## 🚀 Go-to-Market Global
+##  Go-to-Market Global
 
 ### Fase de Lançamento por Região
 
@@ -549,7 +549,7 @@ Total 5-year budget: $100M+ em globalização
 
 ---
 
-## 🎯 KPIs de Globalização
+##  KPIs de Globalização
 
 ### Cobertura
 

@@ -1,10 +1,10 @@
-# 🚀 Development Roadmap - Trayon Protocol
+#  Development Roadmap - Trayon Protocol
 
 **Guia prático passo-a-passo para começar o desenvolvimento**
 
 ---
 
-## 📊 Visão Geral das Fases
+##  Visão Geral das Fases
 
 ```
 PHASE 1: Foundation (Weeks 1-4)    → Ambiente, legal, partnerships
@@ -17,7 +17,7 @@ Tempo Total: 7 meses até Go-live
 
 ---
 
-## 🎯 FASE 1: FOUNDATION (4 Semanas)
+##  FASE 1: FOUNDATION (4 Semanas)
 
 ### Semana 1: Setup Inicial & GitHub
 
@@ -529,16 +529,16 @@ EOF
 
 ---
 
-## ⏸️ END OF PHASE 1
+## ⏸ END OF PHASE 1
 
 **By end of Week 4, you have:**
-- ✅ 4 GitHub repos organized
-- ✅ Legal docs in place
-- ✅ 5 partners identified + initial RFPs sent
-- ✅ Development environment fully setup
-- ✅ Smart contract templates + tests
-- ✅ CI/CD pipeline running
-- ✅ Local Docker environment
+-  4 GitHub repos organized
+-  Legal docs in place
+-  5 partners identified + initial RFPs sent
+-  Development environment fully setup
+-  Smart contract templates + tests
+-  CI/CD pipeline running
+-  Local Docker environment
 
 **Status:** Ready to move to Core Development
 
@@ -546,7 +546,7 @@ EOF
 
 ---
 
-## 🛠️ FASE 2: CORE DEVELOPMENT (Weeks 5-12)
+## 🛠 FASE 2: CORE DEVELOPMENT (Weeks 5-12)
 
 ### Week 5-6: Smart Contract Full Implementation
 
@@ -653,10 +653,10 @@ Weekly Milestones:
 - Week 19-20: Partner feedback collected
 
 Success Criteria:
-- ✅ 99.9% data accuracy
-- ✅ < 100ms API latency
-- ✅ Partner satisfied with output
-- ✅ No security issues found
+-  99.9% data accuracy
+-  < 100ms API latency
+-  Partner satisfied with output
+-  No security issues found
 ```
 
 ### Week 21-24: Pilot Analysis & Optimization
@@ -676,7 +676,7 @@ Decision Point:
 
 ---
 
-## 🚀 FASE 4: PRODUCTION (Weeks 25-28)
+##  FASE 4: PRODUCTION (Weeks 25-28)
 
 ### Week 25: Final Security Audit
 
@@ -824,7 +824,7 @@ Week 28:
 
 ---
 
-## 🎯 CRITICAL SUCCESS FACTORS
+##  CRITICAL SUCCESS FACTORS
 
 ### 1. Keep Documentation Updated
 ```
@@ -964,26 +964,26 @@ Phase 2+: No, you need dedicated team
 
 **TODAY (Week 1, Day 1):**
 ```
-1. ✅ Create GitHub organization
-2. ✅ Create 4 repos
-3. ✅ Clone locally
-4. ✅ Push first README
+1.  Create GitHub organization
+2.  Create 4 repos
+3.  Clone locally
+4.  Push first README
 ```
 
 **TOMORROW (Week 1, Day 2):**
 ```
-1. ✅ Setup Foundry locally
-2. ✅ Create smart contract template
-3. ✅ Write first test
-4. ✅ Push to GitHub
+1.  Setup Foundry locally
+2.  Create smart contract template
+3.  Write first test
+4.  Push to GitHub
 ```
 
 **THIS WEEK (Week 1):**
 ```
-1. ✅ Finish GitHub organization
-2. ✅ Identify 5 first partners
-3. ✅ Draft first partnership email
-4. ✅ Setup Docker environment
+1.  Finish GitHub organization
+2.  Identify 5 first partners
+3.  Draft first partnership email
+4.  Setup Docker environment
 ```
 
 ---
@@ -996,7 +996,7 @@ Qual é seu próximo passo?
 3. Começar com smart contracts? → Vou criar template pronto
 4. Setup partnerships? → Use PARTNERSHIP-RFP-TEMPLATE.md
 
-Me avisa! 🚀
+Me avisa! 
 
 ---
 

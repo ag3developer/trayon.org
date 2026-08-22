@@ -2,14 +2,14 @@
 
 **Trayon** é uma infraestrutura global de protocolo aberto para Auditoria Universal, Predição de Risco e Veracidade de Dados On-Chain.
 
-🌍 **Escopo Global:** Governo, Corporativo, Judiciário, Mercados, Finanças  
+ **Escopo Global:** Governo, Corporativo, Judiciário, Mercados, Finanças  
 🤖 **Motor:** Inteligência Artificial descentralizada + Blockchain  
-⛓️ **Layer 2:** Polygon CDK com token nativo TRAY  
-📈 **Visão:** Padrão internacional de integridade de dados em 5 anos
+⛓ **Layer 2:** Polygon CDK com token nativo TRAY  
+ **Visão:** Padrão internacional de integridade de dados em 5 anos
 
 ---
 
-## 🚀 Comece Aqui
+##  Comece Aqui
 
 ### Para Investidores & Executivos
 👉 **[EXECUTIVE-SUMMARY.md](./EXECUTIVE-SUMMARY.md)** - Oportunidade, modelo de negócio, ROI projetado
@@ -24,7 +24,7 @@
 
 ## 📋 Documentação Completa
 
-### 🎯 Quick Start (Leia Primeiro)
+###  Quick Start (Leia Primeiro)
 1. **[EXECUTIVE-SUMMARY.md](./EXECUTIVE-SUMMARY.md)** (5 min) - Trayon em uma página
 2. **[01-MANIFESTO.md](./01-MANIFESTO.md)** (15 min) - Visão global, problema, solução
 
@@ -35,7 +35,7 @@
 4. **[05-ROADMAP.md](./05-ROADMAP.md)** - 4 fases: Testnet → Beta → Production → Global
 5. **[06-SPECS-TECNICAS.md](./06-SPECS-TECNICAS.md)** - Smart contracts, ML models, database, API specs
 
-### 🌍 Estratégia Global
+###  Estratégia Global
 - **[07-GLOBALIZATION.md](./07-GLOBALIZATION.md)** - Expansão 150+ países, compliance regional, partnerships locais
 
 ### 💼 Documentos de Parcerias (NOVO!)
@@ -57,7 +57,7 @@
 
 ---
 
-## 🎯 Visão Geral
+##  Visão Geral
 
 O Trayon resolve a **crise global de confiança na transição digital** através de uma camada de integridade de dados pública e privada, combinando:
 
@@ -76,7 +76,7 @@ O Trayon resolve a **crise global de confiança na transição digital** atravé
 
 ---
 
-## 🛠️ Stack Técnico
+## 🛠 Stack Técnico
 
 - **Blockchain:** Layer 2 (Polygon CDK)
 - **Token Nativo:** TRAY (Custom Gas Token)
@@ -87,14 +87,14 @@ O Trayon resolve a **crise global de confiança na transição digital** atravé
 
 ---
 
-## 📊 Estrutura do Repositório
+##  Estrutura do Repositório
 
 ```
 trayon.org/
 │
 ├── README.md                           # Este arquivo (índice)
 │
-├─── 🎯 QUICK START
+├───  QUICK START
 ├── EXECUTIVE-SUMMARY.md                # 1-página: Oportunidade + ROI
 │
 ├─── 📖 WHITEPAPER TÉCNICO (Core)
@@ -105,7 +105,7 @@ trayon.org/
 ├── 05-ROADMAP.md                       # 4-phase implementation
 ├── 06-SPECS-TECNICAS.md                # Smart contracts, ML, DB, API
 │
-├─── 🌍 GLOBAL STRATEGY
+├───  GLOBAL STRATEGY
 ├── 07-GLOBALIZATION.md                 # 150+ countries expansion
 │
 ├─── 💼 PARTNERSHIP DOCUMENTS (NOVO!)
@@ -120,7 +120,7 @@ Total: 13 markdown files | Production-ready
 
 ---
 
-## 🚀 Como Usar Esta Documentação
+##  Como Usar Esta Documentação
 
 ### Para Investidores VCs & Fundos
 1. Leia: **EXECUTIVE-SUMMARY.md** (5 min)
@@ -150,7 +150,7 @@ Total: 13 markdown files | Production-ready
 
 ---
 
-## 💡 Dicas de Uso
+##  Dicas de Uso
 
 ### Exportar para Apresentações
 ```bash
@@ -201,14 +201,14 @@ git push origin main
 
 ---
 
-## ⚖️ Licença & Uso
+## ⚖ Licença & Uso
 
 **Trayon Whitepaper** © 2026 Trayon Protocol Foundation
 
-- ✅ Compartilhável: Free to share, adapt, translate
-- ✅ Citável: Please credit "Trayon Protocol"
-- ❌ Comercialização: Não pode vender como seu próprio
-- ⚠️ Direitos autorais: Blockchain, IA, tokenomics = propriedade intelectual Trayon
+-  Compartilhável: Free to share, adapt, translate
+-  Citável: Please credit "Trayon Protocol"
+-  Comercialização: Não pode vender como seu próprio
+-  Direitos autorais: Blockchain, IA, tokenomics = propriedade intelectual Trayon
 
 **Blockchain Code:** Apache 2.0 (Open Source)  
 **AI Models:** Proprietário (Licensing available)  
@@ -216,16 +216,16 @@ git push origin main
 
 ---
 
-## 🎯 Métricas de Sucesso (Q4 2026)
+##  Métricas de Sucesso (Q4 2026)
 
-- ✅ Documentação: Completa (13 arquivos, 150+ páginas)
-- ✅ Público: 3+ potenciais partners em discussions
-- ✅ Media: 10+ mentions (TechCrunch, CoinDesk, etc.)
-- 🔄 Code: Testnet live (Q4 2026)
-- 🔄 Partners: First pilot live (Q1 2027)
+-  Documentação: Completa (13 arquivos, 150+ páginas)
+-  Público: 3+ potenciais partners em discussions
+-  Media: 10+ mentions (TechCrunch, CoinDesk, etc.)
+-  Code: Testnet live (Q4 2026)
+-  Partners: First pilot live (Q1 2027)
 
 ---
 
-**Versão:** 1.0 | **Data:** 22/08/2026 | **Status:** ✅ Produção Pronta  
+**Versão:** 1.0 | **Data:** 22/08/2026 | **Status:**  Produção Pronta  
 **Última atualização:** August 22, 2026  
 **Próxima review:** October 2026 (pós-feedback inicial)
