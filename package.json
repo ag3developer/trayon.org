@@ -10,6 +10,11 @@
     "dev": "npm run dev --prefix web",
     "build": "npm run build --prefix web",
     "start": "npm start --prefix web",
-    "lint": "npm run lint --prefix web"
+    "lint": "npm run lint --prefix web",
+    "install:web": "cd web && npm install",
+    "build:web": "cd web && npm run build"
+  },
+  "engines": {
+    "node": ">=18"
   }
 }
