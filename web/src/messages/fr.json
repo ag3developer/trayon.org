@@ -1,0 +1,180 @@
+{
+  "nav": {
+    "problem": "Problème",
+    "protocol": "Protocole",
+    "useCases": "Cas d'Usage",
+    "architecture": "Architecture",
+    "roadmap": "Feuille de Route",
+    "token": "Jeton",
+    "partner": "Devenir partenaire"
+  },
+  "hero": {
+    "eyebrow": "Infrastructure Mondiale d'Intégrité des Données",
+    "title": "Une preuve en temps réel pour les données dont le monde dépend",
+    "subtitle": "Trayon combine une blockchain Layer 2 avec des validateurs d'IA décentralisés pour vérifier les données critiques, détecter la fraude et arrêter la manipulation avant qu'elle ne se propage — dans les gouvernements, la finance, le juridique et les marchés.",
+    "primaryCta": "Lire le Livre Blanc",
+    "secondaryCta": "Demande de Partenariat",
+    "stats": {
+      "validators": "Validateurs distribués",
+      "continents": "Continents couverts",
+      "verification": "Temps de vérification des données",
+      "uptime": "Objectif de disponibilité du réseau"
+    }
+  },
+  "problem": {
+    "eyebrow": "Le Problème",
+    "title": "Les institutions vérifient les données trop lentement pour éviter les dommages",
+    "description": "Budgets, audits, flux de marché et dossiers juridiques dépendent de rapports centralisés qui arrivent des semaines ou des mois trop tard — sans moyen de prouver qu'ils n'ont pas été modifiés.",
+    "items": {
+      "delayed": { "title": "Vérification tardive", "description": "Les données auditées arrivent souvent des mois après les faits, bien après que les décisions ont été prises." },
+      "opaque": { "title": "Rapports opaques", "description": "Les citoyens et les contreparties n'ont aucun moyen indépendant de confirmer les chiffres publics ou d'entreprise." },
+      "manual": { "title": "Audits manuels et coûteux", "description": "Les cycles d'audit traditionnels consomment 5 à 10 % des budgets institutionnels avec peu de valeur en temps réel." },
+      "fragmented": { "title": "Oracles fragmentés", "description": "Les flux de données à source unique restent vulnérables à la manipulation et aux points de défaillance uniques." }
+    }
+  },
+  "protocol": {
+    "eyebrow": "Le Protocole",
+    "title": "Une couche de vérification, pas un autre silo blockchain",
+    "description": "Trayon collecte des données provenant de sources indépendantes, les traite via des validateurs d'IA décentralisés et enregistre une preuve cryptographique d'intégrité on-chain — vérifiable par tous, modifiable par personne.",
+    "steps": {
+      "ingest": { "title": "Collecte", "description": "Des sources de données indépendantes alimentent le réseau en données gouvernementales, de marché et d'entreprise." },
+      "validate": { "title": "Validation", "description": "Un ensemble de modèles d'IA vote sur les anomalies, les signaux de fraude et la cohérence statistique." },
+      "consensus": { "title": "Consensus", "description": "Plus de 1 000 validateurs avec stake confirment les résultats selon un PBFT modifié avec agrégation BLS." },
+      "settle": { "title": "Règlement de la preuve", "description": "Un engagement vérifié par ZK est réglé sur Ethereum L1 via Polygon CDK." }
+    }
+  },
+  "useCases": {
+    "eyebrow": "Cas d'Usage",
+    "title": "Conçu pour les données que les institutions ne peuvent pas se permettre de mal gérer",
+    "items": {
+      "government": { "title": "Gouvernement & Secteur Public", "description": "Exécution budgétaire en temps réel, transparence des marchés publics et indicateurs macroéconomiques vérifiés." },
+      "corporate": { "title": "Entreprises & Comptabilité", "description": "Détection continue de la fraude, signaux de solvabilité et vérification ESG et chaîne d'approvisionnement." },
+      "judicial": { "title": "Judiciaire & Juridique", "description": "Registres de preuves immuables, audit de chronologie des dossiers et dépôts infalsifiables." },
+      "markets": { "title": "Marchés & Finance", "description": "Oracles de prix par consensus d'IA et détection précoce de la manipulation de marché." }
+    }
+  },
+  "architecture": {
+    "eyebrow": "Architecture",
+    "title": "Règlement Layer 2, validation décentralisée, portée mondiale",
+    "description": "Trayon fonctionne sur une Layer 2 Polygon CDK qui se règle sur Ethereum via des preuves ZK-SNARK, avec une infrastructure de validateurs répartie sur six continents pour la résilience et la neutralité juridictionnelle.",
+    "layers": {
+      "settlement": { "title": "Règlement", "description": "Layer 2 Polygon CDK, finalisée sur Ethereum L1 via des preuves ZK-SNARK." },
+      "consensus": { "title": "Consensus", "description": "PBFT modifié, quorum de 2/3+1, agrégation de signatures BLS, slashing en cas de mauvaise conduite." },
+      "ai": { "title": "Validation par IA", "description": "Vote conjoint entre modèles de détection de fraude, d'anomalies et de prévision." },
+      "data": { "title": "Disponibilité des données", "description": "Approche hybride combinant Polygon CDK DA avec le stockage blob d'Ethereum." }
+    },
+    "regionsLabel": "Régions des validateurs"
+  },
+  "roadmap": {
+    "eyebrow": "Feuille de Route",
+    "title": "Du testnet à la norme mondiale en cinq ans",
+    "phases": {
+      "testnet": { "period": "T3–T4 2026", "title": "Testnet & MVP", "description": "Contrats principaux, intégration des validateurs et premiers modèles d'IA sur testnet." },
+      "beta": { "period": "T1–T2 2027", "title": "Mainnet Beta", "description": "Lancement du mainnet avec des partenaires pilotes dans les gouvernements et institutions financières." },
+      "expansion": { "period": "T3–T4 2027", "title": "Expansion Mondiale", "description": "Déploiements de conformité régionale en Europe, en zone APAC et dans les Amériques." },
+      "standard": { "period": "2028+", "title": "Norme de l'Industrie", "description": "Trayon positionnée comme la couche d'intégrité par défaut pour les données institutionnelles." }
+    }
+  },
+  "token": {
+    "eyebrow": "Jeton TRAY",
+    "title": "Une économie conçue pour la sécurité du réseau à long terme",
+    "description": "TRAY est le jeton natif de gas et de staking sécurisant le réseau Trayon, avec une offre fixe de 1 milliard et un mécanisme déflationniste de destruction des frais.",
+    "facts": {
+      "supply": { "label": "Offre totale", "value": "1 000 000 000 TRAY" },
+      "stake": { "label": "Stake minimum", "value": "32 000 TRAY" },
+      "burn": { "label": "Destruction des frais", "value": "20 % des frais de gas" },
+      "governance": { "label": "Gouvernance", "value": "Vote quadratique" }
+    }
+  },
+  "contact": {
+    "eyebrow": "Contactez-nous",
+    "title": "Construire ensemble la couche d'intégrité",
+    "description": "Que vous représentiez une agence gouvernementale, une institution financière, un cabinet d'audit ou une équipe de développement — discutons de la façon dont Trayon répond à vos besoins d'intégrité des données.",
+    "channels": {
+      "partnerships": { "label": "Demandes de partenariat", "value": "partnerships@trayon.org" },
+      "developers": { "label": "Technique / développeurs", "value": "github.com/trayon-protocol" },
+      "general": { "label": "Contact général", "value": "contact@trayon.org" }
+    }
+  },
+  "footer": {
+    "description": "Trayon Protocol est une infrastructure décentralisée d'intégrité des données combinant règlement blockchain et validation pilotée par IA.",
+    "columns": {
+      "protocol": { "title": "Protocole", "architecture": "Architecture", "token": "Jeton", "roadmap": "Feuille de Route" },
+      "resources": { "title": "Ressources", "whitepaper": "Livre Blanc", "github": "GitHub", "docs": "Documentation" },
+      "company": { "title": "Entreprise", "partnerships": "Partenariats", "contact": "Contact" }
+    },
+    "copyright": "Trayon Protocol. Tous droits réservés.",
+    "tagline": "Conçu pour l'intégrité mondiale des données."
+  },
+  "whitepaper": {
+    "eyebrow": "Livre Blanc Technique",
+    "title": "Le Livre Blanc du Protocole Trayon",
+    "subtitle": "Une infrastructure mondiale pour l'intégrité des données en temps réel, combinant règlement blockchain Layer 2 et validation par IA décentralisée.",
+    "version": "Version 1.0",
+    "updated": "Dernière mise à jour en août 2026",
+    "downloadCta": "Télécharger le PDF",
+    "backCta": "Retour à l'accueil",
+    "toc": "Sommaire",
+    "sections": {
+      "manifesto": {
+        "nav": "Manifeste & Mission",
+        "title": "1. Manifeste & Mission",
+        "body": [
+          "Trayon existe pour construire la couche mondiale d'intégrité des données — publique et privée — en éliminant la manipulation, la fraude et l'opacité grâce à la convergence de l'intelligence artificielle décentralisée et de la sécurité blockchain.",
+          "La transition numérique mondiale est structurellement fragilisée : les processus automatisés reposent encore sur des données saisies manuellement, la corruption, la fraude comptable et des rapports gouvernementaux erronés. Les gouvernements font face à des marchés publics frauduleux et à des données macroéconomiques falsifiées. Les entreprises manipulent leurs bilans et dissimulent leur insolvabilité. Les tribunaux dépendent de preuves numériques modifiables. Les marchés subissent des manipulations de prix et des données d'oracles corrompues.",
+          "La réponse de Trayon est le Zero Trust Data : aucune source unique n'est jamais considérée comme fiable. Chaque donnée critique est capturée par des agents d'IA indépendants, validée par un consensus décentralisé, scellée par une preuve cryptographique on-chain et vérifiable par tout tiers, sans intermediaire nécessaire."
+        ]
+      },
+      "architecture": {
+        "nav": "Architecture Layer 2",
+        "title": "2. Architecture Layer 2",
+        "body": [
+          "Trayon est une Layer 2 décentralisée construite avec Polygon CDK (Chain Development Kit), optimisée pour la capture et la validation de données à haute disponibilité, le traitement d'oracles IA en temps réel et des transactions à faible coût sécurisées par Ethereum via des preuves ZK.",
+          "La pile est organisée en quatre couches : les cas d'usage applicatifs (GovTech, entreprise, judiciaire, marchés) au sommet ; les contrats intelligents Trayon (Oracle Manager, Validator Registry, jeton TRAY, marchés de prédiction) en dessous ; la Layer 2 Trayon elle-même (séquenceur, machine à états compatible EVM, nœuds validateurs, moteur de consensus IA) ; et enfin la preuve ZK avec disponibilité des données, regroupant les preuves pour un règlement final sur Ethereum/Polygon.",
+          "Le consensus suit un modèle PBFT modifié exigeant un quorum de 2/3+1 parmi plus de 1 000 validateurs stakés, avec agrégation de signatures BLS pour l'efficacité et des pénalités de slashing en cas de mauvaise conduite prouvée."
+        ]
+      },
+      "oracle": {
+        "nav": "Oracle & Consensus IA",
+        "title": "3. Oracle & Consensus IA",
+        "body": [
+          "La collecte de données commence avec des agents indépendants puisant dans des API officielles, des portails de transparence et des flux de marché dans différentes régions — jamais à partir d'une source unique centralisée.",
+          "Chaque donnée est traitée par un ensemble de modèles d'IA (détection de fraude, détection d'anomalies et prévision) qui doivent parvenir à un consensus statistique avant qu'une valeur ne soit proposée au réseau. Les validateurs votent ensuite selon la couche de consensus PBFT, et seules les données qui franchissent à la fois l'accord de l'ensemble d'IA et le quorum des validateurs sont enregistrées on-chain avec une preuve vérifiable.",
+          "Cette conception à deux couches — ensemble d'IA plus consensus décentralisé des validateurs — est ce qui permet à Trayon de détecter les schémas de manipulation en temps réel plutôt que de les découvrir lors d'un audit rétrospectif des mois plus tard."
+        ]
+      },
+      "tokenomics": {
+        "nav": "Tokenomics du TRAY",
+        "title": "4. Tokenomics du TRAY",
+        "body": [
+          "TRAY est le jeton natif qui sécurise le réseau Trayon — conçu comme un coût d'infrastructure, non comme une spéculation. L'offre totale est fixée à 1 000 000 000 de TRAY, avec 25 % libérés au lancement et le reste débloqué via des calendriers de récompenses aux validateurs, de croissance de l'écosystème et de trésorerie à long terme.",
+          "TRAY a trois utilités principales : c'est le jeton de gas natif pour toutes les transactions sur la Layer 2 ; c'est l'actif de staking requis pour exploiter un validateur (minimum 32 000 TRAY) ; et c'est l'actif de gouvernance utilisé dans le vote quadratique, qui empêche les décisions dominées par les gros détenteurs.",
+          "Le réseau brûle 20 % de tous les frais de gas collectés, créant une pression déflationniste qui évolue avec l'utilisation du réseau plutôt qu'avec l'activité spéculative."
+        ]
+      },
+      "roadmap": {
+        "nav": "Feuille de Route",
+        "title": "5. Feuille de Route",
+        "body": [
+          "T3–T4 2026 — Testnet & MVP : contrats principaux, intégration des validateurs et premiers modèles d'IA déployés sur une testnet publique.",
+          "T1–T2 2027 — Mainnet Beta : lancement de la mainnet avec des partenaires pilotes dans les administrations publiques et institutions financières.",
+          "T3–T4 2027 — Expansion Mondiale : déploiements de conformité régionale en Europe, en zone APAC et dans les Amériques, associés à des partenariats localisés.",
+          "2028 et au-delà — Norme de l'Industrie : Trayon positionnée comme la couche d'intégrité par défaut pour les données institutionnelles dans le monde entier."
+        ]
+      },
+      "globalization": {
+        "nav": "Stratégie d'Expansion Mondiale",
+        "title": "6. Stratégie d'Expansion Mondiale",
+        "body": [
+          "Trayon est conçue dès le premier jour comme une infrastructure mondiale, et non comme un pilote régional. Les nœuds validateurs sont répartis sur six continents — avec des régions d'ancrage à Francfort, Singapour, São Paulo, New York et Sydney — pour la résilience et la neutralité juridictionnelle.",
+          "La stratégie réglementaire est régionale par conception : le protocole est conçu pour s'adapter à des régimes de conformité distincts dans plus de 150 pays, avec des parcours juridiques et de localisation dédiés pour l'Europe (alignée sur MiCA), les Amériques, la zone APAC et le Moyen-Orient et l'Afrique.",
+          "Les partenariats suivent un modèle à quatre niveaux : organismes gouvernementaux et du secteur public, cabinets d'audit de rang Big Four, institutions financières et fournisseurs d'infrastructure/données — chacun avec un parcours d'engagement et d'intégration adapté."
+        ]
+      }
+    }
+  },
+  "meta": {
+    "title": "Trayon Protocol — Infrastructure d'Intégrité des Données en Temps Réel",
+    "description": "Trayon combine consensus blockchain et validation IA décentralisée pour détecter la fraude, vérifier les données critiques et arrêter la manipulation en temps réel — pour les gouvernements, institutions et marchés du monde entier."
+  }
+}

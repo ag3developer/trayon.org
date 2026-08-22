@@ -1,0 +1,180 @@
+{
+  "nav": {
+    "problem": "问题",
+    "protocol": "协议",
+    "useCases": "应用场景",
+    "architecture": "架构",
+    "roadmap": "路线图",
+    "token": "代币",
+    "partner": "成为合作伙伴"
+  },
+  "hero": {
+    "eyebrow": "全球数据完整性基础设施",
+    "title": "为世界所依赖的数据提供实时证明",
+    "subtitle": "Trayon 将 Layer 2 区块链与去中心化 AI 验证器相结合，验证关键数据、检测欺诈，并在操纵行为扩散之前将其阻止——覆盖政府、金融、法律和市场领域。",
+    "primaryCta": "阅读白皮书",
+    "secondaryCta": "合作咨询",
+    "stats": {
+      "validators": "分布式验证节点",
+      "continents": "覆盖大洲",
+      "verification": "数据验证时间",
+      "uptime": "网络可用性目标"
+    }
+  },
+  "problem": {
+    "eyebrow": "问题所在",
+    "title": "机构验证数据的速度太慢，无法防止损害",
+    "description": "预算、审计、市场数据和法律记录依赖于集中式报告，往往延迟数周或数月——且无法证明数据未被篡改。",
+    "items": {
+      "delayed": { "title": "验证延迟", "description": "经审计的数据通常在事件发生数月后才出现，远远滞后于决策制定。" },
+      "opaque": { "title": "报告不透明", "description": "公民和相关方无法独立确认公共或企业数据的真实性。" },
+      "manual": { "title": "人工审计成本高", "description": "传统审计周期消耗机构预算的 5–10%，却难以提供实时价值。" },
+      "fragmented": { "title": "预言机分散", "description": "单一来源的数据源仍然容易受到操纵和单点故障的影响。" }
+    }
+  },
+  "protocol": {
+    "eyebrow": "协议",
+    "title": "一层验证机制，而非又一个区块链孤岛",
+    "description": "Trayon 从独立数据源获取数据，通过去中心化 AI 验证器进行处理，并在链上确立加密完整性证明——任何人都可审计，任何人都无法篡改。",
+    "steps": {
+      "ingest": { "title": "数据接入", "description": "独立数据源为网络提供政府、市场和企业数据。" },
+      "validate": { "title": "验证", "description": "多个 AI 模型集成投票，判断异常、欺诈信号和统计一致性。" },
+      "consensus": { "title": "达成共识", "description": "1000 多个抵押验证节点在改进版 PBFT 与 BLS 签名聚合机制下确认结果。" },
+      "settle": { "title": "结算证明", "description": "经零知识证明验证的承诺通过 Polygon CDK 在 Ethereum L1 上结算。" }
+    }
+  },
+  "useCases": {
+    "eyebrow": "应用场景",
+    "title": "为机构不能出错的数据而构建",
+    "items": {
+      "government": { "title": "政府与公共部门", "description": "实时预算执行、采购透明度以及经过验证的宏观经济指标。" },
+      "corporate": { "title": "企业与会计", "description": "持续欺诈检测、偿付能力信号以及 ESG 和供应链验证。" },
+      "judicial": { "title": "司法与法律", "description": "不可篡改的证据记录、案件时间线审计以及防篡改的文件提交。" },
+      "markets": { "title": "市场与金融", "description": "基于 AI 共识的价格预言机以及市场操纵行为的早期检测。" }
+    }
+  },
+  "architecture": {
+    "eyebrow": "架构",
+    "title": "Layer 2 结算、去中心化验证、全球布局",
+    "description": "Trayon 运行在 Polygon CDK Layer 2 上，通过 ZK-SNARK 证明在 Ethereum 上结算，验证节点基础设施分布在六大洲，以确保弹性和司法管辖中立性。",
+    "layers": {
+      "settlement": { "title": "结算层", "description": "Polygon CDK Layer 2，通过 ZK-SNARK 证明在 Ethereum L1 上完成最终结算。" },
+      "consensus": { "title": "共识机制", "description": "改进版 PBFT，2/3+1 法定人数，BLS 签名聚合，对不当行为进行惩罚性削减。" },
+      "ai": { "title": "AI 验证", "description": "在欺诈检测、异常检测和预测模型之间进行集成投票。" },
+      "data": { "title": "数据可用性", "description": "结合 Polygon CDK 数据可用性与 Ethereum blob 存储的混合方案。" }
+    },
+    "regionsLabel": "验证节点区域"
+  },
+  "roadmap": {
+    "eyebrow": "路线图",
+    "title": "五年内从测试网发展为全球标准",
+    "phases": {
+      "testnet": { "period": "2026年第三至第四季度", "title": "测试网与最小可行产品", "description": "核心合约、验证节点接入以及测试网上的初始 AI 模型。" },
+      "beta": { "period": "2027年第一至第二季度", "title": "主网测试版", "description": "主网上线，联合政府和金融机构试点合作伙伴。" },
+      "expansion": { "period": "2027年第三至第四季度", "title": "全球扩张", "description": "在欧洲、亚太和美洲地区推进合规部署。" },
+      "standard": { "period": "2028年及以后", "title": "行业标准", "description": "Trayon 成为机构数据默认的完整性层。" }
+    }
+  },
+  "token": {
+    "eyebrow": "TRAY 代币",
+    "title": "为长期网络安全设计的经济模型",
+    "description": "TRAY 是保障 Trayon 网络安全的原生 gas 及抵押代币，总供应量固定为 10 亿枚，并采用通缩性手续费销毁机制。",
+    "facts": {
+      "supply": { "label": "总供应量", "value": "1,000,000,000 TRAY" },
+      "stake": { "label": "最低抵押量", "value": "32,000 TRAY" },
+      "burn": { "label": "手续费销毁", "value": "gas 费用的 20%" },
+      "governance": { "label": "治理机制", "value": "二次方投票" }
+    }
+  },
+  "contact": {
+    "eyebrow": "联系我们",
+    "title": "共同构建完整性基础层",
+    "description": "无论您代表政府机构、金融机构、审计事务所还是开发团队——欢迎沟通 Trayon 如何满足您的数据完整性需求。",
+    "channels": {
+      "partnerships": { "label": "合作咨询", "value": "partnerships@trayon.org" },
+      "developers": { "label": "技术 / 开发者", "value": "github.com/trayon-protocol" },
+      "general": { "label": "一般联系方式", "value": "contact@trayon.org" }
+    }
+  },
+  "footer": {
+    "description": "Trayon Protocol 是一种去中心化的数据完整性基础设施，结合区块链结算与 AI 驱动的验证。",
+    "columns": {
+      "protocol": { "title": "协议", "architecture": "架构", "token": "代币", "roadmap": "路线图" },
+      "resources": { "title": "资源", "whitepaper": "白皮书", "github": "GitHub", "docs": "文档" },
+      "company": { "title": "公司", "partnerships": "合作伙伴", "contact": "联系方式" }
+    },
+    "copyright": "Trayon Protocol。保留所有权利。",
+    "tagline": "为全球数据完整性而构建。"
+  },
+  "whitepaper": {
+    "eyebrow": "技术白皮书",
+    "title": "Trayon 协议白皮书",
+    "subtitle": "一个结合 Layer 2 区块链结算与去中心化 AI 验证的全球实时数据完整性基础设施。",
+    "version": "第 1.0 版",
+    "updated": "最后更新于 2026 年 8 月",
+    "downloadCta": "下载 PDF",
+    "backCta": "返回首页",
+    "toc": "目录",
+    "sections": {
+      "manifesto": {
+        "nav": "宣言与使命",
+        "title": "1. 宣言与使命",
+        "body": [
+          "Trayon 的使命是构建全球数据完整性层——无论公共部门还是私营部门——通过去中心化人工智能与区块链安全的融合，消除操控、欺诈和不透明。",
+          "世界的数字化转型存在结构性缺陷：自动化流程仍依赖人工输入的数据、腐败、会计作假以及政府报告失实。各国政府面对采购过程中的舒弊以及被伪造的宏观经济数据。企业操控资产负债表并掏盖偿付能力不足的事实。法院依赖于可被篡改的数字证据。市场则遭受价格操控和预言机数据被污染的困扰。",
+          "Trayon 的解决方案是零信任数据（Zero Trust Data）：任何单一数据来源都不被默认信任。每一个关键数据点均由独立的 AI 代理获取，由去中心化共识验证，并在链上用密码学证明封存，任何第三方均可对其进行审计，无需任何中介机构。"
+        ]
+      },
+      "architecture": {
+        "nav": "Layer 2 架构",
+        "title": "2. Layer 2 架构",
+        "body": [
+          "Trayon 是一个基于 Polygon CDK（Chain Development Kit）构建的去中心化 Layer 2，针对高可用性数据采集与验证、实时 AI 预言机处理以及通过 ZK 证明由 Ethereum 保护的低成本交易进行了优化。",
+          "整个技术栈分为四层：顶层为应用场景（政府技术、企业、司法、市场）；下层为 Trayon 智能合约（Oracle Manager、Validator Registry、TRAY 代币、预测市场）；再下一层为 Trayon Layer 2 本身（排序器、兼容 EVM 的状态机、验证节点、AI 共识引擎）；最后为零知识证明与数据可用性，将证明批量提交至 Ethereum/Polygon 进行最终结算。",
+          "共识机制采用改进版 PBFT 模型，要求在 1000 以上质押的验证节点中达到 2/3+1 的法定人数，并采用 BLS 签名聚合以提高效率，对可证实的不当行为实施惩罚性削减（slashing）。"
+        ]
+      },
+      "oracle": {
+        "nav": "预言机与 AI 共识",
+        "title": "3. 预言机与 AI 共识",
+        "body": [
+          "数据采集从独立代理从各地区的官方 API、透明度门户和市场数据中获取信息开始——从不依赖单一集中式来源。",
+          "每个数据点都由一组 AI 模型（欺诈检测、异常检测和预测）处理，必须达成统计一致后方可将数值提交给网络。验证节点随后在 PBFT 共识层下进行投票，只有同时通过 AI 集成一致性与验证节点法定人数的数据才会带着可验证的证明在链上确定。",
+          "这种双层设计——AI 集成加上去中心化验证节点共识——使 Trayon 能够实时检测操控模式，而不是在数个月后的回顾性审计中才发现它们。"
+        ]
+      },
+      "tokenomics": {
+        "nav": "TRAY 代币经济学",
+        "title": "4. TRAY 代币经济学",
+        "body": [
+          "TRAY 是保障 Trayon 网络安全的原生代币——它被设计为基础设施成本，而非投机工具。总供应量固定为 10 亿枚 TRAY，其中 25% 在上线时释放，其余部分按验证节点奖励、生态系统发展以及长期财库计划逐步解锁。",
+          "TRAY 具备三大核心用途：它是所有 Layer 2 交易的原生 gas 代币；它是运行验证节点所需的质押资产（最低 32,000 TRAY）；它亦是用于二次方投票治理的治理代币，可防止大额持有者主导决策。",
+          "网络将销毁所收取 gas 费用的 20%，产生一种随网络使用而非投机行为而扩展的通缩压力。"
+        ]
+      },
+      "roadmap": {
+        "nav": "路线图",
+        "title": "5. 路线图",
+        "body": [
+          "2026 年第三至四季度 — 测试网与最小可行产品：核心合约、验证节点接入以及初始 AI 模型部署至公开测试网。",
+          "2027 年第一至二季度 — 主网测试版：主网上线，并与政府机构和金融机构的试点合作伙伴共同推进。",
+          "2027 年第三至四季度 — 全球扩展：在欧洲、亚太和美洲地区推进区域合规部署，并搭配本地化合作。",
+          "2028 年及以后 — 行业标准：Trayon 成为全球机构数据默认的完整性层。"
+        ]
+      },
+      "globalization": {
+        "nav": "全球扩展战略",
+        "title": "6. 全球扩展战略",
+        "body": [
+          "Trayon 从一开始就被设计为全球基础设施，而不是区域性试点项目。验证节点分布在六大洲——锦囊区域包括法兰克福、新加坡、圣保罗、纽约和悉尼——以确保弹性和管辖中立性。",
+          "监管战略在设计上就具备区域适应性：该协议旨在适应 150 余个国家的不同合规体制，并为欧洲（与 MiCA 相兼容）、美洲、亚太以及中东与非洲地区制定专门的法律与本地化路径。",
+          "合作伙伴关系采用四层模型：政府与公共部门机构、四大会计事务所级别的审计机构、金融机构以及基础设施/数据提供商——每一类合作伙伴都有专属的合作与集成路径。"
+        ]
+      }
+    }
+  },
+  "meta": {
+    "title": "Trayon Protocol — 实时数据完整性基础设施",
+    "description": "Trayon 将区块链共识与去中心化 AI 验证相结合，实时检测欺诈、验证关键数据并阻止操纵行为——服务于全球政府、机构和市场。"
+  }
+}
