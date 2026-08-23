@@ -7,12 +7,20 @@
 
 ## 📍 Contract Addresses
 
-### L1 (Polygon Amoy - Chain 80002)
+### L1 - TESTNET (Polygon Amoy - Chain 80002)
 
 | Contract | Address | Explorer |
 |----------|---------|----------|
 | **TRAY Token (L1)** | `0x60c872232Ef71BAf3237087b7BdD5b1a43896F3A` | [View](https://www.oklink.com/polygon-testnet/token/0x60c872232Ef71BAf3237087b7BdD5b1a43896F3A) |
 | **BridgeL1** | `0xd9e51fa118C8F32070fF65BF1Ce31212DecDd8cb` | [View](https://www.oklink.com/polygon-testnet/address/0xd9e51fa118C8F32070fF65BF1Ce31212DecDd8cb) |
+
+### L1 - PRODUÇÃO (Polygon Mainnet - Chain 137) 🚀
+
+| Contract | Address | Explorer |
+|----------|---------|----------|
+| **TRAY Token** | `0x424524F4012f32a8815f0cF37Eb8A3FCbF89260b` | [View](https://polygonscan.com/token/0x424524F4012f32a8815f0cF37Eb8A3FCbF89260b) |
+| **BridgeL1** | `0x6ACdf6bfA39B38441AbEBD4c1461A1a9aD8070C9` | [View](https://polygonscan.com/address/0x6ACdf6bfA39B38441AbEBD4c1461A1a9aD8070C9) |
+| **Owner** | `0x9efFA566D5d2FF1bD1D3AC0902f19D72Fc2F0f0f` | [View](https://polygonscan.com/address/0x9efFA566D5d2FF1bD1D3AC0902f19D72Fc2F0f0f) |
 
 ### L2 (Trayon Testnet - Local Anvil Chain 31337)
 

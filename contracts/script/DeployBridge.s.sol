@@ -51,8 +51,8 @@ contract DeployBridge is Script {
         vm.startBroadcast();
         
         // Determine which network we're deploying to
-        if (block.chainid == 80002) {
-            // POLYGON AMOY (L1)
+        if (block.chainid == 80002 || block.chainid == 137) {
+            // POLYGON AMOY (L1) or POLYGON MAINNET
             deployPolygonAmoy();
         } else if (block.chainid == 7654321 || block.chainid == 31337) {
             // TRAYON TESTNET (L2) or LOCAL ANVIL
