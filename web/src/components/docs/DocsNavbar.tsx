@@ -1,7 +1,8 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { Menu, X, ArrowLeft } from "lucide-react";
 import { DocsSidebar } from "./DocsSidebar";
 import { useDocsHref, useDocsBasePath } from "./DocsBasePath";
@@ -12,9 +13,17 @@ const MAIN_SITE_URL = "https://trayon.org";
 
 export function DocsNavbar() {
   const [open, setOpen] = useState(false);
+  const pathname = usePathname();
   const homeHref = useDocsHref("/docs");
   const basePath = useDocsBasePath();
   const mainSiteHref = basePath === "/docs" ? "/" : MAIN_SITE_URL;
+
+  // Close the mobile menu whenever the route changes (client-side nav via
+  // next/link doesn't remount this component, so the `open` state would
+  // otherwise stay true after tapping a link).
+  useEffect(() => {
+    setOpen(false);
+  }, [pathname]);
 
   return (
     <header className="sticky top-0 z-50 border-b border-border bg-background/80 backdrop-blur-md">

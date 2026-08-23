@@ -10,6 +10,7 @@ import {
   YAxis,
 } from "recharts";
 import { useChartColors } from "./useChartColors";
+import { useIsMobile } from "./useIsMobile";
 
 // Illustrative deflationary supply curve driven by the 20% fee-burn rate,
 // matching the Year 1/3/5 figures in 04-TOKENOMICS.md ("Modelo de Preço & Demanda").
@@ -24,18 +25,28 @@ const BURN_PROJECTION = [
 
 export function FeeBurnProjectionChart() {
   const c = useChartColors();
+  const isMobile = useIsMobile();
 
   return (
     <div className="docs-chart">
-      <ResponsiveContainer width="100%" height={280}>
-        <LineChart data={BURN_PROJECTION as unknown as Record<string, unknown>[]} margin={{ top: 8, right: 12, left: -8, bottom: 0 }}>
+      <ResponsiveContainer width="100%" height={isMobile ? 260 : 280}>
+        <LineChart
+          data={BURN_PROJECTION as unknown as Record<string, unknown>[]}
+          margin={{ top: 8, right: 8, left: isMobile ? -20 : -8, bottom: 0 }}
+        >
           <CartesianGrid stroke={c.border} strokeDasharray="3 3" vertical={false} />
-          <XAxis dataKey="year" tick={{ fill: c.muted, fontSize: 11 }} axisLine={{ stroke: c.border }} tickLine={false} />
+          <XAxis
+            dataKey="year"
+            tick={{ fill: c.muted, fontSize: isMobile ? 10 : 11 }}
+            axisLine={{ stroke: c.border }}
+            tickLine={false}
+            interval={0}
+          />
           <YAxis
-            tick={{ fill: c.muted, fontSize: 11 }}
+            tick={{ fill: c.muted, fontSize: isMobile ? 10 : 11 }}
             axisLine={false}
             tickLine={false}
-            width={54}
+            width={isMobile ? 40 : 54}
             tickFormatter={(v: number) => `${v}M`}
           />
           <Tooltip

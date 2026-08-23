@@ -9,6 +9,7 @@ import {
   Tooltip,
 } from "recharts";
 import { useChartColors } from "./useChartColors";
+import { useIsMobile } from "./useIsMobile";
 
 const ALLOCATION = [
   { name: "Initial Launch (IDO/Private)", value: 25 },
@@ -21,18 +22,21 @@ const ALLOCATION = [
 
 export function SupplyDistributionChart() {
   const c = useChartColors();
+  const isMobile = useIsMobile();
   const colors = [c.accent, c.violet, c.blue, c.gold, c.rose, c.signal];
 
   return (
     <div className="docs-chart">
-      <ResponsiveContainer width="100%" height={320}>
-        <PieChart>
+      <ResponsiveContainer width="100%" height={isMobile ? 400 : 320}>
+        <PieChart margin={{ top: 0, right: 0, bottom: 0, left: 0 }}>
           <Pie
             data={ALLOCATION as unknown as Record<string, unknown>[]}
             dataKey="value"
             nameKey="name"
-            innerRadius={70}
-            outerRadius={110}
+            cx={isMobile ? "50%" : "38%"}
+            cy={isMobile ? "38%" : "50%"}
+            innerRadius={isMobile ? 55 : 70}
+            outerRadius={isMobile ? 85 : 110}
             paddingAngle={1.5}
             strokeWidth={0}
           >
@@ -54,11 +58,11 @@ export function SupplyDistributionChart() {
             }}
           />
           <Legend
-            layout="vertical"
-            verticalAlign="middle"
-            align="right"
+            layout={isMobile ? "horizontal" : "vertical"}
+            verticalAlign={isMobile ? "bottom" : "middle"}
+            align={isMobile ? "center" : "right"}
             iconType="circle"
-            wrapperStyle={{ fontSize: 12, color: c.muted, lineHeight: "22px" }}
+            wrapperStyle={{ fontSize: 11, color: c.muted, lineHeight: "20px" }}
           />
         </PieChart>
       </ResponsiveContainer>

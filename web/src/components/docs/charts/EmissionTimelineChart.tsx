@@ -11,25 +11,30 @@ import {
   YAxis,
 } from "recharts";
 import { useChartColors } from "./useChartColors";
+import { useIsMobile } from "./useIsMobile";
 
 // Circulating supply unlock schedule, in millions of TRAY.
 // 250M unlocks at launch, +50M/year through year 5 (matches 04-TOKENOMICS.md).
 const EMISSION = [
-  { year: "2026 (Launch)", circulating: 250, locked: 750 },
-  { year: "2027", circulating: 300, locked: 700 },
-  { year: "2028", circulating: 350, locked: 650 },
-  { year: "2029", circulating: 400, locked: 600 },
-  { year: "2030", circulating: 450, locked: 550 },
-  { year: "2031", circulating: 500, locked: 500 },
+  { year: "2026 (Launch)", yearShort: "2026", circulating: 250, locked: 750 },
+  { year: "2027", yearShort: "2027", circulating: 300, locked: 700 },
+  { year: "2028", yearShort: "2028", circulating: 350, locked: 650 },
+  { year: "2029", yearShort: "2029", circulating: 400, locked: 600 },
+  { year: "2030", yearShort: "2030", circulating: 450, locked: 550 },
+  { year: "2031", yearShort: "2031", circulating: 500, locked: 500 },
 ] as const;
 
 export function EmissionTimelineChart() {
   const c = useChartColors();
+  const isMobile = useIsMobile();
 
   return (
     <div className="docs-chart">
-      <ResponsiveContainer width="100%" height={300}>
-        <AreaChart data={EMISSION as unknown as Record<string, unknown>[]} margin={{ top: 8, right: 12, left: -8, bottom: 0 }}>
+      <ResponsiveContainer width="100%" height={isMobile ? 280 : 300}>
+        <AreaChart
+          data={EMISSION as unknown as Record<string, unknown>[]}
+          margin={{ top: 8, right: 8, left: isMobile ? -20 : -8, bottom: 0 }}
+        >
           <defs>
             <linearGradient id="circulatingFill" x1="0" y1="0" x2="0" y2="1">
               <stop offset="0%" stopColor={c.accent} stopOpacity={0.55} />
@@ -41,12 +46,18 @@ export function EmissionTimelineChart() {
             </linearGradient>
           </defs>
           <CartesianGrid stroke={c.border} strokeDasharray="3 3" vertical={false} />
-          <XAxis dataKey="year" tick={{ fill: c.muted, fontSize: 11 }} axisLine={{ stroke: c.border }} tickLine={false} />
+          <XAxis
+            dataKey={isMobile ? "yearShort" : "year"}
+            tick={{ fill: c.muted, fontSize: isMobile ? 10 : 11 }}
+            axisLine={{ stroke: c.border }}
+            tickLine={false}
+            interval={0}
+          />
           <YAxis
-            tick={{ fill: c.muted, fontSize: 11 }}
+            tick={{ fill: c.muted, fontSize: isMobile ? 10 : 11 }}
             axisLine={false}
             tickLine={false}
-            width={54}
+            width={isMobile ? 40 : 54}
             tickFormatter={(v: number) => `${v}M`}
           />
           <Tooltip
@@ -57,7 +68,7 @@ export function EmissionTimelineChart() {
           />
           <Legend
             formatter={(value: string) => (value === "circulating" ? "Circulating supply" : "Locked (vesting)")}
-            wrapperStyle={{ fontSize: 12, color: c.muted }}
+            wrapperStyle={{ fontSize: 11, color: c.muted }}
           />
           <Area type="monotone" dataKey="locked" stackId="1" stroke={c.violet} fill="url(#lockedFill)" strokeWidth={1.5} />
           <Area type="monotone" dataKey="circulating" stackId="1" stroke={c.accent} fill="url(#circulatingFill)" strokeWidth={1.5} />
