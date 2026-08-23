@@ -1,10 +1,15 @@
+"use client";
+
 import { ArrowRight, Flame } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { getIcon } from "@/lib/icons";
 import { SectionHeader } from "./SectionHeader";
 import { StaggerGrid, StaggerItem } from "./StaggerGrid";
 import { RevealOnScroll } from "./RevealOnScroll";
-import { TokenAllocationChart } from "./TokenAllocationChart";
+import { TokenAllocationChart, TOKEN_ALLOCATION } from "./TokenAllocationChart";
+import { useChartColors } from "./docs/charts/useChartColors";
+
+const ALLOCATION_COLOR_KEYS = ["accent", "violet", "blue", "gold", "rose", "signal"] as const;
 
 const FACTS = [
   { key: "supply", iconKey: "coins" },
@@ -22,6 +27,8 @@ const UTILITY = [
 
 export function Token() {
   const t = useTranslations("token");
+  const c = useChartColors();
+  const allocationColors = ALLOCATION_COLOR_KEYS.map((key) => c[key]);
 
   return (
     <section id="token" className="py-20 sm:py-28">
@@ -53,7 +60,7 @@ export function Token() {
         </StaggerGrid>
 
         <div className="mt-10 grid grid-cols-1 gap-6 lg:mt-14 lg:grid-cols-[1.1fr_1fr]">
-          {/* Allocation donut */}
+          {/* Allocation donut + breakdown table */}
           <RevealOnScroll className="rounded-lg border border-border bg-surface p-6 sm:p-8">
             <h3 className="text-sm font-semibold uppercase tracking-wide text-muted">
               {t("allocationTitle")}
@@ -61,6 +68,32 @@ export function Token() {
             <div className="mt-4">
               <TokenAllocationChart />
             </div>
+            <table className="mt-4 w-full text-sm">
+              <thead>
+                <tr className="border-b border-border text-xs uppercase tracking-wide text-muted">
+                  <th className="py-2 text-left font-semibold">Category</th>
+                  <th className="py-2 text-right font-semibold">Share</th>
+                  <th className="py-2 text-right font-semibold">Amount</th>
+                </tr>
+              </thead>
+              <tbody>
+                {TOKEN_ALLOCATION.map((row, idx) => (
+                  <tr key={row.name} className="border-b border-border/60 last:border-0">
+                    <td className="py-2">
+                      <span className="flex items-center gap-2">
+                        <span
+                          className="h-2.5 w-2.5 flex-shrink-0 rounded-full"
+                          style={{ backgroundColor: allocationColors[idx] }}
+                        />
+                        <span className="text-foreground">{row.name}</span>
+                      </span>
+                    </td>
+                    <td className="py-2 text-right font-mono text-foreground">{row.value}%</td>
+                    <td className="py-2 text-right text-muted">{row.amount}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
           </RevealOnScroll>
 
           {/* Utility + burn highlight */}
