@@ -18,7 +18,10 @@ export async function GET(request: Request) {
     const { searchParams } = new URL(request.url);
     const locale = searchParams.get("locale") || "en";
 
-    const [logoMark] = await Promise.all([toDataUri("tray-logo.png")]);
+    // Use the cropped icon mark (same asset as the site's <Logo />), not the
+    // full lockup with baked-in wordmark — the PDF renders its own "TRAYON"
+    // text next to it, exactly like the website header.
+    const [logoMark] = await Promise.all([toDataUri("trayon-icon.png")]);
 
     // Generate PDF
     const pdfBuffer = await renderToBuffer(

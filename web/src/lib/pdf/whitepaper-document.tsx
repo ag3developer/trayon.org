@@ -72,7 +72,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
   },
-  headerLogo: { width: 14, height: 14, marginRight: 6 },
+  headerLogo: { width: 11.9, height: 16.3, marginRight: 6 },
   headerBrandText: {
     fontSize: 9,
     fontFamily: "Helvetica-Bold",
@@ -350,6 +350,31 @@ function PieChart({ data, size = 108 }: { data: PieSlice[]; size?: number }) {
 }
 
 /* ------------------------------------------------------------------------ */
+/*  Watermark — faint centered icon mark behind page content               */
+/* ------------------------------------------------------------------------ */
+
+const ICON_ASPECT_RATIO = 657 / 899;
+
+function Watermark({ logoMark, size = 300 }: { logoMark?: string; size?: number }) {
+  if (!logoMark) return null;
+  const width = size * ICON_ASPECT_RATIO;
+  return (
+    <View
+      style={{
+        position: "absolute",
+        top: "50%",
+        left: "50%",
+        marginLeft: -width / 2,
+        marginTop: -size / 2,
+      }}
+      fixed
+    >
+      <Image src={logoMark} style={{ width, height: size, opacity: 0.035 }} />
+    </View>
+  );
+}
+
+/* ------------------------------------------------------------------------ */
 /*  Header / Footer (fixed on every content page)                          */
 /* ------------------------------------------------------------------------ */
 
@@ -364,6 +389,7 @@ function PageFrame({
 }) {
   return (
     <>
+      <Watermark logoMark={logoMark} />
       <View style={styles.headerBar} fixed>
         <View style={styles.headerBrand}>
           {logoMark ? <Image src={logoMark} style={styles.headerLogo} /> : null}
@@ -1019,6 +1045,7 @@ export const WhitepaperDocument: React.FC<WhitepaperDocumentProps> = ({
             <Circle cx={40} cy={780} r={180} fill={color.violet} opacity={0.06} />
           </Svg>
         </View>
+        <Watermark logoMark={logoMark} size={460} />
 
         <View
           style={{
@@ -1033,8 +1060,13 @@ export const WhitepaperDocument: React.FC<WhitepaperDocumentProps> = ({
           {/* top row */}
           <View style={{ flexDirection: "row", alignItems: "center", justifyContent: "space-between" }}>
             <View style={{ flexDirection: "row", alignItems: "center" }}>
-              {logoMark ? <Image src={logoMark} style={{ width: 26, height: 26, marginRight: 9 }} /> : null}
-              <Text style={{ fontSize: 15, fontFamily: "Helvetica-Bold", color: color.white, letterSpacing: 2 }}>
+              {logoMark ? (
+                <Image
+                  src={logoMark}
+                  style={{ width: 26 * ICON_ASPECT_RATIO, height: 26, marginRight: 10 }}
+                />
+              ) : null}
+              <Text style={{ fontSize: 17, fontFamily: "Helvetica-Bold", color: color.white, letterSpacing: 2.5 }}>
                 TRAYON
               </Text>
             </View>
