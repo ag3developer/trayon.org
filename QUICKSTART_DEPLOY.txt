@@ -1,0 +1,88 @@
+================================================================================
+  TRAYON BRIDGE - DEPLOYMENT QUICKSTART
+================================================================================
+
+YOUR WALLET: 0x99e519c1Dff179011541907Ea3d81232d397aaF1
+
+================================================================================
+  STEP 1: GET FREE TESTNET MATIC
+================================================================================
+
+1. Visit: https://faucet.polygon.technology/
+2. Paste your address: 0x99e519c1Dff179011541907Ea3d81232d397aaF1
+3. Click "Claim 1 MATIC"
+4. Wait 1-2 minutes
+
+================================================================================
+  STEP 2: DEPLOY CONTRACTS (AUTOMATIC)
+================================================================================
+
+Open terminal and run:
+
+  cd /Users/josecarlosmartins/Documents/trayon.org/contracts
+  ./script/quick-deploy.sh
+
+This will:
+  ✅ Check your internet connection
+  ✅ Verify you have MATIC
+  ✅ Simulate deployment (no cost)
+  ✅ Ask for confirmation
+  ✅ Deploy for REAL
+  ✅ Show contract addresses
+
+Type "yes" when prompted to confirm!
+
+================================================================================
+  STEP 3: SAVE CONTRACT ADDRESSES
+================================================================================
+
+After deployment completes, you'll see:
+
+  ✅ TRAY L1 deployed: 0x...
+  ✅ BridgeL1 deployed: 0x...
+  ✅ BridgeL2 deployed: 0x...
+  ✅ TRAY L2 deployed: 0x...
+
+SAVE THESE ADDRESSES - you need them for the relayer!
+
+================================================================================
+  STEP 4: UPDATE RELAYER & RESTART
+================================================================================
+
+1. Open file: /relayer/.env.local
+
+2. Find and update:
+   BRIDGE_L1_ADDRESS=0x...     (from deployment)
+   BRIDGE_L2_ADDRESS=0x...     (from deployment)
+   TRAY_L1_ADDRESS=0x...       (from deployment)
+   TRAY_L2_ADDRESS=0x...       (from deployment)
+
+3. In terminal:
+   cd /Users/josecarlosmartins/Documents/trayon.org/relayer
+   npm run build
+   npm run dev
+
+4. Wait for message: "Relayer v1.0.0 initialized successfully"
+
+================================================================================
+  STEP 5: TEST REAL END-TO-END FLOW
+================================================================================
+
+Your bridge is now LIVE on Polygon Amoy testnet!
+
+You can:
+  ✅ Send TRAY tokens from L1 (Polygon Amoy) to L2 (Local)
+  ✅ Relayer automatically processes and bridges tokens
+  ✅ Withdraw from L2 back to L1
+  ✅ Monitor all transactions
+
+================================================================================
+  ESTIMATED COST: ~0.5 MATIC (~$0.001 USD)
+================================================================================
+
+That's it! You now have a working bridge between Polygon Amoy and Trayon!
+
+For detailed guide, see: DEPLOYMENT_GUIDE.md
+For troubleshooting, see: READY_TO_DEPLOY.md
+
+================================================================================
