@@ -91,20 +91,40 @@ main() {
     press_enter
     
     # ========================================================================
-    print_section "Step 2: Checking Internet Connection"
+    print_section "Step 2: Checking Internet Connection & RPC"
     echo ""
     
-    if ! cast rpc eth_chainId --rpc-url "https://rpc-mumbai.maticvigil.com" &> /dev/null; then
+    # Determine which RPC to use (priority: Alchemy > Infura > Public)
+    RPC_URL=""
+    
+    if [ ! -z "$ALCHEMY_API_KEY" ] && [ "$ALCHEMY_API_KEY" != "YOUR_ALCHEMY_KEY_HERE" ]; then
+        RPC_URL="https://polygon-amoy.g.alchemy.com/v2/$ALCHEMY_API_KEY"
+        print_info "Using Alchemy RPC (fastest & most reliable)"
+    elif [ ! -z "$INFURA_API_KEY" ] && [ "$INFURA_API_KEY" != "YOUR_INFURA_KEY_HERE" ]; then
+        RPC_URL="https://polygon-amoy.infura.io/v3/$INFURA_API_KEY"
+        print_info "Using Infura RPC (faster & more reliable)"
+    else
+        RPC_URL="https://rpc-amoy.polygon.technology"
+        print_warning "Using public RPC (may be slow). For better performance:"
+        print_warning "  Add API key to .env: ALCHEMY_API_KEY=your_key or INFURA_API_KEY=your_key"
+    fi
+    
+    print_info "Testing RPC: ${RPC_URL:0:50}..."
+    
+    if ! timeout 10 cast rpc eth_chainId --rpc-url "$RPC_URL" &> /dev/null; then
         print_error "Cannot connect to Polygon Amoy RPC"
         print_info "Checking internet connection..."
         sleep 2
         
-        if ! cast rpc eth_chainId --rpc-url "https://rpc-mumbai.maticvigil.com" &> /dev/null; then
-            print_error "Still no internet. Please check your connection and try again."
+        if ! timeout 10 cast rpc eth_chainId --rpc-url "$RPC_URL" &> /dev/null; then
+            print_error "Still cannot connect. Please check your internet and try again."
             exit 1
         fi
     fi
     print_success "Connected to Polygon Amoy (Chain ID: 80001)"
+    
+    # Export RPC for use in forge commands
+    export POLYGON_AMOY_RPC="$RPC_URL"
     
     press_enter
     
@@ -112,7 +132,7 @@ main() {
     print_section "Step 3: Checking MATIC Balance"
     echo ""
     
-    BALANCE=$(cast balance "$WALLET" --rpc-url "https://rpc-mumbai.maticvigil.com")
+    BALANCE=$(cast balance "$WALLET" --rpc-url "$RPC_URL")
     BALANCE_MATIC=$(echo "scale=6; $BALANCE / 1000000000000000000" | bc)
     
     print_info "Your address: $WALLET"

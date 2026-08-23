@@ -39,9 +39,28 @@ main() {
     MAX_ATTEMPTS=600  # 10 minutes (60 seconds per attempt, 600 attempts)
     
     while [ $ATTEMPT -le $MAX_ATTEMPTS ]; do
-        if timeout 5 cast rpc eth_chainId --rpc-url "https://rpc-amoy.polygon.technology" &> /dev/null || \
-           timeout 5 cast rpc eth_chainId --rpc-url "https://rpc-mumbai.maticvigil.com" &> /dev/null; then
-            print_success "Internet connection established!"
+        # Load env to get API keys
+        export $(grep -v '^#' .env | xargs) 2>/dev/null || true
+        
+        # Try Alchemy first if key available
+        if [ ! -z "$ALCHEMY_API_KEY" ] && [ "$ALCHEMY_API_KEY" != "YOUR_ALCHEMY_KEY_HERE" ]; then
+            if timeout 5 cast rpc eth_chainId --rpc-url "https://polygon-amoy.g.alchemy.com/v2/$ALCHEMY_API_KEY" &> /dev/null; then
+                print_success "Internet connection established (via Alchemy)!"
+                break
+            fi
+        fi
+        
+        # Try Infura if key available
+        if [ ! -z "$INFURA_API_KEY" ] && [ "$INFURA_API_KEY" != "YOUR_INFURA_KEY_HERE" ]; then
+            if timeout 5 cast rpc eth_chainId --rpc-url "https://polygon-amoy.infura.io/v3/$INFURA_API_KEY" &> /dev/null; then
+                print_success "Internet connection established (via Infura)!"
+                break
+            fi
+        fi
+        
+        # Fallback to public RPC
+        if timeout 5 cast rpc eth_chainId --rpc-url "https://rpc-amoy.polygon.technology" &> /dev/null; then
+            print_success "Internet connection established (via public RPC)!"
             break
         fi
         
