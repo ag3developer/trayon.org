@@ -1,5 +1,5 @@
 import { useTranslations } from "next-intl";
-import { Logo } from "./Logo";
+import { LogoLockup } from "./Logo";
 
 const COLUMNS = [
   {
@@ -35,9 +35,8 @@ export function Footer() {
       <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-4">
           <div>
-            <a href="/" className="flex items-center gap-2">
-              <Logo size={28} />
-              <span className="text-base font-semibold text-foreground">Trayon</span>
+            <a href="/" className="flex items-center">
+              <LogoLockup size={28} />
             </a>
             <p className="mt-3 max-w-xs text-sm leading-relaxed text-muted">
               {t("description")}

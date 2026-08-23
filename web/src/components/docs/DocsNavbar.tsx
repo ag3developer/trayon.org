@@ -7,7 +7,7 @@ import { Menu, X, ArrowLeft } from "lucide-react";
 import { DocsSidebar } from "./DocsSidebar";
 import { useDocsHref, useDocsBasePath } from "./DocsBasePath";
 import { ThemeToggle } from "../theme/ThemeToggle";
-import { Logo } from "../Logo";
+import { LogoLockup } from "../Logo";
 
 const MAIN_SITE_URL = "https://trayon.org";
 
@@ -29,14 +29,15 @@ export function DocsNavbar() {
     <header className="sticky top-0 z-50 border-b border-border bg-background/80 backdrop-blur-md">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
         <div className="flex items-center gap-4">
-          <Link href={homeHref} className="flex items-center gap-2">
-            <Logo size={34} />
-            <span className="text-lg font-semibold tracking-tight text-foreground">
-              Trayon
-            </span>
-            <span className="rounded-md border border-border px-1.5 py-0.5 text-xs font-medium text-muted">
-              Docs
-            </span>
+          <Link href={homeHref} className="flex items-center">
+            <LogoLockup
+              size={34}
+              badge={
+                <span className="rounded-md border border-border px-1.5 py-0.5 text-xs font-medium normal-case text-muted">
+                  Docs
+                </span>
+              }
+            />
           </Link>
         </div>
 

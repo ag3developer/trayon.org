@@ -6,7 +6,7 @@ import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { LanguageSwitcher } from "./LanguageSwitcher";
 import { ThemeToggle } from "./theme/ThemeToggle";
-import { Logo } from "./Logo";
+import { LogoLockup } from "./Logo";
 
 export function Navbar() {
   const [open, setOpen] = useState(false);
@@ -24,11 +24,8 @@ export function Navbar() {
   return (
     <header className="sticky top-0 z-50 border-b border-border bg-background/80 backdrop-blur-md">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
-        <Link href="/" className="flex items-center gap-2">
-          <Logo size={34} />
-          <span className="text-lg font-semibold tracking-tight text-foreground">
-            Trayon
-          </span>
+        <Link href="/" className="flex items-center">
+          <LogoLockup size={34} />
         </Link>
 
         <nav className="hidden items-center gap-8 lg:flex">
