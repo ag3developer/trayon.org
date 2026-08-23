@@ -9,7 +9,7 @@ from typing import Optional
 import logging
 from datetime import datetime
 
-from fastapi import FastAPI, File, UploadFile, HTTPException, BackgroundTasks, Depends
+from fastapi import FastAPI, File, Form, UploadFile, HTTPException, BackgroundTasks, Depends
 from fastapi.responses import JSONResponse
 from pydantic import BaseModel, Field
 import ipfshttpclient
@@ -170,36 +170,39 @@ async def health_check():
 # AUDIT INGESTION API
 # ─────────────────────────────────────────────────────────────────────────────
 
+def _queue_ingestion(source_type: str, priority: int) -> str:
+    """Shared helper: generate an ingestion id and push it onto the audit queue."""
+    ingestion_id = f"ingest_{Web3.keccak(text=str(datetime.utcnow())).hex()[:16]}"
+
+    if redis_client:
+        redis_client.lpush(
+            "audit_queue",
+            f"{{\"ingestion_id\": \"{ingestion_id}\", \"type\": \"{source_type}\"}}"
+        )
+
+    logger.info(f"Queued ingestion task: {ingestion_id}")
+    return ingestion_id
+
+
 @app.post("/api/v1/audit/ingest", tags=["Audit"], response_model=dict)
 async def ingest_document(
     request: IngestRequest,
-    file: Optional[UploadFile] = None,
     background_tasks: BackgroundTasks = BackgroundTasks(),
 ):
     """
-    Ingest audit documents for processing.
-    
+    Ingest audit documents from a remote source (no file upload).
+
     Supports:
-    - PDF files (pdfplumber parsing)
-    - Excel files (pandas)
     - API endpoints (requests)
     - Government registry APIs
-    
+
+    For PDF/Excel file uploads, use POST /api/v1/audit/ingest/file instead.
+
     Returns: task_id and queueing status
     """
     try:
-        # Generate unique ingestion ID
-        ingestion_id = f"ingest_{Web3.keccak(text=str(datetime.utcnow())).hex()[:16]}"
-        
-        # Queue for async processing
-        if redis_client:
-            redis_client.lpush(
-                "audit_queue",
-                f"{{\"ingestion_id\": \"{ingestion_id}\", \"type\": \"{request.source_type}\"}}"
-            )
-        
-        logger.info(f"Queued ingestion task: {ingestion_id}")
-        
+        ingestion_id = _queue_ingestion(request.source_type, request.priority)
+
         return {
             "ingestion_id": ingestion_id,
             "status": "queued",
@@ -208,6 +211,58 @@ async def ingest_document(
         }
     except Exception as e:
         logger.error(f"Ingestion error: {str(e)}")
+        raise HTTPException(status_code=500, detail=str(e))
+
+
+@app.post("/api/v1/audit/ingest/file", tags=["Audit"], response_model=dict)
+async def ingest_document_file(
+    file: UploadFile = File(..., description="PDF or Excel audit document"),
+    data_hash: str = Form(..., description="Keccak256 hash of source data"),
+    priority: int = Form(default=1, ge=1, le=10, description="Processing priority (1-10)"),
+    background_tasks: BackgroundTasks = BackgroundTasks(),
+):
+    """
+    Ingest an audit document file (PDF or Excel) for processing.
+
+    Supports:
+    - PDF files (pdfplumber parsing)
+    - Excel files (pandas)
+
+    Returns: task_id and queueing status
+    """
+    try:
+        filename = (file.filename or "").lower()
+        if filename.endswith(".pdf"):
+            source_type = "pdf"
+        elif filename.endswith((".xlsx", ".xls")):
+            source_type = "excel"
+        else:
+            raise HTTPException(
+                status_code=400,
+                detail="Unsupported file type. Only .pdf, .xlsx, and .xls are accepted.",
+            )
+
+        ingestion_id = _queue_ingestion(source_type, priority)
+
+        # Cache the raw file bytes alongside the ingestion id so a worker can
+        # pick it up for parsing (pdfplumber/pandas) without needing shared
+        # disk storage.
+        if redis_client:
+            contents = await file.read()
+            redis_client.setex(f"ingest_file:{ingestion_id}", 3600, contents)
+
+        return {
+            "ingestion_id": ingestion_id,
+            "status": "queued",
+            "priority": priority,
+            "source_type": source_type,
+            "filename": file.filename,
+            "data_hash": data_hash,
+        }
+    except HTTPException:
+        raise
+    except Exception as e:
+        logger.error(f"File ingestion error: {str(e)}")
         raise HTTPException(status_code=500, detail=str(e))
 
 
@@ -225,29 +280,32 @@ async def predict_anomalies(report_id: str):
     - Confidence score (0-1)
     - List of detected anomalies with severity
     """
+    import json
     import time
     start_time = time.time()
-    
+
     try:
         # Fetch report data from cache/DB
         if redis_client:
             cached = redis_client.get(f"report:{report_id}")
             if cached:
-                report_data = eval(cached)  # In production, use json.loads
+                report_data = json.loads(cached)
             else:
                 raise HTTPException(status_code=404, detail="Report not found")
-        
+        else:
+            raise HTTPException(status_code=503, detail="Cache not available")
+
         # Placeholder ML inference (implement actual model in production)
         anomalies = [
             {"type": "accounting_mismatch", "severity": 0.8, "description": "Balance discrepancy"},
             {"type": "transaction_pattern", "severity": 0.6, "description": "Unusual activity"},
         ]
-        
+
         confidence_score = 0.92
         anomaly_detected = confidence_score > 0.5
-        
+
         processing_time = (time.time() - start_time) * 1000
-        
+
         return PredictionResponse(
             prediction_id=f"pred_{Web3.keccak(text=report_id).hex()[:16]}",
             report_id=report_id,
@@ -256,6 +314,8 @@ async def predict_anomalies(report_id: str):
             anomalies=anomalies,
             processing_time_ms=processing_time,
         )
+    except HTTPException:
+        raise
     except Exception as e:
         logger.error(f"Prediction error: {str(e)}")
         raise HTTPException(status_code=500, detail=str(e))
@@ -314,6 +374,8 @@ async def store_report_ipfs(
             "status": "stored",
             "confirmation_queued": True,
         }
+    except HTTPException:
+        raise
     except Exception as e:
         logger.error(f"IPFS storage error: {str(e)}")
         raise HTTPException(status_code=500, detail=str(e))
@@ -340,14 +402,18 @@ async def get_report(report_id: str):
     Returns cached or IPFS-fetched report.
     """
     try:
+        import json
+
         # Check cache first
         if redis_client:
             cached = redis_client.get(f"report:{report_id}")
             if cached:
-                return eval(cached)
-        
+                return json.loads(cached)
+
         # TODO: Fetch from IPFS if not cached
         raise HTTPException(status_code=404, detail="Report not found")
+    except HTTPException:
+        raise
     except Exception as e:
         logger.error(f"Report retrieval error: {str(e)}")
         raise HTTPException(status_code=500, detail=str(e))
