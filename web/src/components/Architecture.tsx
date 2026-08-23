@@ -1,9 +1,9 @@
-import { MapPin } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { getIcon } from "@/lib/icons";
 import { SectionHeader } from "./SectionHeader";
 import { StaggerGrid, StaggerItem } from "./StaggerGrid";
 import { RevealOnScroll } from "./RevealOnScroll";
+import { WorldMap } from "./WorldMap";
 
 const LAYERS = [
   { key: "settlement", iconKey: "layers" },
@@ -11,8 +11,6 @@ const LAYERS = [
   { key: "ai", iconKey: "brainCircuit" },
   { key: "data", iconKey: "hardDrive" },
 ] as const;
-
-const REGIONS = ["Frankfurt", "Singapore", "São Paulo", "New York", "Sydney"];
 
 export function Architecture() {
   const t = useTranslations("architecture");
@@ -46,20 +44,12 @@ export function Architecture() {
           })}
         </StaggerGrid>
 
-        <RevealOnScroll className="mt-10 flex flex-col items-center gap-4 rounded-lg border border-border bg-surface/60 p-6 sm:mt-12 sm:flex-row sm:justify-center sm:gap-8">
+        <RevealOnScroll className="mt-10 rounded-lg border border-border bg-surface/60 p-6 sm:mt-12 sm:p-8">
           <span className="text-xs font-semibold uppercase tracking-wide text-muted">
             {t("regionsLabel")}
           </span>
-          <div className="flex flex-wrap items-center justify-center gap-4">
-            {REGIONS.map((region) => (
-              <span
-                key={region}
-                className="inline-flex items-center gap-1.5 text-sm text-foreground"
-              >
-                <MapPin className="h-3.5 w-3.5 text-accent" strokeWidth={1.75} />
-                {region}
-              </span>
-            ))}
+          <div className="mx-auto mt-4 max-w-3xl">
+            <WorldMap />
           </div>
         </RevealOnScroll>
       </div>
