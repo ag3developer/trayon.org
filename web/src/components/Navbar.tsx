@@ -7,6 +7,7 @@ import { Link } from "@/i18n/navigation";
 import { LanguageSwitcher } from "./LanguageSwitcher";
 import { ThemeToggle } from "./theme/ThemeToggle";
 import { LogoLockup } from "./Logo";
+import { Wallet } from "./Wallet";
 
 export function Navbar() {
   const [open, setOpen] = useState(false);
@@ -43,6 +44,7 @@ export function Navbar() {
         <div className="hidden items-center gap-3 lg:flex">
           <ThemeToggle />
           <LanguageSwitcher />
+          <Wallet />
           <a
             href="#contact"
             className="rounded-md border border-accent/40 bg-accent-soft px-4 py-2 text-sm font-medium text-accent transition-colors hover:bg-accent/10"
@@ -54,6 +56,7 @@ export function Navbar() {
         <div className="flex items-center gap-2 lg:hidden">
           <ThemeToggle />
           <LanguageSwitcher />
+          <Wallet className="hidden sm:flex" />
           <button
             type="button"
             onClick={() => setOpen((v) => !v)}

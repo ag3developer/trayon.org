@@ -11,6 +11,7 @@
   "dependencies": {
     "@react-pdf/renderer": "^4.6.1",
     "clsx": "^2.1.1",
+    "ethers": "^6.10.0",
     "framer-motion": "^13.1.1",
     "lucide-react": "^1.33.0",
     "next": "16.3.2",
@@ -18,7 +19,9 @@
     "react": "19.2.8",
     "react-dom": "19.2.8",
     "recharts": "^3.10.1",
-    "tailwind-merge": "^3.6.0"
+    "tailwind-merge": "^3.6.0",
+    "web3-react": "^8.4.0",
+    "zustand": "^4.4.7"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
