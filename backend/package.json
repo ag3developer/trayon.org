@@ -37,7 +37,7 @@
     "sequelize": "^6.35.1",
     "sequelize-cli": "^6.6.1",
     "bcryptjs": "^2.4.3",
-    "jsonwebtoken": "^9.1.2",
+    "jsonwebtoken": "^9.0.2",
     "redis": "^4.6.12",
     "axios": "^1.6.5",
     "ws": "^8.15.0"

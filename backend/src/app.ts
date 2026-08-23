@@ -16,7 +16,7 @@ dotenv.config();
 
 const logger = new Logger('App');
 const app: Express = express();
-const PORT = process.env.PORT || 3000;
+const PORT = parseInt(process.env.PORT || '8000', 10);
 
 /**
  * Middleware Setup
