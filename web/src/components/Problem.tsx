@@ -22,21 +22,26 @@ export function Problem() {
           description={t("description")}
         />
 
-        <StaggerGrid className="mt-12 grid grid-cols-1 gap-5 sm:mt-16 sm:grid-cols-2 lg:grid-cols-4">
+        <StaggerGrid className="mt-12 grid grid-cols-1 gap-x-10 gap-y-10 sm:mt-16 sm:grid-cols-2">
           {ITEMS.map((item) => {
             const Icon = getIcon(item.iconKey);
             return (
               <StaggerItem
                 key={item.key}
-                className="rounded-lg border border-border bg-surface p-6 transition-all duration-300 hover:-translate-y-1 hover:border-danger/40 hover:shadow-lg hover:shadow-danger/5"
+                className="group flex gap-4 border-l-2 border-border pl-5 transition-colors duration-300 hover:border-danger"
               >
-                <Icon className="h-6 w-6 text-danger" strokeWidth={1.75} />
-                <h3 className="mt-4 text-base font-semibold text-foreground">
-                  {t(`items.${item.key}.title`)}
-                </h3>
-                <p className="mt-2 text-sm leading-relaxed text-muted">
-                  {t(`items.${item.key}.description`)}
-                </p>
+                <Icon
+                  className="h-5 w-5 flex-shrink-0 text-danger/70 transition-colors group-hover:text-danger"
+                  strokeWidth={1.75}
+                />
+                <div>
+                  <h3 className="text-base font-semibold text-foreground">
+                    {t(`items.${item.key}.title`)}
+                  </h3>
+                  <p className="mt-1.5 text-sm leading-relaxed text-muted">
+                    {t(`items.${item.key}.description`)}
+                  </p>
+                </div>
               </StaggerItem>
             );
           })}

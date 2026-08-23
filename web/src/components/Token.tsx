@@ -39,19 +39,19 @@ export function Token() {
           description={t("description")}
         />
 
-        <StaggerGrid className="mt-12 grid grid-cols-1 gap-5 sm:mt-16 sm:grid-cols-2 lg:grid-cols-4">
+        <StaggerGrid className="mt-12 grid grid-cols-2 divide-x divide-y divide-border border border-border sm:mt-16 sm:grid-cols-4 sm:divide-y-0">
           {FACTS.map((fact) => {
             const Icon = getIcon(fact.iconKey);
             return (
               <StaggerItem
                 key={fact.key}
-                className="rounded-lg border border-border bg-surface p-6 text-center transition-all duration-300 hover:-translate-y-1 hover:border-accent/40 hover:shadow-lg hover:shadow-accent/5"
+                className="flex flex-col items-center gap-2 px-4 py-6 text-center"
               >
-                <Icon className="mx-auto h-6 w-6 text-accent" strokeWidth={1.75} />
-                <p className="mt-4 font-mono text-lg font-semibold text-foreground">
+                <Icon className="h-5 w-5 text-accent" strokeWidth={1.75} />
+                <p className="font-mono text-lg font-semibold text-foreground">
                   {t(`facts.${fact.key}.value`)}
                 </p>
-                <p className="mt-1 text-xs text-muted sm:text-sm">
+                <p className="text-xs text-muted sm:text-sm">
                   {t(`facts.${fact.key}.label`)}
                 </p>
               </StaggerItem>
@@ -102,14 +102,12 @@ export function Token() {
               <h3 className="text-sm font-semibold uppercase tracking-wide text-muted">
                 {t("utilityTitle")}
               </h3>
-              <ul className="mt-4 grid grid-cols-1 gap-4 sm:grid-cols-2">
+              <ul className="mt-4 grid grid-cols-1 gap-5 sm:grid-cols-2">
                 {UTILITY.map((item) => {
                   const Icon = getIcon(item.iconKey);
                   return (
-                    <li key={item.key} className="flex gap-3">
-                      <div className="mt-0.5 flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-md border border-accent/30 bg-accent-soft">
-                        <Icon className="h-4 w-4 text-accent" strokeWidth={1.75} />
-                      </div>
+                    <li key={item.key} className="flex gap-3 border-l-2 border-border pl-3">
+                      <Icon className="mt-0.5 h-4 w-4 flex-shrink-0 text-accent" strokeWidth={1.75} />
                       <div>
                         <p className="text-sm font-semibold text-foreground">
                           {t(`utility.${item.key}.title`)}

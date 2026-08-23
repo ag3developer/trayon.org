@@ -22,30 +22,32 @@ export function Protocol() {
           description={t("description")}
         />
 
-        <StaggerGrid className="mt-12 grid grid-cols-1 gap-6 sm:mt-16 sm:grid-cols-2 lg:grid-cols-4">
-          {STEPS.map((step, index) => {
-            const Icon = getIcon(step.iconKey);
-            return (
-              <StaggerItem
-                key={step.key}
-                className="relative rounded-lg border border-border bg-surface p-6 transition-all duration-300 hover:-translate-y-1 hover:border-accent/40 hover:shadow-lg hover:shadow-accent/5"
-              >
-                <div className="flex items-center justify-between">
-                  <span className="font-mono text-xs text-muted">
+        <div className="relative mt-14 sm:mt-20">
+          {/* Connecting line across all four steps (desktop only) */}
+          <div className="pointer-events-none absolute left-0 right-0 top-6 hidden h-px bg-border lg:block" />
+
+          <StaggerGrid className="grid grid-cols-1 gap-y-10 sm:grid-cols-2 sm:gap-x-8 lg:grid-cols-4">
+            {STEPS.map((step, index) => {
+              const Icon = getIcon(step.iconKey);
+              return (
+                <StaggerItem key={step.key} className="group relative">
+                  <div className="relative z-10 flex h-12 w-12 items-center justify-center rounded-full border-2 border-accent bg-background transition-transform duration-300 group-hover:scale-105">
+                    <Icon className="h-5 w-5 text-accent" strokeWidth={1.75} />
+                  </div>
+                  <span className="mt-4 block font-mono text-xs text-muted">
                     {String(index + 1).padStart(2, "0")}
                   </span>
-                  <Icon className="h-6 w-6 text-accent" strokeWidth={1.75} />
-                </div>
-                <h3 className="mt-5 text-base font-semibold text-foreground">
-                  {t(`steps.${step.key}.title`)}
-                </h3>
-                <p className="mt-2 text-sm leading-relaxed text-muted">
-                  {t(`steps.${step.key}.description`)}
-                </p>
-              </StaggerItem>
-            );
-          })}
-        </StaggerGrid>
+                  <h3 className="mt-1 text-base font-semibold text-foreground">
+                    {t(`steps.${step.key}.title`)}
+                  </h3>
+                  <p className="mt-2 text-sm leading-relaxed text-muted">
+                    {t(`steps.${step.key}.description`)}
+                  </p>
+                </StaggerItem>
+              );
+            })}
+          </StaggerGrid>
+        </div>
       </div>
     </section>
   );

@@ -21,15 +21,18 @@ export function Contact() {
           description={t("description")}
         />
 
-        <StaggerGrid className="mx-auto mt-12 grid max-w-3xl grid-cols-1 gap-5 sm:mt-16 sm:grid-cols-3">
+        <StaggerGrid className="mx-auto mt-12 grid max-w-3xl grid-cols-1 divide-y divide-border border-y border-border sm:mt-16 sm:grid-cols-3 sm:divide-x sm:divide-y-0">
           {CHANNELS.map((channel) => {
             const Icon = getIcon(channel.iconKey);
             return (
               <StaggerItem
                 key={channel.key}
-                className="flex flex-col items-center gap-3 rounded-lg border border-border bg-surface p-6 text-center transition-all duration-300 hover:-translate-y-1 hover:border-accent/40 hover:shadow-lg hover:shadow-accent/5"
+                className="group flex flex-col items-center gap-3 px-6 py-8 text-center transition-colors"
               >
-                <Icon className="h-6 w-6 text-accent" strokeWidth={1.75} />
+                <Icon
+                  className="h-5 w-5 text-accent transition-transform duration-300 group-hover:scale-110"
+                  strokeWidth={1.75}
+                />
                 <div>
                   <p className="text-sm font-semibold text-foreground">
                     {t(`channels.${channel.key}.label`)}

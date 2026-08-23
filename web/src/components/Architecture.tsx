@@ -24,15 +24,15 @@ export function Architecture() {
           description={t("description")}
         />
 
-        <StaggerGrid className="mt-12 grid grid-cols-1 gap-5 sm:mt-16 sm:grid-cols-2 lg:grid-cols-4">
+        <StaggerGrid className="mt-12 grid grid-cols-1 gap-x-10 gap-y-10 sm:mt-16 sm:grid-cols-2 lg:grid-cols-4">
           {LAYERS.map((layer) => {
             const Icon = getIcon(layer.iconKey);
             return (
-              <StaggerItem
-                key={layer.key}
-                className="rounded-lg border border-border bg-surface p-6 transition-all duration-300 hover:-translate-y-1 hover:border-accent/40 hover:shadow-lg hover:shadow-accent/5"
-              >
-                <Icon className="h-6 w-6 text-accent" strokeWidth={1.75} />
+              <StaggerItem key={layer.key} className="group">
+                <Icon
+                  className="h-6 w-6 text-accent transition-transform duration-300 group-hover:scale-110"
+                  strokeWidth={1.75}
+                />
                 <h3 className="mt-4 text-base font-semibold text-foreground">
                   {t(`layers.${layer.key}.title`)}
                 </h3>
