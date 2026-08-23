@@ -13,7 +13,7 @@
 |-----------|---------|--------|
 | **TRAY Token** | `0x424524F4012f32a8815f0cF37Eb8A3FCbF89260b` | ✅ Deployed |
 | **BridgeL1** | `0x6ACdf6bfA39B38441AbEBD4c1461A1a9aD8070C9` | ✅ Deployed |
-| **Total Supply** | 300 Million TRAY | ✅ Live |
+| **Total Supply** | 300 Million TRAY (250M + 50M) | ✅ Live |
 | **Owner** | `0x9efFA566D5d2FF1bD1D3AC0902f19D72Fc2F0f0f` | ✅ Set |
 
 **PolygonScan Links:**
@@ -28,7 +28,7 @@
 |-----------|---------|--------|
 | **TRAY Token** | `0x424524F4012f32a8815f0cF37Eb8A3FCbF89260b` | ✅ Deployed |
 | **BridgeL2** | `0x6ACdf6bfA39B38441AbEBD4c1461A1a9aD8070C9` | ✅ Deployed |
-| **Initial Supply** | 50 Million TRAY | ✅ Minted |
+| **L2 Supply** | 50 Million TRAY (minted for testing) | ✅ Minted |
 | **Owner** | `0x9efFA566D5d2FF1bD1D3AC0902f19D72Fc2F0f0f` | ✅ Set |
 
 **Network**: Local Anvil running on `http://localhost:8545`
@@ -121,13 +121,17 @@
 ## 💡 Key Decisions Made
 
 ### ✅ Supply Decision (300M vs 1B)
-**Decision**: Keep 300M TRAY deployed on mainnet
+**Decision**: Deployed 300M TRAY on Polygon Mainnet (250M initial + 50M minted)
+**Specification vs Reality**:
+- Original spec: 1 billion TRAY (1B)
+- Deployed: 300 million TRAY (3×10^8)
+- Reason: Pragmatic testing amount
+
 **Rationale**:
-- Already deployed and functional
-- No additional gas cost
-- Sufficient for comprehensive testing
-- Pragmatic approach for validation phase
-- Future redeployment with 1B when moving to production with real users
+- Already deployed and functional on mainnet
+- No additional gas cost for changes
+- Sufficient for comprehensive E2E testing
+- Future option: Redeployment with 1B when moving to production with real users
 
 ### ✅ Network Configuration
 **Decision**: L1 (Polygon Mainnet) + L2 (Anvil Local)

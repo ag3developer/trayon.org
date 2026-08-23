@@ -28,8 +28,8 @@ TEST_ACCOUNT="0x9efFA566D5d2FF1bD1D3AC0902f19D72Fc2F0f0f"
 # Relayer Account (same as deployer for testing)
 RELAYER_ADDRESS="0x99e519c1Dff179011541907Ea3d81232d397aaF1"
 
-# Deposit Amount (10 TRAY for testing)
-DEPOSIT_AMOUNT="10000000000000000000"
+# Deposit Amount (0.1 TRAY for testing - minimal cost)
+DEPOSIT_AMOUNT="100000000000000000"
 
 # ============================================================================
 # COLORS

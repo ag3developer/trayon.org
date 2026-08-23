@@ -24,7 +24,7 @@ Ended with:
 ```
 TRAY Token:      0x424524F4012f32a8815f0cF37Eb8A3FCbF89260b
 BridgeL1:        0x6ACdf6bfA39B38441AbEBD4c1461A1a9aD8070C9
-Total Supply:    300 Million TRAY
+Total Supply:    300 Million TRAY (250M initial + 50M minted)
 Owner:           0x9efFA566D5d2FF1bD1D3AC0902f19D72Fc2F0f0f
 Status:          ✅ LIVE ON MAINNET
 ```
@@ -37,7 +37,7 @@ Status:          ✅ LIVE ON MAINNET
 ```
 TRAY Token:      0x424524F4012f32a8815f0cF37Eb8A3FCbF89260b
 BridgeL2:        0x6ACdf6bfA39B38441AbEBD4c1461A1a9aD8070C9
-Initial Supply:  50 Million TRAY
+Minted Supply:   50 Million TRAY (for L2 testing)
 Owner:           0x9efFA566D5d2FF1bD1D3AC0902f19D72Fc2F0f0f
 Status:          ✅ DEPLOYED & READY
 ```
@@ -72,12 +72,13 @@ Status:          ✅ DEPLOYED & READY
 ## 🎯 Key Decisions & Solutions
 
 ### 1. **Supply Management**
-**Problem**: Constructor minted 250M + Script minted 50M = 300M total  
-**Decision**: Kept 300M for testing pragmatism  
+**Problem**: Constructor minted 250M + Script minted 50M = 300M total (vs spec of 1B)  
+**Decision**: Kept 300M as deployed on Polygon Mainnet  
 **Rationale**: 
-- Sufficient for comprehensive testing
-- No additional gas cost
-- Can redeployment with 1B when moving to production with real users
+- 300M is sufficient for comprehensive testing
+- No additional gas cost for redeployment
+- Can redeployment with 1B (per spec) when moving to production with real users
+- Pragmatic approach: test now with 300M, deploy correct 1B later
 
 ### 2. **Chain Support**
 **Problem**: DeployBridge.s.sol only supported testnet chains  
@@ -274,6 +275,8 @@ cd relayer && npm start
 - ✅ Contracts deployed: 2 (L1 + L2)
 - ✅ Networks connected: 2 (Mainnet + Local)
 - ✅ RPC endpoints verified: 2
+- ✅ Total Supply: 300M TRAY (L1 Mainnet)
+- ✅ L2 Supply: 50M TRAY (for testing)
 - ✅ Relayer components: 5
 - ✅ Validators configured: 5
 - ✅ Required signatures: 3/5

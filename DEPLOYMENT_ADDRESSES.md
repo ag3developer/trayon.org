@@ -39,12 +39,22 @@
 
 ## 📊 Deployment Statistics
 
-- **Gas Used**: 3,525,323
-- **Gas Price**: 30 gwei
-- **Total Cost**: ~0.1058 POL (MATIC)
-- **Initial TRAY Minted**: 50,000,000 tokens
-- **Block Number**: 45,651,790
-- **RPC**: dRPC (polygon-amoy.drpc.org)
+### L1 (Polygon Mainnet - Chain 137)
+- **Gas Used**: ~3,525,323
+- **Gas Price**: ~639 Gwei (at deployment time)
+- **Total Cost**: ~2.25 POL (MATIC)
+- **Total TRAY Supply**: 300,000,000 tokens (250M initial + 50M minted)
+  - 250M minted in constructor
+  - 50M minted via deployment script
+- **Block Number**: 92,511,401
+- **RPC**: dRPC (https://polygon.drpc.org)
+
+### L2 (Anvil Local - Chain 31337)
+- **Gas Used**: ~3,480,059
+- **Gas Price**: ~2 Gwei (local)
+- **Total Cost**: Free (local deployment)
+- **TRAY Supply**: 50,000,000 tokens (for L2 testing)
+- **RPC**: Local (http://localhost:8545)
 
 ## 📝 Next Steps
 
