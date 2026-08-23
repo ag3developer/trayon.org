@@ -86,8 +86,17 @@ check_prerequisites() {
     fi
     print_success ".env file found"
     
-    # Load environment variables
-    export $(cat "$ENV_FILE" | xargs)
+    # Load environment variables from .env file
+    if [ -f "$ENV_FILE" ]; then
+        while IFS='=' read -r key value; do
+            # Skip empty lines and comments
+            [[ -z "$key" || "$key" =~ ^#.*$ ]] && continue
+            # Remove leading/trailing spaces
+            key=$(echo "$key" | sed 's/^[[:space:]]*//;s/[[:space:]]*$//')
+            value=$(echo "$value" | sed 's/^[[:space:]]*//;s/[[:space:]]*$//')
+            export "$key"="$value"
+        done < "$ENV_FILE"
+    fi
     
     # Check if PRIVATE_KEY is set
     if [ -z "$PRIVATE_KEY" ]; then

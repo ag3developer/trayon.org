@@ -1,0 +1,9 @@
+Warning: Found unknown `fuzz_runs` config for profile `ci` defined in foundry.toml.
+Warning: Found unknown `invariant_runs` config for profile `ci` defined in foundry.toml.
+Warning: Found unknown `cache_dir` config for profile `default` defined in foundry.toml.
+Error: error sending request for url (https://rpc-amoy.polygon.technology/)
+
+Context:
+- Error #0: client error (Connect)
+- Error #1: dns error
+- Error #2: failed to lookup address information: nodename nor servname provided, or not known
