@@ -54,8 +54,8 @@ contract DeployBridge is Script {
         if (block.chainid == 80002) {
             // POLYGON AMOY (L1)
             deployPolygonAmoy();
-        } else if (block.chainid == 7654321) {
-            // TRAYON TESTNET (L2)
+        } else if (block.chainid == 7654321 || block.chainid == 31337) {
+            // TRAYON TESTNET (L2) or LOCAL ANVIL
             deployTrayonTestnet();
         } else {
             revert("Unsupported chain ID");

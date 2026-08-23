@@ -103,14 +103,22 @@ export class L1Listener {
 
   /**
    * Fetch DepositInitiated events from a block range
+   * Chunks queries into 10000 block ranges to respect RPC limits
    */
   private async fetchEvents(
     fromBlock: number,
     toBlock: number
   ): Promise<DepositEvent[]> {
     try {
-      const events = await this.contract.queryFilter('DepositInitiated', fromBlock, toBlock);
-      const deposits: DepositEvent[] = [];
+      const CHUNK_SIZE = 10000;
+      const allDeposits: DepositEvent[] = [];
+      
+      // Process in chunks if range > 10000
+      for (let chunk = fromBlock; chunk <= toBlock; chunk += CHUNK_SIZE) {
+        const chunkEnd = Math.min(chunk + CHUNK_SIZE - 1, toBlock);
+        
+        const events = await this.contract.queryFilter('DepositInitiated', chunk, chunkEnd);
+        const deposits: DepositEvent[] = [];
 
       for (const event of events) {
         if (!(event instanceof EventLog)) continue;
@@ -137,8 +145,12 @@ export class L1Listener {
           blockNumber: event.blockNumber,
         });
       }
+      
+      // Add chunk deposits to all deposits
+      allDeposits.push(...deposits);
+      }
 
-      return deposits;
+      return allDeposits;
     } catch (error) {
       this.logger.error('Error fetching L1 events', error);
       throw error;

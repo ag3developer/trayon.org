@@ -7,11 +7,27 @@
 
 ## 📍 Contract Addresses
 
+### L1 (Polygon Amoy - Chain 80002)
+
 | Contract | Address | Explorer |
 |----------|---------|----------|
 | **TRAY Token (L1)** | `0x60c872232Ef71BAf3237087b7BdD5b1a43896F3A` | [View](https://www.oklink.com/polygon-testnet/token/0x60c872232Ef71BAf3237087b7BdD5b1a43896F3A) |
 | **BridgeL1** | `0xd9e51fa118C8F32070fF65BF1Ce31212DecDd8cb` | [View](https://www.oklink.com/polygon-testnet/address/0xd9e51fa118C8F32070fF65BF1Ce31212DecDd8cb) |
-| **Deployer/Owner** | `0x99e519c1Dff179011541907Ea3d81232d397aaF1` | [View](https://www.oklink.com/polygon-testnet/address/0x99e519c1Dff179011541907Ea3d81232d397aaF1) |
+
+### L2 (Trayon Testnet - Local Anvil Chain 31337)
+
+| Contract | Address | Network |
+|----------|---------|---------|
+| **TRAY Token (L2)** | `0x8554D00dC762640EEd9b568C702792aaE1A200d7` | localhost:8545 |
+| **BridgeL2** | `0x5bc73652e7D866bB79989CA8E43B4F23d1b97926` | localhost:8545 |
+| **Owner** | `0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266` (Anvil default) | localhost:8545 |
+
+### Shared
+
+| Item | Address |
+|------|---------|
+| **Deployer/Owner** | `0x99e519c1Dff179011541907Ea3d81232d397aaF1` |
+| **Relayer Manager** | `0x99e519c1Dff179011541907Ea3d81232d397aaF1` |
 
 ## 📊 Deployment Statistics
 

@@ -103,49 +103,61 @@ export class L2Listener {
 
   /**
    * Fetch WithdrawalInitiated events from a block range
+   * Chunks queries into 10000 block ranges to respect RPC limits
    */
   private async fetchEvents(
     fromBlock: number,
     toBlock: number
   ): Promise<WithdrawalEvent[]> {
     try {
-      const events = await this.contract.queryFilter(
-        'WithdrawalInitiated',
-        fromBlock,
-        toBlock
-      );
-      const withdrawals: WithdrawalEvent[] = [];
-
-      for (const event of events) {
-        if (!(event instanceof EventLog)) continue;
-
-        const [user, amount] = event.args;
+      const CHUNK_SIZE = 10000;
+      const allWithdrawals: WithdrawalEvent[] = [];
+      
+      // Process in chunks if range > 10000
+      for (let chunk = fromBlock; chunk <= toBlock; chunk += CHUNK_SIZE) {
+        const chunkEnd = Math.min(chunk + CHUNK_SIZE - 1, toBlock);
         
-        // Generate withdrawal hash based on user and amount
-        const withdrawalHash = this.generateHash(user as string, amount as bigint);
+        const events = await this.contract.queryFilter(
+          'WithdrawalInitiated',
+          chunk,
+          chunkEnd
+        );
+        const withdrawals: WithdrawalEvent[] = [];
+
+        for (const event of events) {
+          if (!(event instanceof EventLog)) continue;
+
+          const [user, amount] = event.args;
+          
+          // Generate withdrawal hash based on user and amount
+          const withdrawalHash = this.generateHash(user as string, amount as bigint);
+          
+          const block = await this.provider.getBlock(event.blockNumber);
+          const timestamp = block?.timestamp || Math.floor(Date.now() / 1000);
+
+          withdrawals.push({
+            user: user as string,
+            amount: BigInt(amount as bigint),
+            withdrawalHash,
+            blockNumber: event.blockNumber,
+            transactionHash: event.transactionHash,
+            timestamp,
+            processed: false,
+          });
+
+          this.logger.debug('Parsed WithdrawalInitiated event', {
+            user,
+            amount: amount.toString(),
+            withdrawalHash,
+            blockNumber: event.blockNumber,
+          });
+        }
         
-        const block = await this.provider.getBlock(event.blockNumber);
-        const timestamp = block?.timestamp || Math.floor(Date.now() / 1000);
-
-        withdrawals.push({
-          user: user as string,
-          amount: BigInt(amount as bigint),
-          withdrawalHash,
-          blockNumber: event.blockNumber,
-          transactionHash: event.transactionHash,
-          timestamp,
-          processed: false,
-        });
-
-        this.logger.debug('Parsed WithdrawalInitiated event', {
-          user,
-          amount: amount.toString(),
-          withdrawalHash,
-          blockNumber: event.blockNumber,
-        });
+        // Add chunk withdrawals to all withdrawals
+        allWithdrawals.push(...withdrawals);
       }
 
-      return withdrawals;
+      return allWithdrawals;
     } catch (error) {
       this.logger.error('Error fetching L2 events', error);
       throw error;
