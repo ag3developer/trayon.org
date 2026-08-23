@@ -2497,11 +2497,7 @@ __turbopack_context__.s([
     ()=>useWeb3
 ]);
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/index.js [app-client] (ecmascript)");
-(()=>{
-    const e = new Error("Cannot find module 'ethers'");
-    e.code = 'MODULE_NOT_FOUND';
-    throw e;
-})();
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$ethers$2f$lib$2e$esm$2f$ethers$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__$2a$__as__ethers$3e$__ = __turbopack_context__.i("[project]/node_modules/ethers/lib.esm/ethers.js [app-client] (ecmascript) <export * as ethers>");
 var _s = __turbopack_context__.k.signature();
 /**
  * useWeb3.ts - Web3 Connection Hook for MetaMask Integration
@@ -2587,7 +2583,7 @@ function useWeb3() {
                 if (!accounts || accounts.length === 0) {
                     throw new Error('No accounts found. Please unlock MetaMask.');
                 }
-                const provider = new ethers.BrowserProvider(ethereum);
+                const provider = new __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$ethers$2f$lib$2e$esm$2f$ethers$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__$2a$__as__ethers$3e$__["ethers"].BrowserProvider(ethereum);
                 const signer = await provider.getSigner();
                 const address = accounts[0];
                 const network = await provider.getNetwork();
@@ -2598,7 +2594,7 @@ function useWeb3() {
                     provider,
                     signer,
                     chainId: Number(network.chainId),
-                    balance: ethers.formatEther(balance),
+                    balance: __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$ethers$2f$lib$2e$esm$2f$ethers$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__$2a$__as__ethers$3e$__["ethers"].formatEther(balance),
                     isLoading: false,
                     error: null
                 });
@@ -2681,7 +2677,7 @@ function useWeb3() {
                     }
                 }
                 // Update state after switch
-                const provider = new ethers.BrowserProvider(ethereum);
+                const provider = new __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$ethers$2f$lib$2e$esm$2f$ethers$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__$2a$__as__ethers$3e$__["ethers"].BrowserProvider(ethereum);
                 const network = await provider.getNetwork();
                 setState({
                     "useWeb3.useCallback[switchNetwork]": (prev)=>({
@@ -2712,7 +2708,7 @@ function useWeb3() {
                     throw new Error('Wallet not connected');
                 }
                 const balance = await state.provider.getBalance(state.address);
-                const formattedBalance = ethers.formatEther(balance);
+                const formattedBalance = __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$ethers$2f$lib$2e$esm$2f$ethers$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__$2a$__as__ethers$3e$__["ethers"].formatEther(balance);
                 setState({
                     "useWeb3.useCallback[getBalance]": (prev)=>({
                             ...prev,
@@ -2769,7 +2765,7 @@ function useWeb3() {
                 }
                 const tx = await state.signer.sendTransaction({
                     to,
-                    value: ethers.parseEther(value)
+                    value: __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$ethers$2f$lib$2e$esm$2f$ethers$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__$2a$__as__ethers$3e$__["ethers"].parseEther(value)
                 });
                 const receipt = await tx.wait();
                 if (!receipt || !receipt.hash) {
@@ -2848,7 +2844,7 @@ function useFormatAddress(address) {
 function useIsValidAddress(address) {
     if (!address) return false;
     try {
-        return ethers.isAddress(address);
+        return __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$ethers$2f$lib$2e$esm$2f$ethers$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__$2a$__as__ethers$3e$__["ethers"].isAddress(address);
     } catch  {
         return false;
     }
