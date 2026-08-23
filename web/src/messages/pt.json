@@ -8,6 +8,31 @@
     "token": "Token",
     "partner": "Seja parceiro"
   },
+  "wallet": {
+    "connect": "Conectar Carteira",
+    "connecting": "Conectando...",
+    "loading": "Carregando...",
+    "copy": "Copiar",
+    "copied": "Copiado!",
+    "disconnect": "Desconectar",
+    "connectedAddress": "Endereço Conectado",
+    "balance": "Saldo",
+    "network": "Rede",
+    "notConnected": "Não conectado",
+    "connectedTo": "Conectado a",
+    "errors": {
+      "noMetaMask": "MetaMask não está instalado. Instale-o para continuar.",
+      "noAccounts": "Nenhuma conta encontrada. Desbloqueie o MetaMask.",
+      "connectFailed": "Falha ao conectar a carteira.",
+      "switchFailed": "Falha ao trocar de rede.",
+      "notConnectedError": "Carteira não conectada.",
+      "balanceFailed": "Falha ao obter o saldo.",
+      "noSigner": "Assinante não disponível.",
+      "signFailed": "Falha ao assinar a mensagem.",
+      "sendFailed": "Falha ao enviar a transação.",
+      "txFailed": "A transação falhou."
+    }
+  },
   "hero": {
     "eyebrow": "Infraestrutura Global de Integridade de Dados",
     "title": "Prova em tempo real para os dados de que o mundo depende",

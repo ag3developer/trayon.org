@@ -250,6 +250,66 @@ body {
   text-decoration-color: rgba(var(--accent-rgb), 0.35);
 }
 
+.docs-chart-table {
+  margin-top: 1rem;
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.8125rem;
+}
+
+.docs-chart-table thead tr {
+  border-bottom: 1px solid var(--border);
+}
+
+.docs-chart-table th {
+  padding: 0.5rem 0.25rem;
+  text-align: left;
+  font-weight: 600;
+  font-size: 0.6875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: var(--muted);
+}
+
+.docs-chart-table th:not(:first-child),
+.docs-chart-table td:not(:first-child) {
+  text-align: right;
+}
+
+.docs-chart-table tbody tr {
+  border-bottom: 1px solid var(--border);
+}
+
+.docs-chart-table tbody tr:last-child {
+  border-bottom: none;
+}
+
+.docs-chart-table td {
+  padding: 0.5rem 0.25rem;
+  color: var(--foreground);
+}
+
+.docs-chart-table-label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.docs-chart-swatch {
+  flex-shrink: 0;
+  height: 0.625rem;
+  width: 0.625rem;
+  border-radius: 50%;
+}
+
+.docs-chart-table-num {
+  font-family: var(--font-jetbrains), monospace;
+}
+
+.docs-chart-table-muted {
+  color: var(--muted);
+}
+
 .docs-scenarios {
   margin-top: 1.5rem;
   display: grid;

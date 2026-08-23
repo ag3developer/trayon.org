@@ -8,6 +8,31 @@
     "token": "トークン",
     "partner": "パートナーになる"
   },
+  "wallet": {
+    "connect": "ウォレットを接続",
+    "connecting": "接続中...",
+    "loading": "読み込み中...",
+    "copy": "コピー",
+    "copied": "コピーしました！",
+    "disconnect": "切断",
+    "connectedAddress": "接続中のアドレス",
+    "balance": "残高",
+    "network": "ネットワーク",
+    "notConnected": "未接続",
+    "connectedTo": "接続先",
+    "errors": {
+      "noMetaMask": "MetaMaskがインストールされていません。続行するにはインストールしてください。",
+      "noAccounts": "アカウントが見つかりません。MetaMaskのロックを解除してください。",
+      "connectFailed": "ウォレットの接続に失敗しました。",
+      "switchFailed": "ネットワークの切り替えに失敗しました。",
+      "notConnectedError": "ウォレットが接続されていません。",
+      "balanceFailed": "残高の取得に失敗しました。",
+      "noSigner": "署名者が利用できません。",
+      "signFailed": "メッセージの署名に失敗しました。",
+      "sendFailed": "トランザクションの送信に失敗しました。",
+      "txFailed": "トランザクションが失敗しました。"
+    }
+  },
   "hero": {
     "eyebrow": "グローバルなデータ完全性基盤",
     "title": "世界が依拠するデータへのリアルタイムな証明",

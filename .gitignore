@@ -102,6 +102,13 @@ web/node_modules/
 web/.next/
 web/out/
 web/build/
+# Accidentally nested build output (web/web/.next) from a misconfigured
+# working directory when running `next dev`/`next build`.
+web/web/
+
+# Process ID files written by START_DEV.sh / dev scripts
+.pids/
+*.pid
 
 # Testing
 coverage/

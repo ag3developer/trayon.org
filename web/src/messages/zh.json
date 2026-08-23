@@ -8,6 +8,31 @@
     "token": "代币",
     "partner": "成为合作伙伴"
   },
+  "wallet": {
+    "connect": "连接钱包",
+    "connecting": "连接中...",
+    "loading": "加载中...",
+    "copy": "复制",
+    "copied": "已复制！",
+    "disconnect": "断开连接",
+    "connectedAddress": "已连接地址",
+    "balance": "余额",
+    "network": "网络",
+    "notConnected": "未连接",
+    "connectedTo": "已连接至",
+    "errors": {
+      "noMetaMask": "未安装 MetaMask。请安装后继续。",
+      "noAccounts": "未找到账户。请解锁 MetaMask。",
+      "connectFailed": "连接钱包失败。",
+      "switchFailed": "切换网络失败。",
+      "notConnectedError": "钱包未连接。",
+      "balanceFailed": "获取余额失败。",
+      "noSigner": "签名者不可用。",
+      "signFailed": "签名消息失败。",
+      "sendFailed": "发送交易失败。",
+      "txFailed": "交易失败。"
+    }
+  },
   "hero": {
     "eyebrow": "全球数据完整性基础设施",
     "title": "为世界所依赖的数据提供实时证明",

@@ -8,6 +8,31 @@
     "token": "Jeton",
     "partner": "Devenir partenaire"
   },
+  "wallet": {
+    "connect": "Connecter le Portefeuille",
+    "connecting": "Connexion...",
+    "loading": "Chargement...",
+    "copy": "Copier",
+    "copied": "Copié !",
+    "disconnect": "Déconnecter",
+    "connectedAddress": "Adresse Connectée",
+    "balance": "Solde",
+    "network": "Réseau",
+    "notConnected": "Non connecté",
+    "connectedTo": "Connecté à",
+    "errors": {
+      "noMetaMask": "MetaMask n'est pas installé. Veuillez l'installer pour continuer.",
+      "noAccounts": "Aucun compte trouvé. Veuillez déverrouiller MetaMask.",
+      "connectFailed": "Échec de la connexion du portefeuille.",
+      "switchFailed": "Échec du changement de réseau.",
+      "notConnectedError": "Portefeuille non connecté.",
+      "balanceFailed": "Échec de la récupération du solde.",
+      "noSigner": "Signataire non disponible.",
+      "signFailed": "Échec de la signature du message.",
+      "sendFailed": "Échec de l'envoi de la transaction.",
+      "txFailed": "La transaction a échoué."
+    }
+  },
   "hero": {
     "eyebrow": "Infrastructure Mondiale d'Intégrité des Données",
     "title": "Une preuve en temps réel pour les données dont le monde dépend",

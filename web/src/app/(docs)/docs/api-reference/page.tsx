@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { DocsShell } from "@/components/docs/DocsShell";
+import { MainSiteLink } from "@/components/docs/MainSiteLink";
 
 export const metadata: Metadata = {
   title: "API Reference",
@@ -20,7 +21,8 @@ export default function ApiReferencePage() {
       <div className="docs-callout">
         Base URL: <code>https://api.trayon.org/v1</code> — public endpoints
         are rate-limited; authenticated partner access is available on
-        request via <a href="/#contact">partnership inquiries</a>.
+        request via{" "}
+        <MainSiteLink href="/#contact">partnership inquiries</MainSiteLink>.
       </div>
 
       <h2 id="get-data">GET /data/:dataType</h2>

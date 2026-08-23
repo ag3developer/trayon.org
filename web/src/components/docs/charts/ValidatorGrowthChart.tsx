@@ -13,6 +13,7 @@ import {
 } from "recharts";
 import { useChartColors } from "./useChartColors";
 import { useIsMobile } from "./useIsMobile";
+import { MainSiteLink } from "../MainSiteLink";
 
 // Projected validator count and network TVL (in $M) growth, base-case scenario.
 const GROWTH = [
@@ -79,8 +80,8 @@ export function ValidatorGrowthChart() {
       <p className="docs-chart-caption">
         Projected validator count and network TVL under the base-case roadmap
         (see <a href="/docs/validators">Running a Validator</a> and the{" "}
-        <a href="/whitepaper">whitepaper roadmap</a>). Figures are illustrative
-        targets, not guarantees.
+        <MainSiteLink href="/whitepaper">whitepaper roadmap</MainSiteLink>).
+        Figures are illustrative targets, not guarantees.
       </p>
     </div>
   );

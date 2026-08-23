@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { DocsShell } from "@/components/docs/DocsShell";
+import { MainSiteLink } from "@/components/docs/MainSiteLink";
 
 export const metadata: Metadata = {
   title: "Running a Validator",
@@ -86,7 +87,8 @@ export default function ValidatorsPage() {
       <div className="docs-callout">
         Validator client binaries, Docker images, and Ansible playbooks
         will be published alongside the public testnet launch (Q3–Q4
-        2026). See the <a href="/whitepaper">roadmap</a> for milestones.
+        2026). See the <MainSiteLink href="/whitepaper">roadmap</MainSiteLink>{" "}
+        for milestones.
       </div>
     </DocsShell>
   );

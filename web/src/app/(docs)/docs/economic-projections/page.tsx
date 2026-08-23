@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { DocsShell } from "@/components/docs/DocsShell";
 import { ValidatorGrowthChart } from "@/components/docs/charts";
+import { MainSiteLink } from "@/components/docs/MainSiteLink";
 
 export const metadata: Metadata = {
   title: "Economic Projections",
@@ -265,16 +266,17 @@ export default function EconomicProjectionsPage() {
         </li>
         <li>
           <strong>Regional expansion</strong> — each new compliance region
-          (see the <a href="/whitepaper">whitepaper roadmap</a>) unlocks a
-          new class of government and audit-firm customers.
+          (see the{" "}
+          <MainSiteLink href="/whitepaper">whitepaper roadmap</MainSiteLink>)
+          unlocks a new class of government and audit-firm customers.
         </li>
       </ul>
 
       <div className="docs-callout">
         These projections are for illustration only and do not constitute
         financial advice or a guarantee of future performance. See the{" "}
-        <a href="/whitepaper">whitepaper</a> for the full risk disclosures
-        and roadmap assumptions.
+        <MainSiteLink href="/whitepaper">whitepaper</MainSiteLink> for the
+        full risk disclosures and roadmap assumptions.
       </div>
     </DocsShell>
   );

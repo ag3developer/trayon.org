@@ -45,5 +45,8 @@ export default function middleware(request: NextRequest) {
 }
 
 export const config = {
-  matcher: ["/((?!api|trpc|_next|_vercel|.*\\..*).*)"],
+  // NOTE: "api/" (with trailing slash) so this only excludes the actual
+  // /api/* route handlers, not docs pages whose slug happens to start
+  // with "api" (e.g. /docs/api-reference -> docs.trayon.org/api-reference).
+  matcher: ["/((?!api/|trpc|_next|_vercel|.*\\..*).*)"],
 };

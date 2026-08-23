@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { DocsShell } from "@/components/docs/DocsShell";
+import { MainSiteLink } from "@/components/docs/MainSiteLink";
 
 export const metadata: Metadata = {
   title: "Introduction",
@@ -96,15 +97,16 @@ export default function DocsIntroductionPage() {
         Trayon is currently in active development. Testnet and MVP work is
         targeted for Q3–Q4 2026, with a mainnet beta alongside pilot
         partners planned for Q1–Q2 2027. See the{" "}
-        <a href="/whitepaper">whitepaper</a> for the full roadmap and
-        globalization strategy.
+        <MainSiteLink href="/whitepaper">whitepaper</MainSiteLink> for the
+        full roadmap and globalization strategy.
       </p>
 
       <div className="docs-callout">
         <strong>Looking for the business case?</strong> The{" "}
-        <a href="/whitepaper">Trayon Whitepaper</a> covers the mission,
-        market opportunity, and expansion strategy. This documentation
-        focuses on protocol internals and integration for engineers.
+        <MainSiteLink href="/whitepaper">Trayon Whitepaper</MainSiteLink>{" "}
+        covers the mission, market opportunity, and expansion strategy. This
+        documentation focuses on protocol internals and integration for
+        engineers.
       </div>
     </DocsShell>
   );

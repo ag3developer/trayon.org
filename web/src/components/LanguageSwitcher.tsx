@@ -9,6 +9,7 @@ import { locales, localeNames, type Locale } from "@/i18n/routing";
 export function LanguageSwitcher() {
   const [open, setOpen] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
+  const buttonRef = useRef<HTMLButtonElement>(null);
   const locale = useLocale();
   const pathname = usePathname();
   const router = useRouter();
@@ -22,9 +23,12 @@ export function LanguageSwitcher() {
         setOpen(false);
       }
     }
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => document.removeEventListener("mousedown", handleClickOutside);
-  }, []);
+    // Only attach listener when dropdown is open
+    if (open) {
+      document.addEventListener("mousedown", handleClickOutside);
+      return () => document.removeEventListener("mousedown", handleClickOutside);
+    }
+  }, [open]);
 
   function selectLocale(nextLocale: Locale) {
     setOpen(false);
@@ -45,7 +49,7 @@ export function LanguageSwitcher() {
       </button>
 
       {open && (
-        <div className="absolute right-0 z-50 mt-2 w-44 overflow-hidden rounded-md border border-border bg-surface shadow-xl">
+        <div className="absolute left-0 z-50 mt-2 w-44 max-w-[calc(100vw-2rem)] overflow-hidden rounded-md border border-border bg-surface shadow-xl">
           {locales.map((code) => (
             <button
               key={code}

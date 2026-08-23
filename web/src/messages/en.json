@@ -8,6 +8,31 @@
     "token": "Token",
     "partner": "Partner with us"
   },
+  "wallet": {
+    "connect": "Connect Wallet",
+    "connecting": "Connecting...",
+    "loading": "Loading...",
+    "copy": "Copy",
+    "copied": "Copied!",
+    "disconnect": "Disconnect",
+    "connectedAddress": "Connected Address",
+    "balance": "Balance",
+    "network": "Network",
+    "notConnected": "Not connected",
+    "connectedTo": "Connected to",
+    "errors": {
+      "noMetaMask": "MetaMask is not installed. Please install it to continue.",
+      "noAccounts": "No accounts found. Please unlock MetaMask.",
+      "connectFailed": "Failed to connect wallet.",
+      "switchFailed": "Failed to switch network.",
+      "notConnectedError": "Wallet not connected.",
+      "balanceFailed": "Failed to fetch balance.",
+      "noSigner": "Signer not available.",
+      "signFailed": "Failed to sign message.",
+      "sendFailed": "Failed to send transaction.",
+      "txFailed": "Transaction failed."
+    }
+  },
   "hero": {
     "eyebrow": "Global Data Integrity Infrastructure",
     "title": "Real-time proof for the data the world depends on",

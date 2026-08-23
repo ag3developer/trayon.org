@@ -8,6 +8,31 @@
     "token": "Token",
     "partner": "Partner werden"
   },
+  "wallet": {
+    "connect": "Wallet verbinden",
+    "connecting": "Verbinde...",
+    "loading": "Lädt...",
+    "copy": "Kopieren",
+    "copied": "Kopiert!",
+    "disconnect": "Trennen",
+    "connectedAddress": "Verbundene Adresse",
+    "balance": "Kontostand",
+    "network": "Netzwerk",
+    "notConnected": "Nicht verbunden",
+    "connectedTo": "Verbunden mit",
+    "errors": {
+      "noMetaMask": "MetaMask ist nicht installiert. Bitte installieren Sie es, um fortzufahren.",
+      "noAccounts": "Keine Konten gefunden. Bitte entsperren Sie MetaMask.",
+      "connectFailed": "Verbindung zur Wallet fehlgeschlagen.",
+      "switchFailed": "Netzwerkwechsel fehlgeschlagen.",
+      "notConnectedError": "Wallet nicht verbunden.",
+      "balanceFailed": "Kontostand konnte nicht abgerufen werden.",
+      "noSigner": "Signierer nicht verfügbar.",
+      "signFailed": "Signieren der Nachricht fehlgeschlagen.",
+      "sendFailed": "Senden der Transaktion fehlgeschlagen.",
+      "txFailed": "Transaktion fehlgeschlagen."
+    }
+  },
   "hero": {
     "eyebrow": "Globale Infrastruktur für Datenintegrität",
     "title": "Echtzeitbeweis für die Daten, auf die sich die Welt verlässt",

@@ -10,6 +10,18 @@
 import { useEffect, useState, useCallback } from 'react';
 import { ethers } from 'ethers';
 
+export type Web3ErrorCode =
+  | 'noMetaMask'
+  | 'noAccounts'
+  | 'connectFailed'
+  | 'switchFailed'
+  | 'notConnectedError'
+  | 'balanceFailed'
+  | 'noSigner'
+  | 'signFailed'
+  | 'sendFailed'
+  | 'txFailed';
+
 export interface Web3State {
   isConnected: boolean;
   address: string | null;
@@ -19,6 +31,7 @@ export interface Web3State {
   balance: string | null;
   isLoading: boolean;
   error: string | null;
+  errorCode: Web3ErrorCode | null;
 }
 
 export interface Web3Actions {
@@ -60,6 +73,7 @@ export function useWeb3(): [Web3State, Web3Actions] {
     balance: null,
     isLoading: false,
     error: null,
+    errorCode: null,
   });
 
   // Check if MetaMask is installed
@@ -71,10 +85,12 @@ export function useWeb3(): [Web3State, Web3Actions] {
   // Connect wallet
   const connect = useCallback(async () => {
     try {
-      setState((prev) => ({ ...prev, isLoading: true, error: null }));
+      setState((prev) => ({ ...prev, isLoading: true, error: null, errorCode: null }));
 
       if (!hasMetaMask()) {
-        throw new Error('MetaMask is not installed. Please install it to continue.');
+        const err: any = new Error('MetaMask is not installed. Please install it to continue.');
+        err.code = 'noMetaMask';
+        throw err;
       }
 
       const ethereum = (window as any).ethereum;
@@ -85,7 +101,9 @@ export function useWeb3(): [Web3State, Web3Actions] {
       });
 
       if (!accounts || accounts.length === 0) {
-        throw new Error('No accounts found. Please unlock MetaMask.');
+        const err: any = new Error('No accounts found. Please unlock MetaMask.');
+        err.code = 'noAccounts';
+        throw err;
       }
 
       const provider = new ethers.BrowserProvider(ethereum);
@@ -103,13 +121,18 @@ export function useWeb3(): [Web3State, Web3Actions] {
         balance: ethers.formatEther(balance),
         isLoading: false,
         error: null,
+        errorCode: null,
       });
     } catch (error: any) {
       const errorMessage = error?.message || 'Failed to connect wallet';
+      const errorCode: Web3ErrorCode = error?.code === 'noMetaMask' || error?.code === 'noAccounts'
+        ? error.code
+        : 'connectFailed';
       setState((prev) => ({
         ...prev,
         isLoading: false,
         error: errorMessage,
+        errorCode,
         isConnected: false,
       }));
       console.error('Web3 Connect Error:', error);
@@ -128,6 +151,7 @@ export function useWeb3(): [Web3State, Web3Actions] {
         balance: null,
         isLoading: false,
         error: null,
+        errorCode: null,
       });
     } catch (error: any) {
       console.error('Web3 Disconnect Error:', error);
@@ -180,12 +204,14 @@ export function useWeb3(): [Web3State, Web3Actions] {
           ...prev,
           chainId: Number(network.chainId),
           error: null,
+          errorCode: null,
         }));
       } catch (error: any) {
         const errorMessage = error?.message || 'Failed to switch network';
         setState((prev) => ({
           ...prev,
           error: errorMessage,
+          errorCode: 'switchFailed',
         }));
         console.error('Switch Network Error:', error);
       }
@@ -214,6 +240,7 @@ export function useWeb3(): [Web3State, Web3Actions] {
       setState((prev) => ({
         ...prev,
         error: errorMessage,
+        errorCode: 'balanceFailed',
       }));
       console.error('Get Balance Error:', error);
       throw error;
@@ -235,6 +262,7 @@ export function useWeb3(): [Web3State, Web3Actions] {
         setState((prev) => ({
           ...prev,
           error: errorMessage,
+          errorCode: 'signFailed',
         }));
         console.error('Sign Message Error:', error);
         throw error;
@@ -257,8 +285,10 @@ export function useWeb3(): [Web3State, Web3Actions] {
         });
 
         const receipt = await tx.wait();
-        if (!receipt || !receipt.hash) {
-          throw new Error('Transaction failed');
+        if (!receipt?.hash) {
+          const err: any = new Error('Transaction failed');
+          err.code = 'txFailed';
+          throw err;
         }
 
         return receipt.hash;
@@ -267,6 +297,7 @@ export function useWeb3(): [Web3State, Web3Actions] {
         setState((prev) => ({
           ...prev,
           error: errorMessage,
+          errorCode: 'sendFailed',
         }));
         console.error('Send Transaction Error:', error);
         throw error;
