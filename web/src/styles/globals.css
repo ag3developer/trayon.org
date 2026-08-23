@@ -228,3 +228,80 @@ body {
   background: var(--surface);
   padding: 1rem 1.25rem;
 }
+
+.docs-chart {
+  margin-top: 1.5rem;
+  border-radius: 0.75rem;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  padding: 1.25rem 1rem 1rem;
+}
+
+.docs-chart-caption {
+  margin-top: 0.75rem;
+  font-size: 0.8125rem;
+  line-height: 1.6;
+  color: var(--muted);
+}
+
+.docs-chart-caption a {
+  color: var(--accent);
+  text-decoration: underline;
+  text-decoration-color: rgba(var(--accent-rgb), 0.35);
+}
+
+.docs-scenarios {
+  margin-top: 1.5rem;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.875rem;
+}
+
+@media (max-width: 768px) {
+  .docs-scenarios {
+    grid-template-columns: 1fr;
+  }
+}
+
+.docs-scenario-card {
+  border-radius: 0.75rem;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  padding: 1rem 1.125rem;
+}
+
+.docs-scenario-card.is-base {
+  border-color: rgba(var(--accent-rgb), 0.4);
+  background: var(--accent-soft);
+}
+
+.docs-scenario-label {
+  font-size: 0.6875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--muted);
+}
+
+.docs-scenario-card.is-base .docs-scenario-label {
+  color: var(--accent-strong);
+}
+
+.docs-scenario-card dl {
+  margin-top: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.docs-scenario-card dt {
+  font-size: 0.75rem;
+  color: var(--muted);
+}
+
+.docs-scenario-card dd {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--foreground);
+  margin: 0;
+}

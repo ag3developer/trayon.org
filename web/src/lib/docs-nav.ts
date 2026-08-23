@@ -8,6 +8,7 @@ import {
   Coins,
   ShieldCheck,
   Plug,
+  TrendingUp,
 } from "lucide-react";
 
 export interface DocsNavItem {
@@ -46,6 +47,7 @@ export const docsNav: DocsNavGroup[] = [
     items: [
       { title: "TRAY Tokenomics", href: "/docs/tokenomics", icon: Coins },
       { title: "Running a Validator", href: "/docs/validators", icon: ShieldCheck },
+      { title: "Economic Projections", href: "/docs/economic-projections", icon: TrendingUp },
     ],
   },
 ];
