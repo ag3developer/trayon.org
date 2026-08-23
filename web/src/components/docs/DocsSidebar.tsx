@@ -3,9 +3,17 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { docsNav } from "@/lib/docs-nav";
+import { useDocsBasePath } from "./DocsBasePath";
+
+function toRelativeHref(basePath: string, canonicalHref: string) {
+  if (basePath === "/docs") return canonicalHref;
+  const relative = canonicalHref.replace(/^\/docs/, "");
+  return relative === "" ? "/" : relative;
+}
 
 export function DocsSidebar() {
   const pathname = usePathname();
+  const basePath = useDocsBasePath();
 
   return (
     <nav className="flex flex-col gap-6">
@@ -17,11 +25,12 @@ export function DocsSidebar() {
           <ul className="mt-3 flex flex-col gap-1">
             {group.items.map((item) => {
               const Icon = item.icon;
-              const isActive = pathname === item.href;
+              const href = toRelativeHref(basePath, item.href);
+              const isActive = pathname === href;
               return (
                 <li key={item.href}>
                   <Link
-                    href={item.href}
+                    href={href}
                     className={`flex items-center gap-2 rounded-md px-2 py-1.5 text-sm transition-colors ${
                       isActive
                         ? "bg-accent-soft text-accent"

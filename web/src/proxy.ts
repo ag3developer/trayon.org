@@ -17,11 +17,15 @@ export default function middleware(request: NextRequest) {
 
   if (isDocsHost) {
     const url = request.nextUrl.clone();
-    if (!url.pathname.startsWith("/docs")) {
-      url.pathname = `/docs${url.pathname === "/" ? "" : url.pathname}`;
-      return NextResponse.rewrite(url);
+    // If a legacy/cross-referenced link still points at "/docs/xyz" while
+    // already on the docs subdomain, redirect to the clean "/xyz" URL so
+    // the address bar never shows a duplicated "docs" segment.
+    if (url.pathname === "/docs" || url.pathname.startsWith("/docs/")) {
+      url.pathname = url.pathname.slice("/docs".length) || "/";
+      return NextResponse.redirect(url);
     }
-    return NextResponse.next();
+    url.pathname = `/docs${url.pathname === "/" ? "" : url.pathname}`;
+    return NextResponse.rewrite(url);
   }
 
   // `/docs` is a standalone, English-only documentation section that lives

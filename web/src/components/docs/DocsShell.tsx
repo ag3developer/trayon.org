@@ -1,7 +1,10 @@
+"use client";
+
 import Link from "next/link";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import type { ReactNode } from "react";
 import { DocsSidebar } from "./DocsSidebar";
+import { useDocsHref } from "./DocsBasePath";
 import { docsNavFlat } from "@/lib/docs-nav";
 
 interface DocsShellProps {
@@ -16,6 +19,8 @@ export function DocsShell({ children, currentHref }: Readonly<DocsShellProps>) {
     index >= 0 && index < docsNavFlat.length - 1
       ? docsNavFlat[index + 1]
       : undefined;
+  const prevHref = useDocsHref(prev?.href ?? "/docs");
+  const nextHref = useDocsHref(next?.href ?? "/docs");
 
   return (
     <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
@@ -32,7 +37,7 @@ export function DocsShell({ children, currentHref }: Readonly<DocsShellProps>) {
           <div className="mt-16 flex items-center justify-between gap-4 border-t border-border pt-6">
             {prev ? (
               <Link
-                href={prev.href}
+                href={prevHref}
                 className="group flex items-center gap-2 text-sm text-muted transition-colors hover:text-accent"
               >
                 <ArrowLeft className="h-4 w-4" strokeWidth={1.75} />
@@ -46,7 +51,7 @@ export function DocsShell({ children, currentHref }: Readonly<DocsShellProps>) {
             )}
             {next && (
               <Link
-                href={next.href}
+                href={nextHref}
                 className="group flex items-center gap-2 text-right text-sm text-muted transition-colors hover:text-accent"
               >
                 <span>

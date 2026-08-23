@@ -4,17 +4,23 @@ import { useState } from "react";
 import Link from "next/link";
 import { Menu, X, ArrowLeft } from "lucide-react";
 import { DocsSidebar } from "./DocsSidebar";
+import { useDocsHref, useDocsBasePath } from "./DocsBasePath";
 import { ThemeToggle } from "../theme/ThemeToggle";
 import { Logo } from "../Logo";
 
+const MAIN_SITE_URL = "https://trayon.org";
+
 export function DocsNavbar() {
   const [open, setOpen] = useState(false);
+  const homeHref = useDocsHref("/docs");
+  const basePath = useDocsBasePath();
+  const mainSiteHref = basePath === "/docs" ? "/" : MAIN_SITE_URL;
 
   return (
     <header className="sticky top-0 z-50 border-b border-border bg-background/80 backdrop-blur-md">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
         <div className="flex items-center gap-4">
-          <Link href="/docs" className="flex items-center gap-2">
+          <Link href={homeHref} className="flex items-center gap-2">
             <Logo size={34} />
             <span className="text-lg font-semibold tracking-tight text-foreground">
               Trayon
@@ -26,7 +32,7 @@ export function DocsNavbar() {
         </div>
 
         <a
-          href="/"
+          href={mainSiteHref}
           className="hidden items-center gap-2 text-sm text-muted transition-colors hover:text-accent sm:flex"
         >
           <ArrowLeft className="h-4 w-4" strokeWidth={1.75} />
@@ -51,7 +57,7 @@ export function DocsNavbar() {
         <div className="border-t border-border bg-background px-4 py-4 lg:hidden">
           <DocsSidebar />
           <a
-            href="/"
+            href={mainSiteHref}
             className="mt-4 flex items-center gap-2 border-t border-border pt-4 text-sm text-muted"
           >
             <ArrowLeft className="h-4 w-4" strokeWidth={1.75} />
