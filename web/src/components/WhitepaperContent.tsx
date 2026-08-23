@@ -12,7 +12,7 @@ import {
   Rocket,
   Globe2,
 } from "lucide-react";
-import { useTranslations } from "next-intl";
+import { useTranslations, useLocale } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { RevealOnScroll } from "./RevealOnScroll";
 
@@ -27,6 +27,7 @@ const SECTIONS = [
 
 export function WhitepaperContent() {
   const t = useTranslations("whitepaper");
+  const locale = useLocale();
   const [activeSection, setActiveSection] = useState<string>(SECTIONS[0].key);
 
   useEffect(() => {
@@ -81,7 +82,8 @@ export function WhitepaperContent() {
           </div>
           <div className="mt-8 flex justify-center">
             <a
-              href="/whitepaper/trayon-whitepaper.pdf"
+              href={`/api/whitepaper?locale=${locale}`}
+              download={`trayon-whitepaper-${locale}.pdf`}
               className="glow-accent inline-flex items-center gap-2 rounded-md bg-accent px-5 py-3 text-sm font-semibold text-accent-ink transition-transform hover:-translate-y-0.5"
             >
               <Download className="h-4 w-4" strokeWidth={2} />
