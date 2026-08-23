@@ -306,9 +306,9 @@ export function useAPI() {
 
   const request = useCallback(
     async (endpoint: string, options: RequestInit = {}) => {
-      const headers = {
+      const headers: Record<string, string> = {
         'Content-Type': 'application/json',
-        ...options.headers,
+        ...(options.headers as Record<string, string> | undefined),
       };
 
       if (authState.token) {
