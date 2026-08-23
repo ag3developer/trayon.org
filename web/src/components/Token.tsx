@@ -1,12 +1,22 @@
+import { ArrowRight, Flame } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { getIcon } from "@/lib/icons";
 import { SectionHeader } from "./SectionHeader";
 import { StaggerGrid, StaggerItem } from "./StaggerGrid";
+import { RevealOnScroll } from "./RevealOnScroll";
+import { TokenAllocationChart } from "./TokenAllocationChart";
 
 const FACTS = [
   { key: "supply", iconKey: "coins" },
   { key: "stake", iconKey: "lock" },
   { key: "burn", iconKey: "flame" },
+  { key: "governance", iconKey: "vote" },
+] as const;
+
+const UTILITY = [
+  { key: "gas", iconKey: "databaseZap" },
+  { key: "staking", iconKey: "shieldCheck" },
+  { key: "marketplace", iconKey: "scanSearch" },
   { key: "governance", iconKey: "vote" },
 ] as const;
 
@@ -41,6 +51,71 @@ export function Token() {
             );
           })}
         </StaggerGrid>
+
+        <div className="mt-10 grid grid-cols-1 gap-6 lg:mt-14 lg:grid-cols-[1.1fr_1fr]">
+          {/* Allocation donut */}
+          <RevealOnScroll className="rounded-lg border border-border bg-surface p-6 sm:p-8">
+            <h3 className="text-sm font-semibold uppercase tracking-wide text-muted">
+              {t("allocationTitle")}
+            </h3>
+            <div className="mt-4">
+              <TokenAllocationChart />
+            </div>
+          </RevealOnScroll>
+
+          {/* Utility + burn highlight */}
+          <div className="flex flex-col gap-6">
+            <RevealOnScroll delay={0.1} className="rounded-lg border border-border bg-surface p-6 sm:p-8">
+              <h3 className="text-sm font-semibold uppercase tracking-wide text-muted">
+                {t("utilityTitle")}
+              </h3>
+              <ul className="mt-4 grid grid-cols-1 gap-4 sm:grid-cols-2">
+                {UTILITY.map((item) => {
+                  const Icon = getIcon(item.iconKey);
+                  return (
+                    <li key={item.key} className="flex gap-3">
+                      <div className="mt-0.5 flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-md border border-accent/30 bg-accent-soft">
+                        <Icon className="h-4 w-4 text-accent" strokeWidth={1.75} />
+                      </div>
+                      <div>
+                        <p className="text-sm font-semibold text-foreground">
+                          {t(`utility.${item.key}.title`)}
+                        </p>
+                        <p className="mt-1 text-xs leading-relaxed text-muted">
+                          {t(`utility.${item.key}.description`)}
+                        </p>
+                      </div>
+                    </li>
+                  );
+                })}
+              </ul>
+            </RevealOnScroll>
+
+            <RevealOnScroll
+              delay={0.2}
+              className="flex flex-1 flex-col justify-between gap-4 rounded-lg border border-danger/30 bg-danger/5 p-6 sm:p-8"
+            >
+              <div>
+                <div className="flex items-center gap-2">
+                  <Flame className="h-5 w-5 text-danger" strokeWidth={1.75} />
+                  <h3 className="text-sm font-semibold uppercase tracking-wide text-danger">
+                    {t("burnTitle")}
+                  </h3>
+                </div>
+                <p className="mt-3 text-sm leading-relaxed text-muted">
+                  {t("burnDescription")}
+                </p>
+              </div>
+              <a
+                href="/docs/tokenomics"
+                className="inline-flex items-center gap-2 text-sm font-semibold text-accent transition-colors hover:text-accent-strong"
+              >
+                {t("ctaLabel")}
+                <ArrowRight className="h-4 w-4" strokeWidth={1.75} />
+              </a>
+            </RevealOnScroll>
+          </div>
+        </div>
       </div>
     </section>
   );

@@ -84,7 +84,18 @@
       "stake": { "label": "Minimum stake", "value": "32,000 TRAY" },
       "burn": { "label": "Fee burn", "value": "20% of gas fees" },
       "governance": { "label": "Governance", "value": "Quadratic voting" }
-    }
+    },
+    "allocationTitle": "Initial supply allocation",
+    "utilityTitle": "What TRAY actually pays for",
+    "utility": {
+      "gas": { "title": "Native gas token", "description": "Every Layer 2 transaction fee is paid directly in TRAY — no separate gas asset required." },
+      "staking": { "title": "Validator staking", "description": "Running a validator locks a minimum of 32,000 TRAY, aligning long-term incentives with network security." },
+      "marketplace": { "title": "Data marketplace access", "description": "Enterprises and governments spend TRAY to query audited datasets and analytical reports." },
+      "governance": { "title": "Quadratic governance", "description": "Protocol votes use quadratic weighting, preventing whale-dominated decision-making." }
+    },
+    "burnTitle": "Deflationary by design",
+    "burnDescription": "20% of every transaction fee is permanently burned, creating deflationary pressure that scales with real network usage — not speculation.",
+    "ctaLabel": "View full tokenomics"
   },
   "contact": {
     "eyebrow": "Get in Touch",

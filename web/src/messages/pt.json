@@ -84,7 +84,18 @@
       "stake": { "label": "Stake mínimo", "value": "32.000 TRAY" },
       "burn": { "label": "Queima de taxas", "value": "20% das taxas de gas" },
       "governance": { "label": "Governança", "value": "Votação quadrática" }
-    }
+    },
+    "allocationTitle": "Alocação do fornecimento inicial",
+    "utilityTitle": "Para que o TRAY é usado na prática",
+    "utility": {
+      "gas": { "title": "Token de gas nativo", "description": "Toda taxa de transação na Layer 2 é paga diretamente em TRAY — sem necessidade de outro ativo de gas." },
+      "staking": { "title": "Staking de validadores", "description": "Operar um validador exige o bloqueio de no mínimo 32.000 TRAY, alinhando incentivos de longo prazo à segurança da rede." },
+      "marketplace": { "title": "Acesso ao marketplace de dados", "description": "Empresas e governos gastam TRAY para consultar datasets auditados e relatórios analíticos." },
+      "governance": { "title": "Governança quadrática", "description": "As votações do protocolo usam peso quadrático, evitando decisões dominadas por grandes detentores." }
+    },
+    "burnTitle": "Deflacionário por design",
+    "burnDescription": "20% de cada taxa de transação é permanentemente queimado, criando uma pressão deflacionária que escala com o uso real da rede — não com especulação.",
+    "ctaLabel": "Ver tokenomics completo"
   },
   "contact": {
     "eyebrow": "Fale Conosco",

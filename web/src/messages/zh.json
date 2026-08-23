@@ -84,7 +84,18 @@
       "stake": { "label": "最低抵押量", "value": "32,000 TRAY" },
       "burn": { "label": "手续费销毁", "value": "gas 费用的 20%" },
       "governance": { "label": "治理机制", "value": "二次方投票" }
-    }
+    },
+    "allocationTitle": "初始供应分配",
+    "utilityTitle": "TRAY 的实际用途",
+    "utility": {
+      "gas": { "title": "原生 Gas 代币", "description": "Layer 2 上的每笔交易手续费都直接以 TRAY 支付，无需持有其他 Gas 资产。" },
+      "staking": { "title": "验证节点抵押", "description": "运行验证节点需要锁定至少 32,000 TRAY，使长期激励与网络安全保持一致。" },
+      "marketplace": { "title": "数据市场访问权限", "description": "企业和政府使用 TRAY 查询经审计的数据集和分析报告。" },
+      "governance": { "title": "二次方治理投票", "description": "协议投票采用二次方加权机制，防止大户主导决策。" }
+    },
+    "burnTitle": "设计上的通缩机制",
+    "burnDescription": "每笔交易手续费的 20% 将被永久销毁，形成随网络真实使用量（而非投机）扩大的通缩压力。",
+    "ctaLabel": "查看完整代币经济学"
   },
   "contact": {
     "eyebrow": "联系我们",

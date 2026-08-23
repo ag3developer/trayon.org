@@ -84,7 +84,18 @@
       "stake": { "label": "Stake minimum", "value": "32 000 TRAY" },
       "burn": { "label": "Destruction des frais", "value": "20 % des frais de gas" },
       "governance": { "label": "Gouvernance", "value": "Vote quadratique" }
-    }
+    },
+    "allocationTitle": "Répartition de l'offre initiale",
+    "utilityTitle": "À quoi sert vraiment le TRAY",
+    "utility": {
+      "gas": { "title": "Jeton de gas natif", "description": "Chaque frais de transaction sur la Layer 2 est payé directement en TRAY, sans nécessiter un autre actif de gas." },
+      "staking": { "title": "Staking des validateurs", "description": "Faire fonctionner un validateur nécessite de bloquer au moins 32 000 TRAY, alignant les incitations à long terme avec la sécurité du réseau." },
+      "marketplace": { "title": "Accès au marché des données", "description": "Les entreprises et les gouvernements dépensent des TRAY pour consulter des jeux de données audités et des rapports analytiques." },
+      "governance": { "title": "Gouvernance quadratique", "description": "Les votes du protocole utilisent une pondération quadratique, empêchant les décisions dominées par les gros détenteurs." }
+    },
+    "burnTitle": "Déflationniste par conception",
+    "burnDescription": "20 % de chaque frais de transaction est définitivement détruit, créant une pression déflationniste qui évolue avec l'usage réel du réseau, et non avec la spéculation.",
+    "ctaLabel": "Voir la tokenomics complète"
   },
   "contact": {
     "eyebrow": "Contactez-nous",

@@ -84,7 +84,18 @@
       "stake": { "label": "Mindest-Stake", "value": "32.000 TRAY" },
       "burn": { "label": "Gebühren-Burn", "value": "20 % der Gas-Gebühren" },
       "governance": { "label": "Governance", "value": "Quadratische Abstimmung" }
-    }
+    },
+    "allocationTitle": "Anfängliche Angebotsverteilung",
+    "utilityTitle": "Wofür TRAY tatsächlich verwendet wird",
+    "utility": {
+      "gas": { "title": "Nativer Gas-Token", "description": "Jede Transaktionsgebühr auf der Layer 2 wird direkt in TRAY bezahlt — kein separates Gas-Asset erforderlich." },
+      "staking": { "title": "Validator-Staking", "description": "Der Betrieb eines Validators erfordert das Sperren von mindestens 32.000 TRAY und richtet langfristige Anreize an der Netzwerksicherheit aus." },
+      "marketplace": { "title": "Zugang zum Datenmarktplatz", "description": "Unternehmen und Regierungen geben TRAY aus, um geprüfte Datensätze und Analyseberichte abzufragen." },
+      "governance": { "title": "Quadratische Governance", "description": "Protokoll-Abstimmungen verwenden eine quadratische Gewichtung und verhindern so eine von Großinvestoren dominierte Entscheidungsfindung." }
+    },
+    "burnTitle": "Deflationär per Design",
+    "burnDescription": "20 % jeder Transaktionsgebühr werden dauerhaft verbrannt, wodurch ein deflationärer Druck entsteht, der mit der tatsächlichen Netzwerknutzung skaliert — nicht mit Spekulation.",
+    "ctaLabel": "Vollständige Tokenomics ansehen"
   },
   "contact": {
     "eyebrow": "Kontaktieren Sie uns",
