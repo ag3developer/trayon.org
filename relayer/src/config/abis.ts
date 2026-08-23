@@ -12,7 +12,7 @@ export const BRIDGE_L1_ABI = [
     inputs: [
       { name: 'user', type: 'address', indexed: true },
       { name: 'amount', type: 'uint256', indexed: false },
-      { name: 'depositHash', type: 'bytes32', indexed: true },
+      { name: 'nonce', type: 'uint256', indexed: false },
       { name: 'timestamp', type: 'uint256', indexed: false },
     ],
   },

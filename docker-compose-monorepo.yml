@@ -1,0 +1,339 @@
+version: '3.8'
+
+services:
+  # ─────────────────────────────────────────────────────────────────────────────
+  # INFRASTRUCTURE LAYER
+  # ─────────────────────────────────────────────────────────────────────────────
+
+  postgres:
+    image: postgres:15-alpine
+    container_name: trayon-postgres
+    environment:
+      POSTGRES_USER: trayon
+      POSTGRES_PASSWORD: trayon
+      POSTGRES_DB: trayon
+      POSTGRES_INITDB_ARGS: "-c max_connections=200 -c shared_buffers=256MB"
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./init_db.sql:/docker-entrypoint-initdb.d/init.sql
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U trayon"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - trayon-network
+
+  redis:
+    image: redis:7-alpine
+    container_name: trayon-redis
+    command: redis-server --appendonly yes --maxmemory 1gb --maxmemory-policy allkeys-lru
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - trayon-network
+
+  ipfs:
+    image: ipfs/kubo:latest
+    container_name: trayon-ipfs
+    ports:
+      - "4001:4001"        # Swarm
+      - "5001:5001"        # API
+      - "8080:8080"        # Gateway
+    volumes:
+      - ipfs_data:/data/ipfs
+    environment:
+      IPFS_PATH: /data/ipfs
+    healthcheck:
+      test: ["CMD", "ipfs", "id"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - trayon-network
+
+  # ─────────────────────────────────────────────────────────────────────────────
+  # AI-ENGINE MICROSERVICE (Python/FastAPI)
+  # ─────────────────────────────────────────────────────────────────────────────
+
+  ai-engine:
+    build:
+      context: ./services/ai-engine
+      dockerfile: Dockerfile
+    container_name: trayon-ai-engine
+    environment:
+      SERVICE_NAME: trayon-ai-engine
+      DEBUG: "false"
+      API_HOST: 0.0.0.0
+      API_PORT: 8001
+      IPFS_API_URL: /ip4/ipfs/tcp/5001
+      IPFS_GATEWAY_URL: http://ipfs:8080
+      REDIS_URL: redis://redis:6379/0
+      DATABASE_URL: postgresql://trayon:trayon@postgres:5432/trayon
+      CELERY_BROKER_URL: redis://redis:6379/1
+      CELERY_RESULT_BACKEND: redis://redis:6379/2
+      ETH_RPC_URL: https://polygon-rpc.com
+      L2_RPC_URL: http://localhost:9545
+      LOG_LEVEL: INFO
+    ports:
+      - "8001:8001"
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+      ipfs:
+        condition: service_healthy
+    volumes:
+      - ./services/ai-engine/app:/app/app
+      - ai_engine_cache:/app/.cache
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8001/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    networks:
+      - trayon-network
+
+  # Celery worker for async processing
+  ai-engine-worker:
+    build:
+      context: ./services/ai-engine
+      dockerfile: Dockerfile
+    container_name: trayon-ai-worker
+    command: celery -A app.celery_worker worker -l info -c 4
+    environment:
+      SERVICE_NAME: trayon-ai-worker
+      REDIS_URL: redis://redis:6379/0
+      DATABASE_URL: postgresql://trayon:trayon@postgres:5432/trayon
+      CELERY_BROKER_URL: redis://redis:6379/1
+      CELERY_RESULT_BACKEND: redis://redis:6379/2
+      IPFS_API_URL: /ip4/ipfs/tcp/5001
+    depends_on:
+      - redis
+      - postgres
+      - ipfs
+    volumes:
+      - ./services/ai-engine/app:/app/app
+    networks:
+      - trayon-network
+
+  # ─────────────────────────────────────────────────────────────────────────────
+  # BACKEND API (TypeScript/Express)
+  # ─────────────────────────────────────────────────────────────────────────────
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: trayon-backend
+    environment:
+      NODE_ENV: development
+      API_HOST: 0.0.0.0
+      API_PORT: 3000
+      DATABASE_URL: postgresql://trayon:trayon@postgres:5432/trayon
+      REDIS_URL: redis://redis:6379/3
+      LOG_LEVEL: info
+      ETH_RPC_URL: https://polygon-rpc.com
+      L2_RPC_URL: http://localhost:9545
+    ports:
+      - "3000:3000"
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    volumes:
+      - ./backend/src:/app/src
+      - /app/node_modules
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:3000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    networks:
+      - trayon-network
+
+  # ─────────────────────────────────────────────────────────────────────────────
+  # VALIDATOR NODES (BFT Consensus)
+  # ─────────────────────────────────────────────────────────────────────────────
+
+  validator-1:
+    build:
+      context: ./validator
+      dockerfile: Dockerfile
+    container_name: trayon-validator-1
+    environment:
+      NODE_ENV: development
+      VALIDATOR_ID: 1
+      VALIDATOR_PORT: 9001
+      CONSENSUS_TYPE: bft
+      DATABASE_URL: postgresql://trayon:trayon@postgres:5432/trayon
+      REDIS_URL: redis://redis:6379/4
+      IPFS_API_URL: /ip4/ipfs/tcp/5001
+      P2P_LISTEN_ADDR: /ip4/0.0.0.0/tcp/30301
+      L1_RPC_URL: https://polygon-rpc.com
+      L2_RPC_URL: http://localhost:9545
+      STAKING_CONTRACT: "0x0000000000000000000000000000000000000000"
+      PRIVATE_KEY: ${VALIDATOR_1_PRIVATE_KEY}
+      LOG_LEVEL: info
+    ports:
+      - "9001:9001"      # RPC
+      - "30301:30301"    # P2P
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+      ipfs:
+        condition: service_healthy
+    volumes:
+      - ./validator/src:/app/src
+      - validator_1_data:/app/data
+      - /app/node_modules
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:9001/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    networks:
+      - trayon-network
+
+  validator-2:
+    build:
+      context: ./validator
+      dockerfile: Dockerfile
+    container_name: trayon-validator-2
+    environment:
+      NODE_ENV: development
+      VALIDATOR_ID: 2
+      VALIDATOR_PORT: 9002
+      CONSENSUS_TYPE: bft
+      DATABASE_URL: postgresql://trayon:trayon@postgres:5432/trayon
+      REDIS_URL: redis://redis:6379/5
+      IPFS_API_URL: /ip4/ipfs/tcp/5001
+      P2P_LISTEN_ADDR: /ip4/0.0.0.0/tcp/30302
+      L1_RPC_URL: https://polygon-rpc.com
+      L2_RPC_URL: http://localhost:9545
+      STAKING_CONTRACT: "0x0000000000000000000000000000000000000000"
+      PRIVATE_KEY: ${VALIDATOR_2_PRIVATE_KEY}
+      LOG_LEVEL: info
+    ports:
+      - "9002:9002"      # RPC
+      - "30302:30302"    # P2P
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+      ipfs:
+        condition: service_healthy
+    volumes:
+      - ./validator/src:/app/src
+      - validator_2_data:/app/data
+      - /app/node_modules
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:9002/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    networks:
+      - trayon-network
+
+  validator-3:
+    build:
+      context: ./validator
+      dockerfile: Dockerfile
+    container_name: trayon-validator-3
+    environment:
+      NODE_ENV: development
+      VALIDATOR_ID: 3
+      VALIDATOR_PORT: 9003
+      CONSENSUS_TYPE: bft
+      DATABASE_URL: postgresql://trayon:trayon@postgres:5432/trayon
+      REDIS_URL: redis://redis:6379/6
+      IPFS_API_URL: /ip4/ipfs/tcp/5001
+      P2P_LISTEN_ADDR: /ip4/0.0.0.0/tcp/30303
+      L1_RPC_URL: https://polygon-rpc.com
+      L2_RPC_URL: http://localhost:9545
+      STAKING_CONTRACT: "0x0000000000000000000000000000000000000000"
+      PRIVATE_KEY: ${VALIDATOR_3_PRIVATE_KEY}
+      LOG_LEVEL: info
+    ports:
+      - "9003:9003"      # RPC
+      - "30303:30303"    # P2P
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+      ipfs:
+        condition: service_healthy
+    volumes:
+      - ./validator/src:/app/src
+      - validator_3_data:/app/data
+      - /app/node_modules
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:9003/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    networks:
+      - trayon-network
+
+  # ─────────────────────────────────────────────────────────────────────────────
+  # MONITORING & OBSERVABILITY
+  # ─────────────────────────────────────────────────────────────────────────────
+
+  prometheus:
+    image: prom/prometheus:latest
+    container_name: trayon-prometheus
+    volumes:
+      - ./infra/prometheus.yml:/etc/prometheus/prometheus.yml
+      - prometheus_data:/prometheus
+    ports:
+      - "9090:9090"
+    command:
+      - '--config.file=/etc/prometheus/prometheus.yml'
+      - '--storage.tsdb.path=/prometheus'
+    networks:
+      - trayon-network
+
+  grafana:
+    image: grafana/grafana:latest
+    container_name: trayon-grafana
+    environment:
+      GF_SECURITY_ADMIN_PASSWORD: admin
+      GF_USERS_ALLOW_SIGN_UP: "false"
+    ports:
+      - "3001:3000"
+    volumes:
+      - grafana_data:/var/lib/grafana
+    depends_on:
+      - prometheus
+    networks:
+      - trayon-network
+
+networks:
+  trayon-network:
+    driver: bridge
+
+volumes:
+  postgres_data:
+  redis_data:
+  ipfs_data:
+  ai_engine_cache:
+  validator_1_data:
+  validator_2_data:
+  validator_3_data:
+  prometheus_data:
+  grafana_data:

@@ -40,6 +40,21 @@ export class L1Listener {
     }
 
     this.isRunning = true;
+
+    // If starting from block 0, get current block instead (important for RPC limits)
+    if (this.lastProcessedBlock === 0) {
+      try {
+        this.lastProcessedBlock = await this.provider.getBlockNumber();
+        this.logger.info('L1Listener starting from current block', {
+          network: this.networkConfig.name,
+          startBlock: this.lastProcessedBlock,
+        });
+      } catch (error) {
+        this.logger.error('Error getting current block number', error);
+        this.lastProcessedBlock = 0;
+      }
+    }
+
     this.logger.info('L1Listener started', {
       network: this.networkConfig.name,
       startBlock: this.lastProcessedBlock,
@@ -64,11 +79,22 @@ export class L1Listener {
    * Poll for new DepositInitiated events
    */
   private async poll(): Promise<void> {
+    this.logger.info('L1Listener poll() started - beginning event polling loop');
+    
     while (this.isRunning) {
       try {
         const currentBlock = await this.provider.getBlockNumber();
+        this.logger.debug('L1Listener polling', {
+          currentBlock,
+          lastProcessedBlock: this.lastProcessedBlock,
+        });
 
         if (currentBlock > this.lastProcessedBlock) {
+          this.logger.info('Fetching events from blocks', {
+            fromBlock: this.lastProcessedBlock + 1,
+            toBlock: currentBlock,
+          });
+          
           const events = await this.fetchEvents(
             this.lastProcessedBlock + 1,
             currentBlock
@@ -87,6 +113,11 @@ export class L1Listener {
 
             this.lastEventTime = Date.now();
             this.totalEventsFound += events.length;
+          } else {
+            this.logger.debug('No events found in range', {
+              fromBlock: this.lastProcessedBlock + 1,
+              toBlock: currentBlock,
+            });
           }
 
           this.lastProcessedBlock = currentBlock;
@@ -97,6 +128,7 @@ export class L1Listener {
       }
 
       // Wait before polling again (default 12 seconds)
+      this.logger.debug('L1Listener waiting 12 seconds before next poll');
       await this.sleep(12000);
     }
   }
@@ -123,7 +155,7 @@ export class L1Listener {
       for (const event of events) {
         if (!(event instanceof EventLog)) continue;
 
-        const [user, amount, depositHash] = event.args;
+        const [user, amount, nonce] = event.args;
         
         const block = await this.provider.getBlock(event.blockNumber);
         const timestamp = block?.timestamp || Math.floor(Date.now() / 1000);
@@ -131,7 +163,7 @@ export class L1Listener {
         deposits.push({
           user: user as string,
           amount: BigInt(amount as bigint),
-          depositHash: depositHash as string,
+          nonce: nonce.toString(),
           blockNumber: event.blockNumber,
           transactionHash: event.transactionHash,
           timestamp,
@@ -141,7 +173,7 @@ export class L1Listener {
         this.logger.debug('Parsed DepositInitiated event', {
           user,
           amount: amount.toString(),
-          depositHash,
+          nonce: nonce.toString(),
           blockNumber: event.blockNumber,
         });
       }
@@ -164,7 +196,7 @@ export class L1Listener {
     this.logger.info('Processing DepositInitiated event', {
       user: event.user,
       amount: event.amount.toString(),
-      depositHash: event.depositHash,
+      nonce: event.nonce,
       blockNumber: event.blockNumber,
     });
 

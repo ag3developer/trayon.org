@@ -40,6 +40,21 @@ export class L2Listener {
     }
 
     this.isRunning = true;
+
+    // If starting from block 0, get current block instead (important for RPC limits)
+    if (this.lastProcessedBlock === 0) {
+      try {
+        this.lastProcessedBlock = await this.provider.getBlockNumber();
+        this.logger.info('L2Listener starting from current block', {
+          network: this.networkConfig.name,
+          startBlock: this.lastProcessedBlock,
+        });
+      } catch (error) {
+        this.logger.error('Error getting current block number', error);
+        this.lastProcessedBlock = 0;
+      }
+    }
+
     this.logger.info('L2Listener started', {
       network: this.networkConfig.name,
       startBlock: this.lastProcessedBlock,

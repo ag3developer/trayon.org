@@ -21,7 +21,7 @@ export interface NetworkConfig {
 export interface DepositEvent {
   user: string;
   amount: bigint;
-  depositHash: string;
+  nonce: string; // Changed from depositHash to match contract event
   blockNumber: number;
   transactionHash: string;
   timestamp: number;

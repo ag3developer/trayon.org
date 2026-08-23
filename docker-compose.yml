@@ -1,0 +1,171 @@
+version: '3.9'
+
+services:
+  # PostgreSQL Database
+  postgres:
+    image: postgres:15-alpine
+    container_name: trayon-postgres
+    environment:
+      POSTGRES_DB: trayon
+      POSTGRES_USER: trayon
+      POSTGRES_PASSWORD: trayon123
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./backend/src/database/schema.sql:/docker-entrypoint-initdb.d/schema.sql
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U trayon"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - trayon-network
+
+  # Redis Cache
+  redis:
+    image: redis:7-alpine
+    container_name: trayon-redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - trayon-network
+
+  # Backend API
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: trayon-backend
+    environment:
+      NODE_ENV: development
+      PORT: 3000
+      DB_HOST: postgres
+      DB_PORT: 5432
+      DB_NAME: trayon
+      DB_USER: trayon
+      DB_PASSWORD: trayon123
+      REDIS_URL: redis://redis:6379
+      L1_RPC_URL: ${L1_RPC_URL:-https://polygon.drpc.org}
+      L2_RPC_URL: ${L2_RPC_URL:-http://localhost:8545}
+    ports:
+      - "3000:3000"
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:3000/health"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - trayon-network
+    volumes:
+      - ./backend/src:/app/src
+
+  # Validator Node 1
+  validator-1:
+    build:
+      context: ./validator
+      dockerfile: Dockerfile
+    container_name: trayon-validator-1
+    environment:
+      NODE_ENV: development
+      VALIDATOR_ID: 1
+      VALIDATOR_NAME: validator-1
+      VALIDATOR_ADDRESS: ${VALIDATOR_ADDRESS_1}
+      VALIDATOR_PRIVATE_KEY: ${VALIDATOR_PRIVATE_KEY_1}
+      L1_RPC_URL: ${L1_RPC_URL:-https://polygon.drpc.org}
+      L2_RPC_URL: ${L2_RPC_URL:-http://localhost:8545}
+      P2P_PORT: 30333
+      P2P_HOST: 0.0.0.0
+      LOG_LEVEL: info
+      DB_HOST: postgres
+      DB_USER: trayon
+      DB_PASSWORD: trayon123
+    ports:
+      - "30333:30333"
+    depends_on:
+      postgres:
+        condition: service_healthy
+    networks:
+      - trayon-network
+    volumes:
+      - ./validator/src:/app/src
+
+  # Validator Node 2
+  validator-2:
+    build:
+      context: ./validator
+      dockerfile: Dockerfile
+    container_name: trayon-validator-2
+    environment:
+      NODE_ENV: development
+      VALIDATOR_ID: 2
+      VALIDATOR_NAME: validator-2
+      VALIDATOR_ADDRESS: ${VALIDATOR_ADDRESS_2}
+      VALIDATOR_PRIVATE_KEY: ${VALIDATOR_PRIVATE_KEY_2}
+      L1_RPC_URL: ${L1_RPC_URL:-https://polygon.drpc.org}
+      L2_RPC_URL: ${L2_RPC_URL:-http://localhost:8545}
+      P2P_PORT: 30334
+      P2P_HOST: 0.0.0.0
+      LOG_LEVEL: info
+      DB_HOST: postgres
+      DB_USER: trayon
+      DB_PASSWORD: trayon123
+    ports:
+      - "30334:30334"
+    depends_on:
+      postgres:
+        condition: service_healthy
+    networks:
+      - trayon-network
+    volumes:
+      - ./validator/src:/app/src
+
+  # Validator Node 3
+  validator-3:
+    build:
+      context: ./validator
+      dockerfile: Dockerfile
+    container_name: trayon-validator-3
+    environment:
+      NODE_ENV: development
+      VALIDATOR_ID: 3
+      VALIDATOR_NAME: validator-3
+      VALIDATOR_ADDRESS: ${VALIDATOR_ADDRESS_3}
+      VALIDATOR_PRIVATE_KEY: ${VALIDATOR_PRIVATE_KEY_3}
+      L1_RPC_URL: ${L1_RPC_URL:-https://polygon.drpc.org}
+      L2_RPC_URL: ${L2_RPC_URL:-http://localhost:8545}
+      P2P_PORT: 30335
+      P2P_HOST: 0.0.0.0
+      LOG_LEVEL: info
+      DB_HOST: postgres
+      DB_USER: trayon
+      DB_PASSWORD: trayon123
+    ports:
+      - "30335:30335"
+    depends_on:
+      postgres:
+        condition: service_healthy
+    networks:
+      - trayon-network
+    volumes:
+      - ./validator/src:/app/src
+
+networks:
+  trayon-network:
+    driver: bridge
+
+volumes:
+  postgres_data:
+  redis_data:
