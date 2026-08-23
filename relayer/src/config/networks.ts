@@ -6,16 +6,23 @@
 import type { NetworkConfig, RelayerConfig, ValidatorConfig } from '../types/index.js';
 
 /**
- * Polygon Amoy (L1) Configuration
+ * Polygon Mainnet (L1) Configuration
+ * Production deployment on Polygon Mainnet (Chain 137)
  */
-export const polygonAmoyConfig: NetworkConfig = {
-  name: 'polygon-amoy',
-  rpcUrl: process.env.RPC_POLYGON_AMOY || 'https://rpc-amoy.polygon.technology',
-  chainId: 80002,
+export const polygonMainnetConfig: NetworkConfig = {
+  name: 'polygon-mainnet',
+  rpcUrl: process.env.RPC_POLYGON_MAINNET || process.env.RPC_POLYGON_AMOY || 'https://polygon.drpc.org',
+  chainId: 137,
   bridgeAddress: process.env.BRIDGE_L1_ADDRESS || '',
   trayAddress: process.env.TRAY_L1_ADDRESS || '',
   startBlock: parseInt(process.env.LISTEN_START_BLOCK_L1 || '0', 10),
 };
+
+/**
+ * @deprecated Use polygonMainnetConfig for production
+ * Polygon Amoy (L1) Configuration - kept for backward compatibility
+ */
+export const polygonAmoyConfig: NetworkConfig = polygonMainnetConfig;
 
 /**
  * Trayon Testnet (L2) Configuration
@@ -51,6 +58,7 @@ export const getValidators = (): ValidatorConfig[] => {
 
 /**
  * Full Relayer Configuration
+ * Production: Polygon Mainnet (L1) + Local Anvil (L2)
  */
 export const getRelayerConfig = (): RelayerConfig => {
   const validators = getValidators();
@@ -67,7 +75,7 @@ export const getRelayerConfig = (): RelayerConfig => {
   }
 
   return {
-    networkL1: polygonAmoyConfig,
+    networkL1: polygonMainnetConfig,
     networkL2: trayonTestnetConfig,
     validators,
     requiredSignatures,
