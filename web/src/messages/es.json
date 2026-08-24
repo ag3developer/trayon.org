@@ -155,6 +155,9 @@
       "bestAsset": "Mejor Activo",
       "usd": "USD"
     },
+    "chart": {
+      "title": "Valor del Portafolio"
+    },
     "assets": {
       "title": "Activos",
       "asset": "Activo",

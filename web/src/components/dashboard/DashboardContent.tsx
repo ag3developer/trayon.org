@@ -5,6 +5,7 @@ import { useTranslations } from 'next-intl';
 import { TrendingUp, TrendingDown, RefreshCw, AlertCircle } from 'lucide-react';
 import { DashboardHeader } from './sections/DashboardHeader';
 import { DashboardStats } from './sections/DashboardStats';
+import { DashboardChart } from './sections/DashboardChart';
 import { DashboardAssets } from './sections/DashboardAssets';
 import { DashboardWallet } from './sections/DashboardWallet';
 import { DashboardQuickActions } from './sections/DashboardQuickActions';
@@ -43,8 +44,8 @@ export function DashboardContent({
       <DashboardHeader address={address} onRefresh={onRefresh} isLoading={isLoading} />
 
       {/* Main Content */}
-      <main className="px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
-        <div className="max-w-7xl mx-auto space-y-8">
+      <main className="px-3 sm:px-6 lg:px-8 py-4 sm:py-6">
+        <div className="max-w-7xl mx-auto space-y-4 sm:space-y-5">
           {/* Error State */}
           {error && (
             <div className="rounded-lg border border-danger/30 bg-danger/5 p-4 flex gap-3">
@@ -73,15 +74,17 @@ export function DashboardContent({
             <>
               <DashboardStats portfolio={portfolio} />
 
+              <DashboardChart totalValue={portfolio?.totalValue} />
+
               {/* Content Grid */}
-              <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+              <div className="grid grid-cols-1 gap-4 sm:gap-5 lg:grid-cols-3">
                 {/* Main Content */}
-                <div className="lg:col-span-2 space-y-6">
+                <div className="space-y-4 sm:space-y-5 lg:col-span-2">
                   <DashboardAssets portfolio={portfolio} />
                 </div>
 
                 {/* Sidebar */}
-                <div className="space-y-6">
+                <div className="space-y-4 sm:space-y-5">
                   <DashboardWallet balance={balance} chainId={chainId} />
                   <DashboardQuickActions />
                 </div>

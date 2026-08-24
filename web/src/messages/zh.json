@@ -156,6 +156,9 @@
       "bestAsset": "最佳资产",
       "usd": "USD"
     },
+    "chart": {
+      "title": "投资组合价值"
+    },
     "assets": {
       "title": "资产",
       "asset": "资产",

@@ -156,6 +156,9 @@
       "bestAsset": "最高の資産",
       "usd": "USD"
     },
+    "chart": {
+      "title": "ポートフォリオ価値"
+    },
     "assets": {
       "title": "資産",
       "asset": "資産",

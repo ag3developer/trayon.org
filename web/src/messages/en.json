@@ -156,6 +156,9 @@
       "bestAsset": "Best Asset",
       "usd": "USD"
     },
+    "chart": {
+      "title": "Portfolio Value"
+    },
     "assets": {
       "title": "Assets",
       "asset": "Asset",

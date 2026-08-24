@@ -33,15 +33,12 @@ export function DashboardQuickActions() {
   ];
 
   return (
-    <div className="rounded-xl border border-border bg-surface backdrop-blur-sm p-6 space-y-4">
+    <div className="rounded-lg border border-border bg-surface p-4 space-y-3">
       {/* Header */}
-      <div className="flex items-center justify-between">
-        <h3 className="text-lg font-semibold text-foreground leading-tight">{t('title')}</h3>
-        <div className="w-1 h-1 rounded-full bg-accent/40" />
-      </div>
+      <h3 className="text-sm font-semibold text-foreground leading-tight">{t('title')}</h3>
 
       {/* Actions Grid */}
-      <div className="space-y-3">
+      <div className="grid grid-cols-3 gap-2">
         {actions.map((action) => {
           const Icon = action.icon;
           const isActive = activeAction === action.id;
@@ -49,11 +46,13 @@ export function DashboardQuickActions() {
           return (
             <button
               key={action.id}
+              type="button"
               onMouseEnter={() => setActiveAction(action.id)}
               onMouseLeave={() => setActiveAction(null)}
+              title={action.description}
               className={`
-                w-full px-4 py-3 rounded-lg font-semibold text-sm
-                flex items-center justify-center gap-2
+                flex flex-col items-center justify-center gap-1 rounded-lg px-2 py-2.5
+                text-xs font-semibold
                 transition-all duration-300 active:scale-95
                 ${action.className}
                 ${isActive ? 'ring-2 ring-accent/40 ring-offset-2 ring-offset-background' : ''}
@@ -64,13 +63,6 @@ export function DashboardQuickActions() {
             </button>
           );
         })}
-      </div>
-
-      {/* Footer Info */}
-      <div className="pt-2 border-t border-border/40">
-        <p className="text-xs text-muted leading-relaxed">
-          {t('info')}
-        </p>
       </div>
     </div>
   );

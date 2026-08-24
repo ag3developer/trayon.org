@@ -14,7 +14,7 @@
 
 import React, { useEffect, useState } from 'react';
 import { useTranslations } from 'next-intl';
-import { useRouter } from 'next/navigation';
+import { useRouter } from '@/i18n/navigation';
 import { useWeb3, useFormatAddress } from '@/hooks/useWeb3';
 import { ChevronDown, LogOut, Wallet as WalletIcon, AlertCircle, BarChart3 } from 'lucide-react';
 
@@ -63,7 +63,7 @@ export function Wallet({ className = '' }: Readonly<WalletProps>) {
   };
 
   const handleViewPortfolio = () => {
-    router.push('/en/dashboard');
+    router.push('/dashboard');
     setIsDropdownOpen(false);
   };
 

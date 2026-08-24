@@ -5,6 +5,7 @@ import { getTranslations } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
 import { ThemeProvider, themeInitScript } from "@/components/theme/ThemeProvider";
+import { Web3Provider } from "@/hooks/Web3Provider";
 import "@/styles/globals.css";
 
 const inter = Inter({
@@ -76,7 +77,7 @@ export default async function LocaleLayout({
       <body className="min-h-full flex flex-col bg-background text-foreground">
         <ThemeProvider>
           <NextIntlClientProvider locale={locale}>
-            {children}
+            <Web3Provider>{children}</Web3Provider>
           </NextIntlClientProvider>
         </ThemeProvider>
       </body>

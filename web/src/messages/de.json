@@ -156,6 +156,9 @@
       "bestAsset": "Bestes Vermögen",
       "usd": "USD"
     },
+    "chart": {
+      "title": "Portfoliowert"
+    },
     "assets": {
       "title": "Vermögenswerte",
       "asset": "Vermögenswert",
