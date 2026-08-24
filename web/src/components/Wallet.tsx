@@ -14,8 +14,9 @@
 
 import React, { useEffect, useState } from 'react';
 import { useTranslations } from 'next-intl';
+import { useRouter } from 'next/navigation';
 import { useWeb3, useFormatAddress } from '@/hooks/useWeb3';
-import { ChevronDown, LogOut, Wallet as WalletIcon, AlertCircle } from 'lucide-react';
+import { ChevronDown, LogOut, Wallet as WalletIcon, AlertCircle, BarChart3 } from 'lucide-react';
 
 interface WalletProps {
   className?: string;
@@ -31,6 +32,7 @@ const NETWORKS = [
 
 export function Wallet({ className = '' }: Readonly<WalletProps>) {
   const t = useTranslations('wallet');
+  const router = useRouter();
   const [state, actions] = useWeb3();
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isCopied, setIsCopied] = useState(false);
@@ -57,6 +59,11 @@ export function Wallet({ className = '' }: Readonly<WalletProps>) {
 
   const handleSwitchNetwork = async (chainId: number) => {
     await actions.switchNetwork(chainId);
+    setIsDropdownOpen(false);
+  };
+
+  const handleViewPortfolio = () => {
+    router.push('/en/dashboard');
     setIsDropdownOpen(false);
   };
 
@@ -162,6 +169,16 @@ export function Wallet({ className = '' }: Readonly<WalletProps>) {
               </div>
             </div>
           )}
+
+          {/* View Portfolio Button */}
+          <button
+            type="button"
+            onClick={handleViewPortfolio}
+            className="flex w-full items-center justify-center gap-2 border-b border-border p-4 text-sm font-medium text-accent transition-colors hover:bg-accent/5"
+          >
+            <BarChart3 className="h-4 w-4" />
+            View Portfolio
+          </button>
 
           {/* Disconnect Button */}
           <button
