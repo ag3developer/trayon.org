@@ -132,6 +132,60 @@
       "general": { "label": "一般联系方式", "value": "contact@trayon.org" }
     }
   },
+  "dashboard": {
+    "connect": {
+      "title": "您的投资组合",
+      "description": "连接您的钱包以访问您的投资组合、跟踪资产并无缝跨链转账代币。",
+      "button": "连接钱包",
+      "supportedWallets": "支持 MetaMask 或 WalletConnect",
+      "features": {
+        "portfolio": "投资组合",
+        "assets": "资产",
+        "bridge": "跨链转账"
+      }
+    },
+    "header": {
+      "portfolio": "投资组合",
+      "account": "账户",
+      "refresh": "刷新",
+      "refreshing": "刷新中..."
+    },
+    "stats": {
+      "totalValue": "总价值",
+      "change24h": "24小时变化",
+      "bestAsset": "最佳资产",
+      "usd": "USD"
+    },
+    "assets": {
+      "title": "资产",
+      "asset": "资产",
+      "balance": "余额",
+      "value": "价值",
+      "change24h": "24小时变化",
+      "noAssets": "未找到资产"
+    },
+    "wallet": {
+      "title": "钱包信息",
+      "nativeBalance": "原生余额",
+      "network": "网络",
+      "chainId": "链 ID",
+      "connected": "已连接"
+    },    "quickActions": {
+      "title": "快速操作",
+      "send": "发送",
+      "sendDesc": "将代币发送到另一个地址",
+      "bridge": "跨链",
+      "bridgeDesc": "在链间传输代币",
+      "swap": "交换",
+      "swapDesc": "即时交换代币",
+      "info": "直接从您的投资组合执行交易"
+    },    "errors": {
+      "loadingFailed": "投资组合加载失败",
+      "tryAgain": "重试"
+    },
+    "loading": "加载投资组合中...",
+    "notConnected": "钱包未连接"
+  },
   "footer": {
     "description": "Trayon Protocol 是一种去中心化的数据完整性基础设施，结合区块链结算与 AI 驱动的验证。",
     "columns": {

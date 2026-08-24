@@ -131,8 +131,62 @@
       "developers": { "label": "Technique / développeurs", "value": "github.com/trayon-protocol" },
       "general": { "label": "Contact général", "value": "contact@trayon.org" }
     }
-  },
-  "footer": {
+  },  "dashboard": {
+    "connect": {
+      "title": "Votre Portefeuille",
+      "description": "Connectez votre portefeuille pour accéder à votre portefeuille, suivre les actifs et faire un bridge de tokens en toute transparence.",
+      "button": "Connecter le Portefeuille",
+      "supportedWallets": "MetaMask ou WalletConnect supportés",
+      "features": {
+        "portfolio": "Portefeuille",
+        "assets": "Actifs",
+        "bridge": "Bridge"
+      }
+    },
+    "header": {
+      "portfolio": "Portefeuille",
+      "account": "Compte",
+      "refresh": "Actualiser",
+      "refreshing": "Actualisation..."
+    },
+    "stats": {
+      "totalValue": "Valeur Totale",
+      "change24h": "Changement 24h",
+      "bestAsset": "Meilleur Actif",
+      "usd": "USD"
+    },
+    "assets": {
+      "title": "Actifs",
+      "asset": "Actif",
+      "balance": "Solde",
+      "value": "Valeur",
+      "change24h": "Changement 24h",
+      "noAssets": "Aucun actif trouvé"
+    },
+    "wallet": {
+      "title": "Informations du Portefeuille",
+      "nativeBalance": "Solde Natif",
+      "network": "Réseau",
+      "chainId": "ID de Chaîne",
+      "connected": "Connecté"
+    },
+    "quickActions": {
+      "title": "Actions Rapides",
+      "send": "Envoyer",
+      "sendDesc": "Envoyer des tokens à une autre adresse",
+      "bridge": "Bridge",
+      "bridgeDesc": "Transférer des tokens entre chaînes",
+      "swap": "Échanger",
+      "swapDesc": "Échanger des tokens instantanément",
+      "info": "Exécutez des transactions directement depuis votre portefeuille"
+    },
+    "errors": {
+      "loadingFailed": "Erreur lors du chargement du portefeuille",
+      "tryAgain": "Réessayer"
+    },
+    "loading": "Chargement du portefeuille...",
+    "notConnected": "Portefeuille non connecté"
+  },  "footer": {
     "description": "Trayon Protocol est une infrastructure décentralisée d'intégrité des données combinant règlement blockchain et validation pilotée par IA.",
     "columns": {
       "protocol": { "title": "Protocole", "architecture": "Architecture", "token": "Jeton", "roadmap": "Feuille de Route" },

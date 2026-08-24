@@ -131,8 +131,62 @@
       "developers": { "label": "Técnico / desenvolvedores", "value": "github.com/trayon-protocol" },
       "general": { "label": "Contato geral", "value": "contact@trayon.org" }
     }
-  },
-  "footer": {
+  },  "dashboard": {
+    "connect": {
+      "title": "Seu Portfólio",
+      "description": "Conecte sua carteira para acessar seu portfólio, acompanhar ativos e fazer bridge de tokens perfeitamente.",
+      "button": "Conectar Carteira",
+      "supportedWallets": "MetaMask ou WalletConnect suportados",
+      "features": {
+        "portfolio": "Portfólio",
+        "assets": "Ativos",
+        "bridge": "Bridge"
+      }
+    },
+    "header": {
+      "portfolio": "Portfólio",
+      "account": "Conta",
+      "refresh": "Atualizar",
+      "refreshing": "Atualizando..."
+    },
+    "stats": {
+      "totalValue": "Valor Total",
+      "change24h": "Alteração 24h",
+      "bestAsset": "Melhor Ativo",
+      "usd": "USD"
+    },
+    "assets": {
+      "title": "Ativos",
+      "asset": "Ativo",
+      "balance": "Saldo",
+      "value": "Valor",
+      "change24h": "Alteração 24h",
+      "noAssets": "Nenhum ativo encontrado"
+    },
+    "wallet": {
+      "title": "Informações da Carteira",
+      "nativeBalance": "Saldo Nativo",
+      "network": "Rede",
+      "chainId": "ID da Chain",
+      "connected": "Conectado"
+    },
+    "quickActions": {
+      "title": "Ações Rápidas",
+      "send": "Enviar",
+      "sendDesc": "Enviar tokens para outro endereço",
+      "bridge": "Bridge",
+      "bridgeDesc": "Transferir tokens entre chains",
+      "swap": "Trocar",
+      "swapDesc": "Trocar tokens instantaneamente",
+      "info": "Execute transações diretamente do seu portfólio"
+    },
+    "errors": {
+      "loadingFailed": "Falha ao carregar portfólio",
+      "tryAgain": "Tentar novamente"
+    },
+    "loading": "Carregando portfólio...",
+    "notConnected": "Carteira não conectada"
+  },  "footer": {
     "description": "A Trayon Protocol é uma infraestrutura descentralizada de integridade de dados que combina liquidação em blockchain e validação orientada por IA.",
     "columns": {
       "protocol": { "title": "Protocolo", "architecture": "Arquitetura", "token": "Token", "roadmap": "Roadmap" },

@@ -132,6 +132,62 @@
       "general": { "label": "General contact", "value": "contact@trayon.org" }
     }
   },
+  "dashboard": {
+    "connect": {
+      "title": "Your Portfolio",
+      "description": "Connect your wallet to access your portfolio, track assets, and bridge tokens seamlessly.",
+      "button": "Connect Wallet",
+      "supportedWallets": "MetaMask or WalletConnect supported",
+      "features": {
+        "portfolio": "Portfolio",
+        "assets": "Assets",
+        "bridge": "Bridge"
+      }
+    },
+    "header": {
+      "portfolio": "Portfolio",
+      "account": "Account",
+      "refresh": "Refresh",
+      "refreshing": "Refreshing..."
+    },
+    "stats": {
+      "totalValue": "Total Value",
+      "change24h": "24h Change",
+      "bestAsset": "Best Asset",
+      "usd": "USD"
+    },
+    "assets": {
+      "title": "Assets",
+      "asset": "Asset",
+      "balance": "Balance",
+      "value": "Value",
+      "change24h": "Change 24h",
+      "noAssets": "No assets found"
+    },
+    "wallet": {
+      "title": "Wallet Info",
+      "nativeBalance": "Native Balance",
+      "network": "Network",
+      "chainId": "Chain ID",
+      "connected": "Connected"
+    },
+    "quickActions": {
+      "title": "Quick Actions",
+      "send": "Send",
+      "sendDesc": "Send tokens to another address",
+      "bridge": "Bridge",
+      "bridgeDesc": "Bridge tokens across chains",
+      "swap": "Swap",
+      "swapDesc": "Swap tokens instantly",
+      "info": "Execute transactions directly from your portfolio"
+    },
+    "errors": {
+      "loadingFailed": "Failed to load portfolio",
+      "tryAgain": "Try again"
+    },
+    "loading": "Loading portfolio...",
+    "notConnected": "Wallet not connected"
+  },
   "footer": {
     "description": "Trayon Protocol is a decentralized data-integrity infrastructure combining blockchain settlement and AI-driven validation.",
     "columns": {

@@ -131,8 +131,60 @@
       "developers": { "label": "Técnico / desarrolladores", "value": "github.com/trayon-protocol" },
       "general": { "label": "Contacto general", "value": "contact@trayon.org" }
     }
-  },
-  "footer": {
+  },  "dashboard": {
+    "connect": {
+      "title": "Tu Portafolio",
+      "description": "Conecta tu billetera para acceder a tu portafolio, rastrear activos y hacer bridge de tokens sin problemas.",
+      "button": "Conectar Billetera",
+      "supportedWallets": "MetaMask o WalletConnect soportados",
+      "features": {
+        "portfolio": "Portafolio",
+        "assets": "Activos",
+        "bridge": "Bridge"
+      }
+    },
+    "header": {
+      "portfolio": "Portafolio",
+      "account": "Cuenta",
+      "refresh": "Actualizar",
+      "refreshing": "Actualizando..."
+    },
+    "stats": {
+      "totalValue": "Valor Total",
+      "change24h": "Cambio 24h",
+      "bestAsset": "Mejor Activo",
+      "usd": "USD"
+    },
+    "assets": {
+      "title": "Activos",
+      "asset": "Activo",
+      "balance": "Saldo",
+      "value": "Valor",
+      "change24h": "Cambio 24h",
+      "noAssets": "No se encontraron activos"
+    },
+    "wallet": {
+      "title": "Información de la Billetera",
+      "nativeBalance": "Saldo Nativo",
+      "network": "Red",
+      "chainId": "ID de Cadena",
+      "connected": "Conectado"
+    },    "quickActions": {
+      "title": "Acciones Rápidas",
+      "send": "Enviar",
+      "sendDesc": "Enviar tokens a otra dirección",
+      "bridge": "Bridge",
+      "bridgeDesc": "Transferir tokens entre cadenas",
+      "swap": "Intercambiar",
+      "swapDesc": "Intercambiar tokens al instante",
+      "info": "Ejecute transacciones directamente desde su cartera"
+    },    "errors": {
+      "loadingFailed": "Error al cargar portafolio",
+      "tryAgain": "Intentar de nuevo"
+    },
+    "loading": "Cargando portafolio...",
+    "notConnected": "Billetera no conectada"
+  },  "footer": {
     "description": "Trayon Protocol es una infraestructura descentralizada de integridad de datos que combina liquidación en blockchain y validación impulsada por IA.",
     "columns": {
       "protocol": { "title": "Protocolo", "architecture": "Arquitectura", "token": "Token", "roadmap": "Hoja de Ruta" },

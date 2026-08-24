@@ -132,6 +132,62 @@
       "general": { "label": "Allgemeiner Kontakt", "value": "contact@trayon.org" }
     }
   },
+  "dashboard": {
+    "connect": {
+      "title": "Ihr Portfolio",
+      "description": "Verbinden Sie Ihre Geldbörse, um auf Ihr Portfolio zuzugreifen, Vermögenswerte zu verfolgen und Token nahtlos zu überbrücken.",
+      "button": "Geldbörse Verbinden",
+      "supportedWallets": "MetaMask oder WalletConnect werden unterstützt",
+      "features": {
+        "portfolio": "Portfolio",
+        "assets": "Vermögenswerte",
+        "bridge": "Bridge"
+      }
+    },
+    "header": {
+      "portfolio": "Portfolio",
+      "account": "Konto",
+      "refresh": "Aktualisieren",
+      "refreshing": "Wird aktualisiert..."
+    },
+    "stats": {
+      "totalValue": "Gesamtwert",
+      "change24h": "Änderung 24h",
+      "bestAsset": "Bestes Vermögen",
+      "usd": "USD"
+    },
+    "assets": {
+      "title": "Vermögenswerte",
+      "asset": "Vermögenswert",
+      "balance": "Bilanz",
+      "value": "Wert",
+      "change24h": "Änderung 24h",
+      "noAssets": "Keine Vermögenswerte gefunden"
+    },
+    "wallet": {
+      "title": "Geldbörsen-Informationen",
+      "nativeBalance": "Natürlicher Bestand",
+      "network": "Netzwerk",
+      "chainId": "Ketten-ID",
+      "connected": "Verbunden"
+    },
+    "quickActions": {
+      "title": "Schnellaktionen",
+      "send": "Senden",
+      "sendDesc": "Token an eine andere Adresse senden",
+      "bridge": "Brücke",
+      "bridgeDesc": "Token zwischen Ketten übertragen",
+      "swap": "Tauschen",
+      "swapDesc": "Token sofort tauschen",
+      "info": "Führen Sie Transaktionen direkt aus Ihrem Portfolio aus"
+    },
+    "errors": {
+      "loadingFailed": "Fehler beim Laden des Portfolios",
+      "tryAgain": "Versuchen Sie es erneut"
+    },
+    "loading": "Portfolio wird geladen...",
+    "notConnected": "Geldbörse nicht verbunden"
+  },
   "footer": {
     "description": "Trayon Protocol ist eine dezentrale Infrastruktur für Datenintegrität, die Blockchain-Abrechnung mit KI-gesteuerter Validierung kombiniert.",
     "columns": {

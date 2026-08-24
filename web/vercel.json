@@ -1,0 +1,30 @@
+{
+  "buildCommand": "npm run build",
+  "installCommand": "npm install",
+  "outputDirectory": ".next",
+  "framework": "nextjs",
+  "nodeVersion": "22.x",
+  "env": {
+    "NEXT_PUBLIC_API_URL": {
+      "description": "API base URL",
+      "default": "http://localhost:8000"
+    },
+    "NEXT_PUBLIC_CHAIN_ID": {
+      "description": "Ethereum chain ID",
+      "default": "11155111"
+    },
+    "NEXT_PUBLIC_ETHEREUM_RPC_URL": {
+      "description": "Ethereum RPC endpoint",
+      "default": "https://sepolia.infura.io/v3/YOUR_INFURA_KEY"
+    },
+    "NEXT_PUBLIC_BRIDGE_CONTRACT": {
+      "description": "Bridge contract address",
+      "default": "0x0000000000000000000000000000000000000000"
+    }
+  },
+  "domains": [
+    "trayon.org",
+    "www.trayon.org",
+    "app.trayon.org"
+  ]
+}

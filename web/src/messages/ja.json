@@ -132,6 +132,60 @@
       "general": { "label": "一般のお問い合わせ", "value": "contact@trayon.org" }
     }
   },
+  "dashboard": {
+    "connect": {
+      "title": "ポートフォリオ",
+      "description": "ウォレットを接続して、ポートフォリオにアクセスし、資産を追跡し、トークンをシームレスにブリッジします。",
+      "button": "ウォレットを接続",
+      "supportedWallets": "MetaMask または WalletConnect に対応",
+      "features": {
+        "portfolio": "ポートフォリオ",
+        "assets": "資産",
+        "bridge": "ブリッジ"
+      }
+    },
+    "header": {
+      "portfolio": "ポートフォリオ",
+      "account": "アカウント",
+      "refresh": "更新",
+      "refreshing": "更新中..."
+    },
+    "stats": {
+      "totalValue": "総価値",
+      "change24h": "24時間の変化",
+      "bestAsset": "最高の資産",
+      "usd": "USD"
+    },
+    "assets": {
+      "title": "資産",
+      "asset": "資産",
+      "balance": "残高",
+      "value": "価値",
+      "change24h": "24時間の変化",
+      "noAssets": "資産が見つかりません"
+    },
+    "wallet": {
+      "title": "ウォレット情報",
+      "nativeBalance": "ネイティブ残高",
+      "network": "ネットワーク",
+      "chainId": "チェーン ID",
+      "connected": "接続済み"
+    },    "quickActions": {
+      "title": "クイックアクション",
+      "send": "送信",
+      "sendDesc": "別のアドレスにトークンを送信",
+      "bridge": "ブリッジ",
+      "bridgeDesc": "チェーン間でトークンを転送",
+      "swap": "スワップ",
+      "swapDesc": "トークンを即座にスワップ",
+      "info": "ポートフォリオから直接トランザクションを実行"
+    },    "errors": {
+      "loadingFailed": "ポートフォリオの読み込みに失敗しました",
+      "tryAgain": "もう一度試す"
+    },
+    "loading": "ポートフォリオを読み込み中...",
+    "notConnected": "ウォレットが接続されていません"
+  },
   "footer": {
     "description": "Trayon Protocolは、ブロックチェーン決済とAI駆動の検証を組み合わせた分散型データ完全性基盤です。",
     "columns": {
