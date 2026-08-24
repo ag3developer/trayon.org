@@ -30,6 +30,17 @@ const NETWORKS = [
   { name: 'Arbitrum', chainId: 42161 },
 ] as const;
 
+// Native currency symbol for each supported chain — Polygon's native
+// token is MATIC/POL, not ETH, so the balance label must follow the
+// connected network instead of always showing "ETH".
+const NATIVE_CURRENCY: { [chainId: number]: string } = {
+  1: 'ETH',
+  11155111: 'ETH',
+  137: 'POL',
+  80001: 'MATIC',
+  42161: 'ETH',
+};
+
 export function Wallet({ className = '' }: Readonly<WalletProps>) {
   const t = useTranslations('wallet');
   const router = useRouter();
@@ -146,7 +157,7 @@ export function Wallet({ className = '' }: Readonly<WalletProps>) {
             <div className="border-b border-border p-4">
               <p className="mb-1 text-xs text-muted">{t('balance')}</p>
               <p className="text-lg font-semibold text-foreground">
-                {Number(state.balance).toFixed(4)} ETH
+                {Number(state.balance).toFixed(4)} {NATIVE_CURRENCY[state.chainId ?? 1] ?? 'ETH'}
               </p>
             </div>
           )}

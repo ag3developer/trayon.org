@@ -19,7 +19,7 @@ const chainNames: { [key: number]: string } = {
 
 const chainSymbols: { [key: number]: string } = {
   1: 'ETH',
-  137: 'MATIC',
+  137: 'POL',
   43114: 'AVAX',
   250: 'FTM',
 };
