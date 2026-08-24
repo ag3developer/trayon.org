@@ -9,10 +9,17 @@ const intlMiddleware = createMiddleware(routing);
 // e.g. https://docs.trayon.org/tokenomics -> internally /docs/tokenomics
 const DOCS_HOSTS = ["docs.trayon.org", "docs.trayonorg.vercel.app"];
 
+// Hosts that should serve the dashboard app directly at the root path,
+// e.g. https://app.trayon.org/ -> internally /en/dashboard
+const APP_HOSTS = ["app.trayon.org", "app.trayonorg.vercel.app"];
+
 export default function middleware(request: NextRequest) {
   const hostname = request.headers.get("host") ?? "";
   const isDocsHost = DOCS_HOSTS.some(
     (docsHost) => hostname === docsHost || hostname.startsWith(`${docsHost}:`)
+  );
+  const isAppHost = APP_HOSTS.some(
+    (appHost) => hostname === appHost || hostname.startsWith(`${appHost}:`)
   );
 
   if (isDocsHost) {
@@ -32,6 +39,23 @@ export default function middleware(request: NextRequest) {
   // outside the [locale] segment, so it must be excluded from i18n routing.
   if (request.nextUrl.pathname.startsWith("/docs")) {
     return NextResponse.next();
+  }
+
+  // On the app.trayon.org subdomain, send bare "/" or a bare locale root
+  // (e.g. "/en") straight into the dashboard instead of the marketing page.
+  if (isAppHost) {
+    const url = request.nextUrl.clone();
+    const localePattern = /^\/(en|pt|es|fr|de|zh|ja)\/?$/;
+    if (url.pathname === "/") {
+      url.pathname = "/en/dashboard";
+      return NextResponse.redirect(url);
+    }
+    if (localePattern.test(url.pathname)) {
+      const locale = url.pathname.split("/")[1];
+      url.pathname = `/${locale}/dashboard`;
+      return NextResponse.redirect(url);
+    }
+    return intlMiddleware(request);
   }
 
   // Redirect bare "/" to the default locale on the main marketing site.
