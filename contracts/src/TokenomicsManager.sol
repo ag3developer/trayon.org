@@ -8,7 +8,7 @@ import {ReentrancyGuard} from "openzeppelin/security/ReentrancyGuard.sol";
 /**
  * @title TokenomicsManager
  * @notice Gerencia distribuição de tokens, vesting e fee collection
- * @dev Implementação completa conforme: https://localhost:3000/docs/tokenomics
+ * @dev Implementação completa conforme: https://docs.trayon.org/tokenomics
  * 
  * Responsabilidades:
  * 1. Controlar vesting de tokens (4 anos para dev team)

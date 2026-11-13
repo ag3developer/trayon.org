@@ -463,7 +463,8 @@ artillery run load-test.yml
 - [Frontend README](./web/README.md)
 - [Python AI-Engine](./services/ai-engine/README.md)
 - [Testing Guide](./TESTING_GUIDE.md)
-- [Deployment Guide](./docs/PASSO_3_TESTING_DEPLOYMENT.md)
+- [Deployment Guide (Vercel)](./DEPLOY_GUIDE.md)
+- [Project Status](./STATUS.md)
 
 ---
 
