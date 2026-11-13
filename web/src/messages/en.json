@@ -103,24 +103,35 @@
   "token": {
     "eyebrow": "TRAY Token",
     "title": "Economics designed for long-term network security",
-    "description": "TRAY is the native gas and staking token securing the Trayon network, with a fixed 1B supply and a deflationary fee-burn mechanism.",
+    "description": "TRAY is the Trayon network token: today an ERC-20 on Polygon with a hard cap of 21,000,000, planned to become the native gas and staking token of the Trayon chain through a 1:1 migration.",
     "facts": {
-      "supply": { "label": "Total supply", "value": "1,000,000,000 TRAY" },
-      "stake": { "label": "Minimum stake", "value": "32,000 TRAY" },
-      "burn": { "label": "Fee burn", "value": "20% of gas fees" },
-      "governance": { "label": "Governance", "value": "Quadratic voting" }
+      "supply": { "label": "Total supply (hard cap)", "value": "21,000,000 TRAY" },
+      "network": { "label": "Network today", "value": "Polygon · ERC-20" },
+      "stake": { "label": "Validator stake (planned)", "value": "32,000 TRAY" },
+      "burn": { "label": "Fee burn (planned)", "value": "20% of gas fees" }
     },
-    "allocationTitle": "Initial supply allocation",
+    "allocationTitle": "Current on-chain distribution",
     "utilityTitle": "What TRAY actually pays for",
     "utility": {
-      "gas": { "title": "Native gas token", "description": "Every Layer 2 transaction fee is paid directly in TRAY — no separate gas asset required." },
+      "gas": { "title": "Native gas token (planned)", "description": "When the Trayon chain launches, every transaction fee will be paid in TRAY, migrated 1:1 from the Polygon contract." },
       "staking": { "title": "Validator staking", "description": "Running a validator locks a minimum of 32,000 TRAY, aligning long-term incentives with network security." },
       "marketplace": { "title": "Data marketplace access", "description": "Enterprises and governments spend TRAY to query audited datasets and analytical reports." },
       "governance": { "title": "Quadratic governance", "description": "Protocol votes use quadratic weighting, preventing whale-dominated decision-making." }
     },
     "burnTitle": "Deflationary by design",
-    "burnDescription": "20% of every transaction fee is permanently burned, creating deflationary pressure that scales with real network usage — not speculation.",
-    "ctaLabel": "View full tokenomics"
+    "burnDescription": "Planned for the Trayon chain: 20% of every transaction fee is permanently burned, creating deflationary pressure that scales with real network usage — not speculation.",
+    "ctaLabel": "View full tokenomics",
+    "contract": {
+      "title": "Official TRAY contract",
+      "decimals": "{n} decimals",
+      "copy": "Copy",
+      "copied": "Copied",
+      "explorer": "Polygonscan",
+      "addToWallet": "Add to MetaMask",
+      "noWallet": "No browser wallet detected. Add the address manually in your wallet.",
+      "walletError": "The wallet did not add the token. You can add the address manually.",
+      "warning": "This is the only official TRAY contract. Other tokens using the TRAY name — including 1-billion-supply versions — are not official. Always check the address before buying or receiving TRAY."
+    }
   },
   "contact": {
     "eyebrow": "Get in Touch",
@@ -242,8 +253,8 @@
         "nav": "TRAY Tokenomics",
         "title": "4. TRAY Tokenomics",
         "body": [
-          "TRAY is the native token securing the Trayon network — designed as infrastructure cost, not speculation. Total supply is fixed at 1,000,000,000 TRAY, with 25% released at launch and the remainder unlocked over validator rewards, ecosystem growth, and long-term treasury schedules.",
-          "TRAY has three core utilities: it is the native gas token for all Layer 2 transactions; it is the staking asset required to run a validator (32,000 TRAY minimum); and it is the governance asset used in quadratic voting, which prevents whale-dominated decision-making.",
+          "TRAY is the token of the Trayon network — designed as infrastructure cost, not speculation. Total supply is capped at 21,000,000 TRAY by the token contract itself. Today TRAY is an ERC-20 on Polygon; when the Trayon chain launches it is planned to become the native gas token through a 1:1 migration.",
+          "TRAY has three planned core utilities on the Trayon chain: native gas for all transactions; the staking asset required to run a validator (32,000 TRAY minimum); and the governance asset used in quadratic voting, which prevents whale-dominated decision-making.",
           "The network burns 20% of all gas fees collected, creating a deflationary pressure that scales with network usage rather than speculative activity."
         ]
       },

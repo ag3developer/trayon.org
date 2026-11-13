@@ -103,24 +103,35 @@
   "token": {
     "eyebrow": "TRAY 代币",
     "title": "为长期网络安全设计的经济模型",
-    "description": "TRAY 是保障 Trayon 网络安全的原生 gas 及抵押代币，总供应量固定为 10 亿枚，并采用通缩性手续费销毁机制。",
+    "description": "TRAY 是 Trayon 网络的代币：目前是 Polygon 上的 ERC-20 代币，总量上限为 21,000,000 枚，计划通过 1:1 迁移成为 Trayon 链的原生 gas 和质押代币。",
     "facts": {
-      "supply": { "label": "总供应量", "value": "1,000,000,000 TRAY" },
-      "stake": { "label": "最低抵押量", "value": "32,000 TRAY" },
-      "burn": { "label": "手续费销毁", "value": "gas 费用的 20%" },
-      "governance": { "label": "治理机制", "value": "二次方投票" }
+      "supply": { "label": "总供应量（上限）", "value": "21,000,000 TRAY" },
+      "network": { "label": "当前网络", "value": "Polygon · ERC-20" },
+      "stake": { "label": "验证节点质押（计划）", "value": "32,000 TRAY" },
+      "burn": { "label": "手续费销毁（计划）", "value": "gas 费的 20%" }
     },
-    "allocationTitle": "初始供应分配",
+    "allocationTitle": "当前链上分布",
     "utilityTitle": "TRAY 的实际用途",
     "utility": {
-      "gas": { "title": "原生 Gas 代币", "description": "Layer 2 上的每笔交易手续费都直接以 TRAY 支付，无需持有其他 Gas 资产。" },
+      "gas": { "title": "原生 gas 代币（计划）", "description": "Trayon 链上线后，每笔交易手续费都将以 TRAY 支付，并从 Polygon 合约 1:1 迁移。" },
       "staking": { "title": "验证节点抵押", "description": "运行验证节点需要锁定至少 32,000 TRAY，使长期激励与网络安全保持一致。" },
       "marketplace": { "title": "数据市场访问权限", "description": "企业和政府使用 TRAY 查询经审计的数据集和分析报告。" },
       "governance": { "title": "二次方治理投票", "description": "协议投票采用二次方加权机制，防止大户主导决策。" }
     },
     "burnTitle": "设计上的通缩机制",
-    "burnDescription": "每笔交易手续费的 20% 将被永久销毁，形成随网络真实使用量（而非投机）扩大的通缩压力。",
-    "ctaLabel": "查看完整代币经济学"
+    "burnDescription": "计划在 Trayon 链上实施：每笔交易手续费的 20% 将被永久销毁，形成随真实网络使用量增长的通缩压力——而非投机。",
+    "ctaLabel": "查看完整代币经济学",
+    "contract": {
+      "title": "TRAY 官方合约",
+      "decimals": "{n} 位小数",
+      "copy": "复制",
+      "copied": "已复制",
+      "explorer": "Polygonscan",
+      "addToWallet": "添加到 MetaMask",
+      "noWallet": "未检测到浏览器钱包。请在钱包中手动添加该地址。",
+      "walletError": "钱包未添加该代币。您可以手动添加地址。",
+      "warning": "这是唯一的 TRAY 官方合约。其他使用 TRAY 名称的代币（包括供应量为 10 亿的版本）均非官方。购买或接收 TRAY 前请务必核对地址。"
+    }
   },
   "contact": {
     "eyebrow": "联系我们",
@@ -240,8 +251,8 @@
         "nav": "TRAY 代币经济学",
         "title": "4. TRAY 代币经济学",
         "body": [
-          "TRAY 是保障 Trayon 网络安全的原生代币——它被设计为基础设施成本，而非投机工具。总供应量固定为 10 亿枚 TRAY，其中 25% 在上线时释放，其余部分按验证节点奖励、生态系统发展以及长期财库计划逐步解锁。",
-          "TRAY 具备三大核心用途：它是所有 Layer 2 交易的原生 gas 代币；它是运行验证节点所需的质押资产（最低 32,000 TRAY）；它亦是用于二次方投票治理的治理代币，可防止大额持有者主导决策。",
+          "TRAY 是 Trayon 网络的代币——定位为基础设施成本，而非投机工具。代币合约本身将总供应量上限设定为 21,000,000 枚 TRAY。目前 TRAY 是 Polygon 上的 ERC-20 代币；Trayon 链上线后，计划通过 1:1 迁移成为原生 gas 代币。",
+          "TRAY 在 Trayon 链上将具备三大核心用途：所有交易的原生 gas；运行验证节点所需的质押资产（最低 32,000 TRAY）；以及用于二次方投票的治理资产，可防止大户主导决策。",
           "网络将销毁所收取 gas 费用的 20%，产生一种随网络使用而非投机行为而扩展的通缩压力。"
         ]
       },

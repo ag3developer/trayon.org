@@ -12,6 +12,7 @@ import {
   Line,
   Rect,
 } from "@react-pdf/renderer";
+import { SNAPSHOT_DATE, TRAY_ALLOCATION, TRAY_TOKEN } from "../token";
 
 /* ------------------------------------------------------------------------ */
 /*  Design tokens                                                          */
@@ -35,7 +36,7 @@ const color = {
   white: "#ffffff",
 };
 
-const PIE_COLORS = [color.accent, color.violet, color.blue, color.gold, color.rose, "#f87171"];
+const PIE_COLORS = [color.accent, color.violet, color.blue, color.gold, color.rose, "#f87171", color.muted];
 
 const styles = StyleSheet.create({
   page: {
@@ -429,14 +430,8 @@ interface WhitepaperDocumentProps {
   logoMark?: string;
 }
 
-const TOKEN_ALLOCATION = [
-  { key: "launch", pct: 25 },
-  { key: "treasury", pct: 25 },
-  { key: "validators", pct: 20 },
-  { key: "team", pct: 15 },
-  { key: "partnerships", pct: 10 },
-  { key: "reserve", pct: 5 },
-] as const;
+// On-chain distribution of the 21M TRAY supply (shared with the website).
+const TOKEN_ALLOCATION = TRAY_ALLOCATION.map((r) => ({ key: r.key, pct: r.pct }));
 
 const ROADMAP_PHASES = [
   { period: "Q3–Q4 2026", key: "testnet" },
@@ -573,26 +568,27 @@ const dictionaries: Record<Locale, any> = {
       eyebrow: "07 — TRAY Tokenomics",
       title: "Economics designed for long-term network security",
       intro:
-        "TRAY is the native token securing the Trayon network — engineered as an infrastructure cost, not a speculative instrument. Total supply is fixed at 1,000,000,000 TRAY, with 25% released at launch and the remainder unlocked across validator rewards, ecosystem growth, and long-term treasury schedules.",
+        `TRAY is the token of the Trayon network — engineered as an infrastructure cost, not a speculative instrument. Total supply is capped at 21,000,000 TRAY by the token contract itself. Today TRAY is an ERC-20 on Polygon PoS (official contract ${TRAY_TOKEN.address}); when the Trayon chain launches it is planned to become the native gas token through a 1:1 migration.`,
       facts: [
-        { value: "1B TRAY", label: "Total supply" },
-        { value: "250M TRAY", label: "Initial circulating (25%)" },
-        { value: "32,000 TRAY", label: "Minimum validator stake" },
-        { value: "20%", label: "Gas fee burn rate" },
+        { value: "21M TRAY", label: "Total supply (hard cap)" },
+        { value: "Polygon", label: "Network today (ERC-20)" },
+        { value: "32,000 TRAY", label: "Validator stake (planned)" },
+        { value: "20%", label: "Gas fee burn (planned)" },
       ],
-      allocationTitle: "Initial supply allocation — 1,000,000,000 TRAY",
+      allocationTitle: `On-chain distribution — 21,000,000 TRAY (snapshot ${SNAPSHOT_DATE})`,
       allocation: [
-        { key: "launch", label: "Initial Launch (IDO / Private)", detail: "100M private round · 100M public sale · 50M liquidity pools" },
-        { key: "treasury", label: "DAO Treasury (Governance)", detail: "Future development, growth incentives, emergency fund" },
-        { key: "validators", label: "Validators & Operators", detail: "100M rewards (years 1–5) · 50M initial incentives · 50M security fund" },
-        { key: "team", label: "Development Team", detail: "50M founders · 50M engineering · 50M research & security (4-yr vesting)" },
-        { key: "partnerships", label: "Partnerships & Integrations", detail: "50M exchanges/market makers · 25M API integrations · 25M gov/corporate" },
-        { key: "reserve", label: "Strategic Reserve", detail: "Emergency volatility buffer, security forks, extraordinary DAO decisions" },
+        { key: "treasury", label: "Treasury", detail: "Funding development, listings, and the public sale" },
+        { key: "staking", label: "Staking rewards", detail: "Rewards pool for TRAY staking plans" },
+        { key: "liquidity", label: "Liquidity", detail: "Reserved for DEX liquidity (TRAY/USDT)" },
+        { key: "timelock", label: "Timelock reserve", detail: "Released only through time-delayed proposals" },
+        { key: "vesting", label: "Vesting", detail: "Locked allocations released on a vesting schedule" },
+        { key: "ecosystem", label: "Ecosystem distribution", detail: "Partnerships, integrations, and community distribution" },
+        { key: "circulating", label: "Circulating (holders)", detail: "Held by community wallets" },
       ],
-      utilitiesTitle: "Token utility",
+      utilitiesTitle: "Token utility (planned on the Trayon chain)",
       utilities: [
-        { title: "Native gas token", body: "All Layer 2 transaction fees are paid in TRAY, removing the need to hold a separate gas asset." },
-        { title: "Validator staking", body: "Operating a validator requires locking 32,000 TRAY, aligning incentives with network security." },
+        { title: "Native gas token", body: "Planned: all Trayon chain transaction fees paid in TRAY, migrated 1:1 from the Polygon contract." },
+        { title: "Validator staking", body: "Planned: operating a validator requires locking 32,000 TRAY, aligning incentives with network security." },
         { title: "Data marketplace access", body: "Enterprises and agencies spend TRAY to query audited datasets and analytical reports." },
         { title: "Quadratic governance", body: "Protocol votes use quadratic weighting, preventing whale-dominated decision-making." },
       ],
@@ -771,26 +767,27 @@ const dictionaries: Record<Locale, any> = {
       eyebrow: "07 — Tokenomics do TRAY",
       title: "Economia desenhada para segurança de rede de longo prazo",
       intro:
-        "O TRAY é o token nativo que garante a segurança da rede Trayon — concebido como custo de infraestrutura, e não como instrumento especulativo. O fornecimento total é fixo em 1.000.000.000 de TRAY, com 25% liberado no lançamento e o restante distribuído entre recompensas de validadores, crescimento do ecossistema e tesouraria de longo prazo.",
+        `O TRAY é o token da rede Trayon — concebido como custo de infraestrutura, e não como instrumento especulativo. O fornecimento total é limitado a 21.000.000 de TRAY pelo próprio contrato. Hoje o TRAY é um ERC-20 na Polygon PoS (contrato oficial ${TRAY_TOKEN.address}); quando a chain Trayon for lançada, está planejado que ele se torne o token nativo de gas por meio de uma migração 1:1.`,
       facts: [
-        { value: "1B TRAY", label: "Fornecimento total" },
-        { value: "250M TRAY", label: "Circulante inicial (25%)" },
-        { value: "32.000 TRAY", label: "Stake mínimo de validador" },
-        { value: "20%", label: "Taxa de queima de gas" },
+        { value: "21M TRAY", label: "Fornecimento total (teto)" },
+        { value: "Polygon", label: "Rede atual (ERC-20)" },
+        { value: "32.000 TRAY", label: "Stake de validador (planejado)" },
+        { value: "20%", label: "Queima de gas (planejada)" },
       ],
-      allocationTitle: "Alocação do fornecimento inicial — 1.000.000.000 TRAY",
+      allocationTitle: `Distribuição on-chain — 21.000.000 TRAY (posição em ${SNAPSHOT_DATE})`,
       allocation: [
-        { key: "launch", label: "Lançamento Inicial (IDO / Private)", detail: "100M rodada privada · 100M venda pública · 50M pools de liquidez" },
-        { key: "treasury", label: "Tesouro DAO (Governança)", detail: "Desenvolvimento futuro, incentivos de crescimento, fundo de emergência" },
-        { key: "validators", label: "Validadores & Operadores", detail: "100M recompensas (anos 1–5) · 50M incentivos iniciais · 50M fundo de segurança" },
-        { key: "team", label: "Time de Desenvolvimento", detail: "50M fundadores · 50M engenharia · 50M pesquisa & segurança (vesting de 4 anos)" },
-        { key: "partnerships", label: "Parcerias & Integrações", detail: "50M exchanges/market makers · 25M integrações de API · 25M governo/corporativo" },
-        { key: "reserve", label: "Reserva Estratégica", detail: "Buffer de volatilidade, forks de segurança, decisões extraordinárias da DAO" },
+        { key: "treasury", label: "Tesouraria", detail: "Financia desenvolvimento, listagens e a venda pública" },
+        { key: "staking", label: "Recompensas de staking", detail: "Fundo de recompensas dos planos de staking do TRAY" },
+        { key: "liquidity", label: "Liquidez", detail: "Reservado para liquidez em DEX (TRAY/USDT)" },
+        { key: "timelock", label: "Reserva com timelock", detail: "Liberada apenas por propostas com prazo de espera" },
+        { key: "vesting", label: "Vesting", detail: "Alocações bloqueadas, liberadas por cronograma de vesting" },
+        { key: "ecosystem", label: "Distribuição do ecossistema", detail: "Parcerias, integrações e distribuição à comunidade" },
+        { key: "circulating", label: "Em circulação (holders)", detail: "Em carteiras da comunidade" },
       ],
-      utilitiesTitle: "Utilidade do token",
+      utilitiesTitle: "Utilidade do token (planejada na chain Trayon)",
       utilities: [
-        { title: "Token de gas nativo", body: "Todas as taxas de transação na Layer 2 são pagas em TRAY, eliminando a necessidade de outro ativo de gas." },
-        { title: "Staking de validadores", body: "Operar um validador exige o bloqueio de 32.000 TRAY, alinhando incentivos à segurança da rede." },
+        { title: "Token de gas nativo", body: "Planejado: todas as taxas da chain Trayon pagas em TRAY, migrado 1:1 do contrato na Polygon." },
+        { title: "Staking de validadores", body: "Planejado: operar um validador exige o bloqueio de 32.000 TRAY, alinhando incentivos à segurança da rede." },
         { title: "Acesso ao marketplace de dados", body: "Empresas e órgãos gastam TRAY para consultar datasets auditados e relatórios analíticos." },
         { title: "Governança quadrática", body: "As votações do protocolo usam peso quadrático, evitando decisões dominadas por grandes detentores." },
       ],

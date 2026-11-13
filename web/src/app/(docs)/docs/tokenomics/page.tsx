@@ -1,15 +1,22 @@
 import type { Metadata } from "next";
 import { DocsShell } from "@/components/docs/DocsShell";
-import {
-  SupplyDistributionChart,
-  EmissionTimelineChart,
-  FeeBurnProjectionChart,
-} from "@/components/docs/charts";
+import { SupplyDistributionChart } from "@/components/docs/charts";
+import { SNAPSHOT_DATE, TRAY_ALLOCATION, TRAY_TOKEN, shortAddress } from "@/lib/token";
 
 export const metadata: Metadata = {
   title: "TRAY Tokenomics",
   description:
-    "TRAY token supply, distribution, staking requirements, fee burn mechanics, real-world use cases, and governance model.",
+    "TRAY token supply (21,000,000 hard cap), official contract on Polygon, on-chain distribution, planned utility, and migration to the native Trayon chain.",
+};
+
+const CATEGORY_DETAIL: Record<string, string> = {
+  treasury: "Project treasury: funding development, listings, and the public sale",
+  staking: "Rewards pool for TRAY staking plans",
+  liquidity: "Reserved for DEX liquidity (TRAY/USDT)",
+  timelock: "Reserve released only through time-delayed proposals",
+  vesting: "Locked allocations released on a vesting schedule",
+  ecosystem: "Partnerships, integrations, and community distribution",
+  circulating: "Held by community wallets",
 };
 
 export default function TokenomicsPage() {
@@ -17,9 +24,45 @@ export default function TokenomicsPage() {
     <DocsShell currentHref="/docs/tokenomics">
       <h1>TRAY Tokenomics</h1>
       <p>
-        TRAY is the native token securing the Trayon network. It is
-        designed as infrastructure cost, not speculation, with a fixed
-        total supply and utility tied directly to network usage.
+        TRAY is the token of the Trayon network. Today it is an ERC-20 on
+        Polygon PoS with a hard cap of <strong>21,000,000 TRAY</strong>,
+        enforced by the token contract itself. When the Trayon chain
+        launches, TRAY is planned to become its native gas and staking
+        token through a 1:1 migration.
+      </p>
+
+      <h2 id="official-contract">Official contract</h2>
+      <table>
+        <tbody>
+          <tr>
+            <td>Address</td>
+            <td>
+              <a href={TRAY_TOKEN.explorerUrl} target="_blank" rel="noopener noreferrer">
+                <code>{TRAY_TOKEN.address}</code>
+              </a>
+            </td>
+          </tr>
+          <tr>
+            <td>Network</td>
+            <td>{TRAY_TOKEN.network} (chain ID {TRAY_TOKEN.chainId})</td>
+          </tr>
+          <tr>
+            <td>Name / symbol</td>
+            <td>
+              {TRAY_TOKEN.name} / {TRAY_TOKEN.symbol}
+            </td>
+          </tr>
+          <tr>
+            <td>Decimals</td>
+            <td>{TRAY_TOKEN.decimals}</td>
+          </tr>
+        </tbody>
+      </table>
+      <p>
+        <strong>This is the only official TRAY contract.</strong> Other
+        tokens using the TRAY name — including versions with a
+        1,000,000,000 supply — are not official. Always check the address
+        before buying or receiving TRAY.
       </p>
 
       <h2 id="supply">Supply</h2>
@@ -33,15 +76,11 @@ export default function TokenomicsPage() {
         <tbody>
           <tr>
             <td>Token standard</td>
-            <td>ERC-20 (L1) + native gas token (L2)</td>
+            <td>ERC-20 on Polygon PoS today · native gas token on the Trayon chain (planned, 1:1 migration)</td>
           </tr>
           <tr>
             <td>Total supply</td>
-            <td>1,000,000,000 TRAY</td>
-          </tr>
-          <tr>
-            <td>Initial circulating supply</td>
-            <td>250,000,000 TRAY (25%)</td>
+            <td>21,000,000 TRAY (hard cap — <code>MAX_SUPPLY</code> in the contract)</td>
           </tr>
           <tr>
             <td>Decimals</td>
@@ -52,131 +91,115 @@ export default function TokenomicsPage() {
 
       <SupplyDistributionChart />
 
-      <h3 id="allocation-breakdown">Initial allocation breakdown</h3>
+      <h3 id="allocation-breakdown">Distribution breakdown</h3>
+      <p>
+        Balances read directly from the blockchain on {SNAPSHOT_DATE}. Each
+        category is held by its own contract, so anyone can verify it on
+        Polygonscan.
+      </p>
       <table>
         <thead>
           <tr>
             <th>Category</th>
             <th>Amount</th>
-            <th>Detail</th>
+            <th>Held by</th>
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>Initial Launch (IDO/Private)</td>
-            <td>250M (25%)</td>
-            <td>100M private round · 100M public sale · 50M liquidity pools</td>
-          </tr>
-          <tr>
-            <td>DAO Treasury</td>
-            <td>250M (25%)</td>
-            <td>Future development, growth incentives, emergency fund</td>
-          </tr>
-          <tr>
-            <td>Validators &amp; Operators</td>
-            <td>200M (20%)</td>
-            <td>100M rewards (years 1–5) · 50M initial incentives · 50M security fund</td>
-          </tr>
-          <tr>
-            <td>Development Team</td>
-            <td>150M (15%)</td>
-            <td>50M founders · 50M engineering · 50M research &amp; security (4-yr vesting)</td>
-          </tr>
-          <tr>
-            <td>Partnerships &amp; Integrations</td>
-            <td>100M (10%)</td>
-            <td>50M exchanges/market makers · 25M API integrations · 25M gov/corporate</td>
-          </tr>
-          <tr>
-            <td>Strategic Reserve</td>
-            <td>50M (5%)</td>
-            <td>Emergency volatility buffer, security forks, extraordinary DAO decisions</td>
-          </tr>
+          {TRAY_ALLOCATION.map((row) => (
+            <tr key={row.key}>
+              <td>
+                {row.name}
+                <br />
+                <small>{CATEGORY_DETAIL[row.key]}</small>
+              </td>
+              <td>
+                {row.amount.toLocaleString("en-US")} ({row.pct}%)
+              </td>
+              <td>
+                {row.holder ? (
+                  <a href={`https://polygonscan.com/address/${row.holder}`} target="_blank" rel="noopener noreferrer">
+                    <code>{shortAddress(row.holder)}</code>
+                  </a>
+                ) : (
+                  "—"
+                )}
+              </td>
+            </tr>
+          ))}
         </tbody>
       </table>
-
-      <h3 id="unlock-schedule">Unlock schedule (2026–2031)</h3>
-      <EmissionTimelineChart />
+      <p>
+        A detailed release and vesting schedule for these allocations will
+        be published before the public sale.
+      </p>
 
       <h2 id="utility">Utility</h2>
+      <p>
+        The utilities below describe TRAY on the Trayon chain. They are{" "}
+        <strong>planned</strong> and become active as each part of the
+        network launches.
+      </p>
       <ul>
         <li>
-          <strong>Gas</strong> — TRAY is the native gas token for every
-          Layer 2 transaction; there is no need to hold ETH to interact
-          with the network.
+          <strong>Gas (planned)</strong> — TRAY will be the native gas token
+          for every transaction on the Trayon chain; there will be no need to
+          hold another asset to interact with the network.
         </li>
         <li>
-          <strong>Staking</strong> — running a validator requires a minimum
-          stake of 32,000 TRAY, locked and subject to slashing.
+          <strong>Validator staking (planned)</strong> — running a validator
+          will require a minimum stake of 32,000 TRAY, locked and subject to
+          slashing.
         </li>
         <li>
-          <strong>Data marketplace access</strong> — enterprises and
-          government agencies spend TRAY to query audited datasets and
-          analytical reports (see <a href="#use-cases">Real-world use
-          cases</a> below).
+          <strong>Data marketplace access (planned)</strong> — enterprises
+          and government agencies will spend TRAY to query audited datasets
+          and analytical reports.
         </li>
         <li>
-          <strong>Governance</strong> — protocol parameters are governed
-          through quadratic voting, where vote cost scales with the square
-          of voting power to reduce whale dominance.
+          <strong>Governance (planned)</strong> — protocol parameters will
+          be governed through quadratic voting, where vote cost scales with
+          the square of voting power to reduce whale dominance.
         </li>
       </ul>
 
       <h2 id="use-cases">Real-world use cases</h2>
       <p>
-        Beyond gas and staking, TRAY is consumed directly by enterprises
-        and governments paying for verified data access — this is the
-        demand side that drives the fee-burn engine described below.
+        Beyond gas and staking, TRAY is designed to be consumed directly by
+        enterprises and governments paying for verified data access. Prices
+        will be set when the data marketplace launches.
       </p>
+      <ul>
+        <li>
+          <strong>Corporate balance-sheet queries</strong> — recurring
+          monthly access to verified financial data.
+        </li>
+        <li>
+          <strong>Government procurement audits</strong> — on-demand full
+          audits of public spending.
+        </li>
+        <li>
+          <strong>Predictive analytics reports</strong> — weekly reports for
+          subscribing companies.
+        </li>
+      </ul>
 
-      <h3 id="use-case-corporate">Corporate balance-sheet queries</h3>
-      <pre>
-        <code>{`Price:      1,000 TRAY per access
-Frequency:  Monthly
-Annual cost: 12,000 TRAY per subscribing company
-Impact:      Continuous, predictable demand`}</code>
-      </pre>
-
-      <h3 id="use-case-government">Government procurement audits</h3>
-      <pre>
-        <code>{`Price:      50,000 TRAY per full audit
-Frequency:  On demand
-Example:    1,000 audits/year → 50M TRAY in query volume
-Impact:      Large, discrete burn events`}</code>
-      </pre>
-
-      <h3 id="use-case-predictive">Predictive analytics reports</h3>
-      <pre>
-        <code>{`Price:      5,000 TRAY per report
-Frequency:  Weekly
-Subscribers: 100 companies → 26M TRAY/year
-Impact:      Recurring revenue for the data marketplace`}</code>
-      </pre>
-
-      <h2 id="deflation">Fee burn &amp; deflation</h2>
+      <h2 id="deflation">Fee burn &amp; deflation (planned)</h2>
       <p>
-        Every transaction fee is split three ways: <strong>70%</strong> to
-        validators (rewards), <strong>20%</strong> permanently burned via{" "}
-        <code>TrayonToken.burn()</code>, and <strong>10%</strong> to the
-        DAO treasury. Slashed stake is also burned rather than
-        redistributed. This creates deflationary pressure that scales with
+        On the Trayon chain, every transaction fee is planned to be split
+        three ways: <strong>70%</strong> to validators (rewards),{" "}
+        <strong>20%</strong> permanently burned, and <strong>10%</strong> to
+        the treasury. Slashed stake is also burned rather than
+        redistributed, creating deflationary pressure that scales with
         actual network usage rather than speculative activity.
       </p>
-      <pre>
-        <code>{`getDeflationPercentage() = (TOTAL_SUPPLY - totalSupply()) / TOTAL_SUPPLY * 100`}</code>
-      </pre>
 
-      <FeeBurnProjectionChart />
-
-      <h2 id="staking-rewards">Staking rewards</h2>
+      <h2 id="migration">Migration to the native chain</h2>
       <p>
-        Validators earn block rewards for honest participation, in
-        addition to a share of network fees. Rewards accrue continuously
-        and are reduced proportionally to any active slashing penalties.
-        See <a href="/docs/validators">Running a Validator</a> for setup
-        and expected yield ranges, and{" "}
-        <a href="/docs/economic-projections">Economic Projections</a> for
-        conservative/base/optimistic demand scenarios through 2031.
+        When the Trayon chain launches, TRAY on Polygon is planned to be
+        exchangeable 1:1 for native TRAY. The migration process and its
+        timeline will be announced on this page and on the official
+        channels before it starts.
       </p>
     </DocsShell>
   );

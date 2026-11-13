@@ -7,15 +7,16 @@ import { SectionHeader } from "./SectionHeader";
 import { StaggerGrid, StaggerItem } from "./StaggerGrid";
 import { RevealOnScroll } from "./RevealOnScroll";
 import { TokenAllocationChart, TOKEN_ALLOCATION } from "./TokenAllocationChart";
+import { OfficialContract } from "./OfficialContract";
 import { useChartColors } from "./docs/charts/useChartColors";
 
-const ALLOCATION_COLOR_KEYS = ["accent", "violet", "blue", "gold", "rose", "signal"] as const;
+const ALLOCATION_COLOR_KEYS = ["accent", "violet", "blue", "gold", "rose", "signal", "muted"] as const;
 
 const FACTS = [
   { key: "supply", iconKey: "coins" },
+  { key: "network", iconKey: "databaseZap" },
   { key: "stake", iconKey: "lock" },
   { key: "burn", iconKey: "flame" },
-  { key: "governance", iconKey: "vote" },
 ] as const;
 
 const UTILITY = [
@@ -58,6 +59,8 @@ export function Token() {
             );
           })}
         </StaggerGrid>
+
+        <OfficialContract />
 
         <div className="mt-10 grid grid-cols-1 gap-6 lg:mt-14 lg:grid-cols-[1.1fr_1fr]">
           {/* Allocation donut + breakdown table */}

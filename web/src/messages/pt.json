@@ -103,24 +103,35 @@
   "token": {
     "eyebrow": "Token TRAY",
     "title": "Economia desenhada para segurança de rede de longo prazo",
-    "description": "O TRAY é o token nativo de gas e staking que garante a segurança da rede Trayon, com fornecimento fixo de 1 bilhão e mecanismo deflacionário de queima de taxas.",
+    "description": "O TRAY é o token da rede Trayon: hoje um ERC-20 na Polygon com teto de 21.000.000, planejado para se tornar o token nativo de gas e staking da chain Trayon por meio de uma migração 1:1.",
     "facts": {
-      "supply": { "label": "Fornecimento total", "value": "1.000.000.000 TRAY" },
-      "stake": { "label": "Stake mínimo", "value": "32.000 TRAY" },
-      "burn": { "label": "Queima de taxas", "value": "20% das taxas de gas" },
-      "governance": { "label": "Governança", "value": "Votação quadrática" }
+      "supply": { "label": "Fornecimento total (teto)", "value": "21.000.000 TRAY" },
+      "network": { "label": "Rede atual", "value": "Polygon · ERC-20" },
+      "stake": { "label": "Stake de validador (planejado)", "value": "32.000 TRAY" },
+      "burn": { "label": "Queima de taxas (planejada)", "value": "20% das taxas de gas" }
     },
-    "allocationTitle": "Alocação do fornecimento inicial",
+    "allocationTitle": "Distribuição atual on-chain",
     "utilityTitle": "Para que o TRAY é usado na prática",
     "utility": {
-      "gas": { "title": "Token de gas nativo", "description": "Toda taxa de transação na Layer 2 é paga diretamente em TRAY — sem necessidade de outro ativo de gas." },
+      "gas": { "title": "Token de gas nativo (planejado)", "description": "Quando a chain Trayon for lançada, toda taxa de transação será paga em TRAY, migrado 1:1 do contrato na Polygon." },
       "staking": { "title": "Staking de validadores", "description": "Operar um validador exige o bloqueio de no mínimo 32.000 TRAY, alinhando incentivos de longo prazo à segurança da rede." },
       "marketplace": { "title": "Acesso ao marketplace de dados", "description": "Empresas e governos gastam TRAY para consultar datasets auditados e relatórios analíticos." },
       "governance": { "title": "Governança quadrática", "description": "As votações do protocolo usam peso quadrático, evitando decisões dominadas por grandes detentores." }
     },
     "burnTitle": "Deflacionário por design",
-    "burnDescription": "20% de cada taxa de transação é permanentemente queimado, criando uma pressão deflacionária que escala com o uso real da rede — não com especulação.",
-    "ctaLabel": "Ver tokenomics completo"
+    "burnDescription": "Planejado para a chain Trayon: 20% de cada taxa de transação é permanentemente queimado, criando uma pressão deflacionária que escala com o uso real da rede — não com especulação.",
+    "ctaLabel": "Ver tokenomics completo",
+    "contract": {
+      "title": "Contrato oficial do TRAY",
+      "decimals": "{n} casas decimais",
+      "copy": "Copiar",
+      "copied": "Copiado",
+      "explorer": "Polygonscan",
+      "addToWallet": "Adicionar à MetaMask",
+      "noWallet": "Nenhuma carteira detectada no navegador. Adicione o endereço manualmente na sua carteira.",
+      "walletError": "A carteira não adicionou o token. Você pode adicionar o endereço manualmente.",
+      "warning": "Este é o único contrato oficial do TRAY. Outros tokens com o nome TRAY — inclusive versões com fornecimento de 1 bilhão — não são oficiais. Confira sempre o endereço antes de comprar ou receber TRAY."
+    }
   },
   "contact": {
     "eyebrow": "Fale Conosco",
@@ -240,8 +251,8 @@
         "nav": "Tokenomics do TRAY",
         "title": "4. Tokenomics do TRAY",
         "body": [
-          "O TRAY é o token nativo que garante a segurança da rede Trayon — concebido como custo de infraestrutura, não especulação. O fornecimento total é fixo em 1.000.000.000 de TRAY, com 25% liberado no lançamento e o restante desbloqueado ao longo de cronogramas de recompensas a validadores, crescimento do ecossistema e tesouraria de longo prazo.",
-          "O TRAY tem três utilidades principais: é o token nativo de gas para todas as transações na Layer 2; é o ativo de stake exigido para operar um validador (mínimo de 32.000 TRAY); e é o ativo de governança usado em votação quadrática, que impede decisões dominadas por grandes detentores.",
+          "O TRAY é o token da rede Trayon — concebido como custo de infraestrutura, não especulação. O fornecimento total é limitado a 21.000.000 de TRAY pelo próprio contrato. Hoje o TRAY é um ERC-20 na Polygon; quando a chain Trayon for lançada, está planejado que ele se torne o token nativo de gas por meio de uma migração 1:1.",
+          "O TRAY terá três utilidades principais na chain Trayon: gas nativo para todas as transações; ativo de staking exigido para operar um validador (mínimo de 32.000 TRAY); e ativo de governança usado na votação quadrática, que evita decisões dominadas por grandes detentores.",
           "A rede queima 20% de todas as taxas de gas coletadas, criando uma pressão deflacionária que escala com o uso da rede, e não com atividade especulativa."
         ]
       },

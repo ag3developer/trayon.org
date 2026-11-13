@@ -103,24 +103,35 @@
   "token": {
     "eyebrow": "Jeton TRAY",
     "title": "Une économie conçue pour la sécurité du réseau à long terme",
-    "description": "TRAY est le jeton natif de gas et de staking sécurisant le réseau Trayon, avec une offre fixe de 1 milliard et un mécanisme déflationniste de destruction des frais.",
+    "description": "TRAY est le jeton du réseau Trayon : aujourd'hui un ERC-20 sur Polygon plafonné à 21 000 000, destiné à devenir le jeton natif de gas et de staking de la chaîne Trayon via une migration 1:1.",
     "facts": {
-      "supply": { "label": "Offre totale", "value": "1 000 000 000 TRAY" },
-      "stake": { "label": "Stake minimum", "value": "32 000 TRAY" },
-      "burn": { "label": "Destruction des frais", "value": "20 % des frais de gas" },
-      "governance": { "label": "Gouvernance", "value": "Vote quadratique" }
+      "supply": { "label": "Offre totale (plafond)", "value": "21 000 000 TRAY" },
+      "network": { "label": "Réseau actuel", "value": "Polygon · ERC-20" },
+      "stake": { "label": "Stake validateur (prévu)", "value": "32 000 TRAY" },
+      "burn": { "label": "Burn des frais (prévu)", "value": "20 % des frais de gas" }
     },
-    "allocationTitle": "Répartition de l'offre initiale",
+    "allocationTitle": "Répartition actuelle on-chain",
     "utilityTitle": "À quoi sert vraiment le TRAY",
     "utility": {
-      "gas": { "title": "Jeton de gas natif", "description": "Chaque frais de transaction sur la Layer 2 est payé directement en TRAY, sans nécessiter un autre actif de gas." },
+      "gas": { "title": "Jeton de gas natif (prévu)", "description": "Au lancement de la chaîne Trayon, chaque frais de transaction sera payé en TRAY, migré 1:1 depuis le contrat Polygon." },
       "staking": { "title": "Staking des validateurs", "description": "Faire fonctionner un validateur nécessite de bloquer au moins 32 000 TRAY, alignant les incitations à long terme avec la sécurité du réseau." },
       "marketplace": { "title": "Accès au marché des données", "description": "Les entreprises et les gouvernements dépensent des TRAY pour consulter des jeux de données audités et des rapports analytiques." },
       "governance": { "title": "Gouvernance quadratique", "description": "Les votes du protocole utilisent une pondération quadratique, empêchant les décisions dominées par les gros détenteurs." }
     },
     "burnTitle": "Déflationniste par conception",
-    "burnDescription": "20 % de chaque frais de transaction est définitivement détruit, créant une pression déflationniste qui évolue avec l'usage réel du réseau, et non avec la spéculation.",
-    "ctaLabel": "Voir la tokenomics complète"
+    "burnDescription": "Prévu pour la chaîne Trayon : 20 % de chaque frais de transaction est brûlé définitivement, créant une pression déflationniste proportionnelle à l'usage réel du réseau — pas à la spéculation.",
+    "ctaLabel": "Voir la tokenomics complète",
+    "contract": {
+      "title": "Contrat officiel TRAY",
+      "decimals": "{n} décimales",
+      "copy": "Copier",
+      "copied": "Copié",
+      "explorer": "Polygonscan",
+      "addToWallet": "Ajouter à MetaMask",
+      "noWallet": "Aucun portefeuille détecté dans le navigateur. Ajoutez l'adresse manuellement dans votre portefeuille.",
+      "walletError": "Le portefeuille n'a pas ajouté le jeton. Vous pouvez ajouter l'adresse manuellement.",
+      "warning": "Ceci est le seul contrat officiel TRAY. Les autres jetons portant le nom TRAY — y compris les versions à 1 milliard d'unités — ne sont pas officiels. Vérifiez toujours l'adresse avant d'acheter ou de recevoir du TRAY."
+    }
   },
   "contact": {
     "eyebrow": "Contactez-nous",
@@ -240,8 +251,8 @@
         "nav": "Tokenomics du TRAY",
         "title": "4. Tokenomics du TRAY",
         "body": [
-          "TRAY est le jeton natif qui sécurise le réseau Trayon — conçu comme un coût d'infrastructure, non comme une spéculation. L'offre totale est fixée à 1 000 000 000 de TRAY, avec 25 % libérés au lancement et le reste débloqué via des calendriers de récompenses aux validateurs, de croissance de l'écosystème et de trésorerie à long terme.",
-          "TRAY a trois utilités principales : c'est le jeton de gas natif pour toutes les transactions sur la Layer 2 ; c'est l'actif de staking requis pour exploiter un validateur (minimum 32 000 TRAY) ; et c'est l'actif de gouvernance utilisé dans le vote quadratique, qui empêche les décisions dominées par les gros détenteurs.",
+          "TRAY est le jeton du réseau Trayon — conçu comme un coût d'infrastructure, non comme un instrument spéculatif. L'offre totale est plafonnée à 21 000 000 TRAY par le contrat lui-même. Aujourd'hui, TRAY est un ERC-20 sur Polygon ; au lancement de la chaîne Trayon, il est prévu qu'il devienne le jeton natif de gas via une migration 1:1.",
+          "TRAY aura trois usages principaux sur la chaîne Trayon : le gas natif de toutes les transactions ; l'actif de staking requis pour exploiter un validateur (minimum 32 000 TRAY) ; et l'actif de gouvernance utilisé pour le vote quadratique, qui empêche les décisions dominées par les gros détenteurs.",
           "Le réseau brûle 20 % de tous les frais de gas collectés, créant une pression déflationniste qui évolue avec l'utilisation du réseau plutôt qu'avec l'activité spéculative."
         ]
       },

@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
 import { DocsShell } from "@/components/docs/DocsShell";
+import { TRAY_TOKEN } from "@/lib/token";
 
 export const metadata: Metadata = {
   title: "Smart Contracts",
   description:
-    "Reference for the core Trayon smart contracts: TrayonToken, ValidatorRegistry, and TrayonOracle.",
+    "Reference for the core Trayon smart contracts: the TRAY token, ValidatorRegistry, and TrayonOracle.",
 };
 
 export default function SmartContractsPage() {
@@ -18,21 +19,24 @@ export default function SmartContractsPage() {
         implementations and tests.
       </p>
 
-      <h2 id="trayon-token">TrayonToken.sol</h2>
+      <h2 id="trayon-token">TRAYONToken.sol</h2>
       <p>
-        The native ERC-20 gas and staking token. Total supply is fixed at
-        launch; the sequencer burns TRAY to pay for gas, and 20% of all
-        collected fees are permanently burned.
+        The TRAY token deployed today on Polygon PoS at{" "}
+        <a href={TRAY_TOKEN.explorerUrl} target="_blank" rel="noopener noreferrer">
+          <code>{TRAY_TOKEN.address}</code>
+        </a>{" "}
+        (source verified on Polygonscan). Supply is hard-capped at 21,000,000
+        TRAY. When the Trayon chain launches, TRAY is planned to become its
+        native gas token through a 1:1 migration.
       </p>
       <pre>
-        <code>{`contract TrayonToken is ERC20, Ownable {
-    uint256 public constant TOTAL_SUPPLY = 1_000_000_000 * 10**18;
-    uint256 public constant BURN_RATE = 20; // percent of fees burned
+        <code>{`contract TRAYONToken is ERC20, Ownable {
+    uint256 public constant MAX_SUPPLY = 21_000_000 * 10**18;
+    bool public isFinalized;
 
-    function consumeGas(address user, uint256 amount) external;
+    function mint(address to, uint256 amount) public onlyOwner; // never above MAX_SUPPLY
     function burn(uint256 amount) public;
-    function getCurrentSupply() external view returns (uint256);
-    function getDeflationPercentage() external view returns (uint256);
+    function finalize() external onlyOwner; // permanently disables mint
 }`}</code>
       </pre>
 

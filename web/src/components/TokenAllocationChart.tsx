@@ -10,15 +10,9 @@ import {
 } from "recharts";
 import { useChartColors } from "./docs/charts/useChartColors";
 import { useIsMobile } from "./docs/charts/useIsMobile";
+import { TRAY_ALLOCATION } from "@/lib/token";
 
-const ALLOCATION = [
-  { name: "Initial Launch (IDO/Private)", value: 25, amount: "250M TRAY" },
-  { name: "DAO Treasury", value: 25, amount: "250M TRAY" },
-  { name: "Validators & Operators", value: 20, amount: "200M TRAY" },
-  { name: "Development Team", value: 15, amount: "150M TRAY" },
-  { name: "Partnerships & Integrations", value: 10, amount: "100M TRAY" },
-  { name: "Strategic Reserve", value: 5, amount: "50M TRAY" },
-] as const;
+const ALLOCATION = TRAY_ALLOCATION.map((r) => ({ name: r.name, value: r.pct, amount: r.label }));
 
 /**
  * Compact TRAY supply-allocation donut for the landing page's Token
@@ -31,7 +25,7 @@ const ALLOCATION = [
 export function TokenAllocationChart() {
   const c = useChartColors();
   const isMobile = useIsMobile();
-  const colors = [c.accent, c.violet, c.blue, c.gold, c.rose, c.signal];
+  const colors = [c.accent, c.violet, c.blue, c.gold, c.rose, c.signal, c.muted];
   const outerRadius = isMobile ? 100 : 110;
 
   const renderPercentLabel = ({ cx, cy, midAngle, outerRadius: r, percent }: PieLabelRenderProps) => {

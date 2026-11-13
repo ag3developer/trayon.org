@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { DocsShell } from "@/components/docs/DocsShell";
 import { ValidatorGrowthChart } from "@/components/docs/charts";
 import { MainSiteLink } from "@/components/docs/MainSiteLink";
@@ -13,6 +14,14 @@ export default function EconomicProjectionsPage() {
   return (
     <DocsShell currentHref="/docs/economic-projections">
       <h1>Economic Projections</h1>
+      <blockquote>
+        <strong>Being recalculated.</strong> The scenarios below were modeled
+        for an earlier design with a 1,000,000,000 TRAY supply. The official
+        TRAY supply is now 21,000,000 (see{" "}
+        <Link href="/docs/tokenomics">TRAY Tokenomics</Link>), and these
+        projections will be updated accordingly. Treat the figures as
+        illustrative of growth dynamics only.
+      </blockquote>
       <p>
         The figures below model how TRAY price, market cap, and network
         usage could evolve depending on adoption speed. They are{" "}
@@ -20,8 +29,9 @@ export default function EconomicProjectionsPage() {
         results depend on validator onboarding, enterprise adoption of the
         oracle, and broader market conditions. All three scenarios share
         the same tokenomics rules described in{" "}
-        <a href="/docs/tokenomics">TRAY Tokenomics</a>: fixed 1B supply,
-        20% fee burn, and 32,000 TRAY minimum validator stake.
+        <a href="/docs/tokenomics">TRAY Tokenomics</a> as originally
+        modeled: fixed supply, 20% fee burn, and 32,000 TRAY minimum
+        validator stake.
       </p>
 
       <h2 id="methodology">Methodology</h2>

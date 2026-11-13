@@ -11,15 +11,9 @@ import {
 } from "recharts";
 import { useChartColors } from "./useChartColors";
 import { useIsMobile } from "./useIsMobile";
+import { SNAPSHOT_DATE, TRAY_ALLOCATION } from "@/lib/token";
 
-const ALLOCATION = [
-  { name: "Initial Launch (IDO/Private)", value: 25, amount: "250M TRAY" },
-  { name: "DAO Treasury", value: 25, amount: "250M TRAY" },
-  { name: "Validators & Operators", value: 20, amount: "200M TRAY" },
-  { name: "Development Team", value: 15, amount: "150M TRAY" },
-  { name: "Partnerships & Integrations", value: 10, amount: "100M TRAY" },
-  { name: "Strategic Reserve", value: 5, amount: "50M TRAY" },
-] as const;
+const ALLOCATION = TRAY_ALLOCATION.map((r) => ({ name: r.name, value: r.pct, amount: r.label }));
 
 /**
  * Donut chart used on the /docs/tokenomics page. Draws the percentage
@@ -31,7 +25,7 @@ const ALLOCATION = [
 export function SupplyDistributionChart() {
   const c = useChartColors();
   const isMobile = useIsMobile();
-  const colors = [c.accent, c.violet, c.blue, c.gold, c.rose, c.signal];
+  const colors = [c.accent, c.violet, c.blue, c.gold, c.rose, c.signal, c.muted];
   const outerRadius = isMobile ? 90 : 100;
 
   const renderPercentLabel = ({ cx, cy, midAngle, outerRadius: r, percent }: PieLabelRenderProps) => {
@@ -127,9 +121,10 @@ export function SupplyDistributionChart() {
       </table>
 
       <p className="docs-chart-caption">
-        Initial supply allocation — 1,000,000,000 TRAY total. See{" "}
-        <a href="#allocation-breakdown">Initial allocation breakdown</a> for
-        vesting and usage detail per category.
+        On-chain distribution of the 21,000,000 TRAY supply (snapshot{" "}
+        {SNAPSHOT_DATE}). See{" "}
+        <a href="#allocation-breakdown">Distribution breakdown</a> for the
+        contract holding each category.
       </p>
     </div>
   );
