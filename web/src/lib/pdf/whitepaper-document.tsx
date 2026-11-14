@@ -36,7 +36,7 @@ const color = {
   white: "#ffffff",
 };
 
-const PIE_COLORS = [color.accent, color.violet, color.blue, color.gold, color.rose, "#f87171", color.muted];
+const PIE_COLORS = [color.accent, color.violet, color.blue, color.gold, color.rose, "#f87171", color.mutedSoft, color.muted];
 
 const styles = StyleSheet.create({
   page: {
@@ -583,6 +583,7 @@ const dictionaries: Record<Locale, any> = {
         { key: "timelock", label: "Timelock reserve", detail: "Released only through time-delayed proposals" },
         { key: "vesting", label: "Vesting", detail: "Locked allocations released on a vesting schedule" },
         { key: "ecosystem", label: "Ecosystem distribution", detail: "Partnerships, integrations, and community distribution" },
+        { key: "referral", label: "Referral contract (locked)", detail: "Legacy referral registry with no function to move tokens" },
         { key: "circulating", label: "Circulating (holders)", detail: "Held by community wallets" },
       ],
       utilitiesTitle: "Token utility (planned on the Trayon chain)",
@@ -782,6 +783,7 @@ const dictionaries: Record<Locale, any> = {
         { key: "timelock", label: "Reserva com timelock", detail: "Liberada apenas por propostas com prazo de espera" },
         { key: "vesting", label: "Vesting", detail: "Alocações bloqueadas, liberadas por cronograma de vesting" },
         { key: "ecosystem", label: "Distribuição do ecossistema", detail: "Parcerias, integrações e distribuição à comunidade" },
+        { key: "referral", label: "Contrato de indicação (travado)", detail: "Registro antigo de indicações, sem função para mover tokens" },
         { key: "circulating", label: "Em circulação (holders)", detail: "Em carteiras da comunidade" },
       ],
       utilitiesTitle: "Utilidade do token (planejada na chain Trayon)",

@@ -41,6 +41,8 @@ const ROWS: AllocationRow[] = [
   { key: "timelock", name: "Timelock reserve", amount: 3_003_000, holder: "0xb202530e63a66b46625d5f96396Db09C2001707B" },
   { key: "vesting", name: "Vesting", amount: 2_940_000, holder: "0x2F972CA3e5dE50d9232bb6Ddab6365dfbd9E4AEd" },
   { key: "ecosystem", name: "Ecosystem distribution", amount: 2_457_000, holder: "0x85985ecfd13492bfb75d85Aa07015371e8d1Af44" },
+  // Referral registry funded in May 2025; the contract has no code path that can move tokens.
+  { key: "referral", name: "Referral contract (locked)", amount: 1_491_000, holder: "0x603091127e4c790917de64b5aaa260bdd3c2c0f9" },
 ];
 
 const allocated = ROWS.reduce((sum, r) => sum + r.amount, 0);

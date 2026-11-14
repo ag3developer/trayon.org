@@ -10,7 +10,7 @@ import { TokenAllocationChart, TOKEN_ALLOCATION } from "./TokenAllocationChart";
 import { OfficialContract } from "./OfficialContract";
 import { useChartColors } from "./docs/charts/useChartColors";
 
-const ALLOCATION_COLOR_KEYS = ["accent", "violet", "blue", "gold", "rose", "signal", "muted"] as const;
+const ALLOCATION_COLOR_KEYS = ["accent", "violet", "blue", "gold", "rose", "signal", "danger", "muted"] as const;
 
 const FACTS = [
   { key: "supply", iconKey: "coins" },

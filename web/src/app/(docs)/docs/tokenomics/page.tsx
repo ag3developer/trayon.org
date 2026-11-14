@@ -16,6 +16,7 @@ const CATEGORY_DETAIL: Record<string, string> = {
   timelock: "Reserve released only through time-delayed proposals",
   vesting: "Locked allocations released on a vesting schedule",
   ecosystem: "Partnerships, integrations, and community distribution",
+  referral: "Legacy referral registry; it has no function to move tokens, so this balance is effectively out of circulation",
   circulating: "Held by community wallets",
 };
 

@@ -25,7 +25,7 @@ const ALLOCATION = TRAY_ALLOCATION.map((r) => ({ name: r.name, value: r.pct, amo
 export function TokenAllocationChart() {
   const c = useChartColors();
   const isMobile = useIsMobile();
-  const colors = [c.accent, c.violet, c.blue, c.gold, c.rose, c.signal, c.muted];
+  const colors = [c.accent, c.violet, c.blue, c.gold, c.rose, c.signal, c.danger, c.muted];
   const outerRadius = isMobile ? 100 : 110;
 
   const renderPercentLabel = ({ cx, cy, midAngle, outerRadius: r, percent }: PieLabelRenderProps) => {
