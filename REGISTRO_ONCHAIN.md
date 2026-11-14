@@ -16,15 +16,57 @@ Cada linha tem endereço ou hash que qualquer pessoa pode abrir no Polygonscan.
 | Papel | Endereço | Observação |
 |---|---|---|
 | Carteira de deploy (dona de tudo abaixo) | [`0x9efFA566D5d2FF1bD1D3AC0902f19D72Fc2F0f0f`](https://polygonscan.com/address/0x9efFA566D5d2FF1bD1D3AC0902f19D72Fc2F0f0f) | É `owner` do TRAY v1, dos vaults e da BridgeL1. Saldo de TRAY v1: 0. **A chave dessa carteira esteve em texto puro em arquivos do projeto — trocar.** |
-| Dona do token antigo (TRAYON 21M) | [`0xd0c5ed74b306b504fa2a62ff62284ccbe6232ade`](https://polygonscan.com/address/0xd0c5ed74b306b504fa2a62ff62284ccbe6232ade) | Carteira diferente da de deploy. |
+| Dona do token antigo (TRAYON 21M) | [`0xd0c5ed74b306b504fa2a62ff62284ccbe6232ade`](https://polygonscan.com/address/0xd0c5ed74b306b504fa2a62ff62284ccbe6232ade) | Carteira do fundador. Recebeu a posse do token depois do hack da carteira original. |
+| ⛔ Carteira original (comprometida) | [`0x99e519c1Dff179011541907Ea3d81232d397aaF1`](https://polygonscan.com/address/0x99e519c1Dff179011541907Ea3d81232d397aaF1) | Criou o token de 21M e fez os deploys na Amoy. **Hackeada — nunca enviar nada para ela.** |
 
 ## Tokens
 
 | Token | Endereço | Supply hoje | Situação |
 |---|---|---|---|
-| **TRAY v1** (oficial) | [`0x424524F4012f32a8815f0cF37Eb8A3FCbF89260b`](https://polygonscan.com/token/0x424524F4012f32a8815f0cF37Eb8A3FCbF89260b) | 1.000.000.000 | Em uso. ERC-20 comum na Polygon PoS (o gas continua sendo POL). |
+| **TRAYON (TRAY) — OFICIAL** | [`0x6b62514E925099643abA13B322A62ff6298f8E8A`](https://polygonscan.com/token/0x6b62514E925099643abA13B322A62ff6298f8E8A) | 21.000.000 | **Token oficial do projeto** desde 13/11/2026 (teto fixo de 21M). Detalhes na seção abaixo. |
+| TRAY v1 (1B) | [`0x424524F4012f32a8815f0cF37Eb8A3FCbF89260b`](https://polygonscan.com/token/0x424524F4012f32a8815f0cF37Eb8A3FCbF89260b) | 1.000.000.000 | **Não oficial / descontinuado.** Distribuído nos 6 vaults abaixo; não deve ser vendido nem listado. |
 | TRAY v2 (duplicado) | [`0xA9308dfaDCCccbf744c08109b5949CAB5E5d6125`](https://polygonscan.com/token/0xA9308dfaDCCccbf744c08109b5949CAB5E5d6125) | 150.000.000 | **Descartado.** 850M queimados; os 150M restantes estão presos no TokenomicsManager abaixo. Não usar. |
-| TRAYON (TRAY) — token antigo | [`0x6b62514E925099643abA13B322A62ff6298f8E8A`](https://polygonscan.com/token/0x6b62514E925099643abA13B322A62ff6298f8E8A) | 19.103.129,36 | Contrato anterior (teto citado: 21.000.000). Não há plano de migração dos holders. |
+
+## Token oficial TRAYON (21M)
+
+- **Contrato:** `TRAYONToken`, código verificado no Polygonscan em 09/05/2025. ERC-20 simples, não atualizável, sem taxa, pausa ou lista negra.
+- **Deploy:** 10/05/2025, bloco 71.325.777. Os 21.000.000 foram criados de uma vez para a carteira original `0x99e5…aaF1`.
+- **Hack (23/08/2026):** a carteira original foi comprometida. O invasor levou 1.896.870,64 TRAY e todo saldo que chegava nela.
+- **Resposta (25/08/2026):** a posse do token foi passada para `0xd0c5…2ade` e os tokens em poder do invasor foram queimados com `burnFrom`.
+- **Resgate (13/11/2026):** a posse dos contratos que guardavam tokens foi retirada da carteira comprometida e passada para `0xd0c5…2ade` ([tx](https://polygonscan.com/tx/0x29554531d0686468979eb6eec83ea58a48880f03cc8d766089917120ef177cc1)).
+- **Reposição (13/11/2026):** os 1.896.870,64 TRAY queimados foram recriados na tesouraria ([tx](https://polygonscan.com/tx/0xc756957c5e8e1d12bf72fae9b583db000deac7c7acd2c616beb3da0cd6a2de85)). O supply voltou a 21.000.000.
+
+| Parâmetro (lido na blockchain) | Valor | O que significa |
+|---|---|---|
+| `MAX_SUPPLY` | 21.000.000 | Teto fixo no código. Nunca pode passar disso. |
+| `totalSupply` | 21.000.000 | Supply completo |
+| `owner` | `0xd0c5…2ade` | Carteira do fundador |
+| `isFinalized` | `false` | `finalize()` desativaria o `mint` para sempre. |
+| `burnFrom` | só o dono, **sem autorização do holder** | O dono pode queimar o saldo de qualquer endereço. Foi o que permitiu recuperar o controle no hack, mas exchanges e ferramentas de risco classificam isso como risco alto. Some com `renounceOwnership()`. |
+
+### Contratos que guardam TRAYON
+
+| Contrato | Endereço | Saldo | Dono hoje |
+|---|---|---|---|
+| Tesouraria (carteira) | `0xd0C5ED74b306b504Fa2A62Ff62284cCBE6232aDe` | 4.386.478,19 | — |
+| Staking | `0xCae7c27EfeA755f7671945Cd89A3bFC91d882ac5` | 3.507.000 | `0xd0c5` |
+| Liquidez | `0xd6f040cc6795E62fF75eD2dC9e4Da7a30016D18e` | 3.003.000 | `0xd0c5` |
+| Timelock | `0xb202530e63a66b46625d5f96396Db09C2001707B` | 3.003.000 | `0xd0c5` |
+| Vesting | `0x2F972CA3e5dE50d9232bb6Ddab6365dfbd9E4AEd` | 2.940.000 | `0xd0c5` |
+| Distribuidor | `0x85985ecfd13492bfb75d85Aa07015371e8d1Af44` | 2.457.000 | `0xd0c5` |
+| Indicação (referral) | `0x603091127e4c790917de64b5aaa260bdd3c2c0f9` | 1.491.000 | ⛔ carteira comprometida, mas **o contrato não tem função que mova tokens**: o saldo está travado |
+| Pool QuickSwap TRAY/USDT | `0x3e030feffd9f9a549f73b41c9530587735096348` | ~12 | — (liquidez quase nula) |
+
+Em circulação com holders: ~212.522 TRAY (1,01%) em ~65 endereços.
+
+### Contratos antigos — NÃO USAR
+
+| Contrato | Endereço | Situação |
+|---|---|---|
+| Pré-venda | `0x0c9C7433B3e6E9823F0c09A1531c25EAcf1f8ed3` | Vazia. O dono continua sendo a carteira comprometida (o contrato não permite trocar). **Nunca enviar tokens para ela.** |
+| Venda de tokens (mais antiga) | `0xc75ed5c54e7c57e51cb470487481f1889cca53ea` | Vazia. Dono: carteira comprometida. **Nunca enviar tokens para ela.** |
+
+**Decisões em aberto:** recuperar os 1,49M travados no referral (`burnFrom` + `mint`), finalizar o `mint`, passar a posse para um multisig e criar uma pré-venda nova.
 
 ## Contratos com fundos (TRAY v1)
 

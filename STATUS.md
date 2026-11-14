@@ -12,7 +12,7 @@ Plano e visão ficam em [`docs/visao/`](docs/visao/), não aqui.
 TRAY como **moeda nativa** (gas token) de uma **chain própria da Trayon**, construída com Polygon CDK, com oráculo de dados por IA.
 
 **Situação desse objetivo: não iniciado.** Não existe chain Trayon, nem configuração de CDK, nem nó rodando.
-O que existe é um token ERC-20 na Polygon PoS (onde o gas é pago em POL).
+O que existe é o token TRAYON (ERC-20, 21M) na Polygon PoS, onde o gas é pago em POL. A migração 1:1 para a moeda nativa está planejada.
 
 ---
 
@@ -20,8 +20,9 @@ O que existe é um token ERC-20 na Polygon PoS (onde o gas é pago em POL).
 
 | Item | Prova |
 |---|---|
-| ✅ Token TRAY v1 (1B) na Polygon mainnet | [REGISTRO_ONCHAIN.md](REGISTRO_ONCHAIN.md) |
-| ✅ 6 vaults com o 1B distribuído | [REGISTRO_ONCHAIN.md](REGISTRO_ONCHAIN.md) |
+| ✅ Token oficial TRAYON (21M) na Polygon mainnet, com posse e contratos retomados após o hack | [REGISTRO_ONCHAIN.md](REGISTRO_ONCHAIN.md) |
+| ✅ Site mostra o contrato oficial e a distribuição on-chain real | https://trayon.org/pt#token |
+| ⚠️ TRAY v1 (1B) e 6 vaults existem na mainnet, mas foram descontinuados | [REGISTRO_ONCHAIN.md](REGISTRO_ONCHAIN.md) |
 | ✅ BridgeL1 implantada (só o lado L1) | [REGISTRO_ONCHAIN.md](REGISTRO_ONCHAIN.md) |
 | ✅ Site, docs e whitepaper (7 idiomas) | https://trayon.org · https://docs.trayon.org |
 | ✅ Conectar MetaMask e ver saldo nativo | https://app.trayon.org |
