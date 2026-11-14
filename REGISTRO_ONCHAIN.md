@@ -48,13 +48,13 @@ Cada linha tem endereço ou hash que qualquer pessoa pode abrir no Polygonscan.
 
 | Contrato | Endereço | Saldo | Dono hoje |
 |---|---|---|---|
-| Tesouraria (carteira) | `0xd0C5ED74b306b504Fa2A62Ff62284cCBE6232aDe` | 4.386.478,19 | — |
+| Tesouraria (carteira) | `0xd0C5ED74b306b504Fa2A62Ff62284cCBE6232aDe` | 5.877.478,19 | — |
 | Staking | `0xCae7c27EfeA755f7671945Cd89A3bFC91d882ac5` | 3.507.000 | `0xd0c5` |
 | Liquidez | `0xd6f040cc6795E62fF75eD2dC9e4Da7a30016D18e` | 3.003.000 | `0xd0c5` |
 | Timelock | `0xb202530e63a66b46625d5f96396Db09C2001707B` | 3.003.000 | `0xd0c5` |
 | Vesting | `0x2F972CA3e5dE50d9232bb6Ddab6365dfbd9E4AEd` | 2.940.000 | `0xd0c5` |
 | Distribuidor | `0x85985ecfd13492bfb75d85Aa07015371e8d1Af44` | 2.457.000 | `0xd0c5` |
-| Indicação (referral) | `0x603091127e4c790917de64b5aaa260bdd3c2c0f9` | 1.491.000 | ⛔ carteira comprometida, mas **o contrato não tem função que mova tokens**: o saldo está travado |
+| Indicação (referral) | `0x603091127e4c790917de64b5aaa260bdd3c2c0f9` | 0 | ⛔ carteira comprometida. Os 1.491.000 que estavam travados aqui (o contrato não tem função para movê-los) foram queimados e recriados na tesouraria em 14/11/2026 ([queima](https://polygonscan.com/tx/0xccda6d3091545210607e5426c04f7008996b7b9c9254c564dba21640cb3a1452), [reposição](https://polygonscan.com/tx/0x797aef5c5c3bc9a23784394c6cb86595740dfef4cd05b4f97ed314dc13d77e7b)). |
 | Pool QuickSwap TRAY/USDT | `0x3e030feffd9f9a549f73b41c9530587735096348` | ~12 | — (liquidez quase nula) |
 
 Em circulação com holders: ~212.522 TRAY (1,01%) em ~65 endereços.
@@ -66,7 +66,7 @@ Em circulação com holders: ~212.522 TRAY (1,01%) em ~65 endereços.
 | Pré-venda | `0x0c9C7433B3e6E9823F0c09A1531c25EAcf1f8ed3` | Vazia. O dono continua sendo a carteira comprometida (o contrato não permite trocar). **Nunca enviar tokens para ela.** |
 | Venda de tokens (mais antiga) | `0xc75ed5c54e7c57e51cb470487481f1889cca53ea` | Vazia. Dono: carteira comprometida. **Nunca enviar tokens para ela.** |
 
-**Decisões em aberto:** recuperar os 1,49M travados no referral (`burnFrom` + `mint`), finalizar o `mint`, passar a posse para um multisig e criar uma pré-venda nova.
+**Decisões em aberto:** finalizar o `mint`, passar a posse para um multisig e criar uma pré-venda nova.
 
 ## Contratos com fundos (TRAY v1)
 

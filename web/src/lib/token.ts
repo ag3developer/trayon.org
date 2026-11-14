@@ -23,7 +23,7 @@ export const TRAY_TOKEN = {
   explorerUrl: "https://polygonscan.com/token/0x6b62514E925099643abA13B322A62ff6298f8E8A",
 } as const;
 
-export const SNAPSHOT_DATE = "2026-11-13";
+export const SNAPSHOT_DATE = "2026-11-14";
 
 export interface AllocationRow {
   key: string;
@@ -35,14 +35,12 @@ export interface AllocationRow {
 }
 
 const ROWS: AllocationRow[] = [
-  { key: "treasury", name: "Treasury", amount: 4_386_478, holder: "0xd0C5ED74b306b504Fa2A62Ff62284cCBE6232aDe" },
+  { key: "treasury", name: "Treasury", amount: 5_877_478, holder: "0xd0C5ED74b306b504Fa2A62Ff62284cCBE6232aDe" },
   { key: "staking", name: "Staking rewards", amount: 3_507_000, holder: "0xCae7c27EfeA755f7671945Cd89A3bFC91d882ac5" },
   { key: "liquidity", name: "Liquidity", amount: 3_003_000, holder: "0xd6f040cc6795E62fF75eD2dC9e4Da7a30016D18e" },
   { key: "timelock", name: "Timelock reserve", amount: 3_003_000, holder: "0xb202530e63a66b46625d5f96396Db09C2001707B" },
   { key: "vesting", name: "Vesting", amount: 2_940_000, holder: "0x2F972CA3e5dE50d9232bb6Ddab6365dfbd9E4AEd" },
   { key: "ecosystem", name: "Ecosystem distribution", amount: 2_457_000, holder: "0x85985ecfd13492bfb75d85Aa07015371e8d1Af44" },
-  // Referral registry funded in May 2025; the contract has no code path that can move tokens.
-  { key: "referral", name: "Referral contract (locked)", amount: 1_491_000, holder: "0x603091127e4c790917de64b5aaa260bdd3c2c0f9" },
 ];
 
 const allocated = ROWS.reduce((sum, r) => sum + r.amount, 0);
