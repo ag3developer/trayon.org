@@ -41,7 +41,7 @@ Cada linha tem endereço ou hash que qualquer pessoa pode abrir no Polygonscan.
 | `MAX_SUPPLY` | 21.000.000 | Teto fixo no código. Nunca pode passar disso. |
 | `totalSupply` | 21.000.000 | Supply completo |
 | `owner` | `0xd0c5…2ade` | Carteira do fundador |
-| `isFinalized` | `false` | `finalize()` desativaria o `mint` para sempre. |
+| `isFinalized` | **`true`** | `mint` **desativado para sempre** desde 14/11/2026 ([tx](https://polygonscan.com/tx/0x1a957f8b08b595469a882aa0ef3f6d71b64aadd6ad6b95579dd115b339d5eba0)). Nenhum TRAY novo pode ser criado. |
 | `burnFrom` | só o dono, **sem autorização do holder** | O dono pode queimar o saldo de qualquer endereço. Foi o que permitiu recuperar o controle no hack, mas exchanges e ferramentas de risco classificam isso como risco alto. Some com `renounceOwnership()`. |
 
 ### Contratos que guardam TRAYON
@@ -66,7 +66,7 @@ Em circulação com holders: ~212.522 TRAY (1,01%) em ~65 endereços.
 | Pré-venda | `0x0c9C7433B3e6E9823F0c09A1531c25EAcf1f8ed3` | Vazia. O dono continua sendo a carteira comprometida (o contrato não permite trocar). **Nunca enviar tokens para ela.** |
 | Venda de tokens (mais antiga) | `0xc75ed5c54e7c57e51cb470487481f1889cca53ea` | Vazia. Dono: carteira comprometida. **Nunca enviar tokens para ela.** |
 
-**Decisões em aberto:** finalizar o `mint`, passar a posse para um multisig e criar uma pré-venda nova.
+**Decisões em aberto:** passar a posse para um multisig e criar uma pré-venda nova.
 
 ## Contratos com fundos (TRAY v1)
 

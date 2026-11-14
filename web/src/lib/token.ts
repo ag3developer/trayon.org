@@ -21,6 +21,9 @@ export const TRAY_TOKEN = {
   standard: "ERC-20",
   maxSupply: 21_000_000,
   explorerUrl: "https://polygonscan.com/token/0x6b62514E925099643abA13B322A62ff6298f8E8A",
+  /** finalize() was called: mint is permanently disabled. */
+  finalizedTx: "https://polygonscan.com/tx/0x1a957f8b08b595469a882aa0ef3f6d71b64aadd6ad6b95579dd115b339d5eba0",
+  finalizedDate: "2026-11-14",
 } as const;
 
 export const SNAPSHOT_DATE = "2026-11-14";

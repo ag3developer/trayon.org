@@ -84,6 +84,17 @@ export default function TokenomicsPage() {
             <td>21,000,000 TRAY (hard cap — <code>MAX_SUPPLY</code> in the contract)</td>
           </tr>
           <tr>
+            <td>Minting</td>
+            <td>
+              Permanently disabled — <code>finalize()</code> was called on{" "}
+              {TRAY_TOKEN.finalizedDate} (
+              <a href={TRAY_TOKEN.finalizedTx} target="_blank" rel="noopener noreferrer">
+                transaction
+              </a>
+              ). No new TRAY can ever be created.
+            </td>
+          </tr>
+          <tr>
             <td>Decimals</td>
             <td>18</td>
           </tr>

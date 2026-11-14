@@ -26,7 +26,11 @@ export default function SmartContractsPage() {
           <code>{TRAY_TOKEN.address}</code>
         </a>{" "}
         (source verified on Polygonscan). Supply is hard-capped at 21,000,000
-        TRAY. When the Trayon chain launches, TRAY is planned to become its
+        TRAY, and minting has been permanently disabled with{" "}
+        <a href={TRAY_TOKEN.finalizedTx} target="_blank" rel="noopener noreferrer">
+          <code>finalize()</code>
+        </a>{" "}
+        on {TRAY_TOKEN.finalizedDate}. When the Trayon chain launches, TRAY is planned to become its
         native gas token through a 1:1 migration.
       </p>
       <pre>
