@@ -74,8 +74,8 @@ T+12s  Finality
         </tbody>
       </table>
       <p>
-        Slashed TRAY is burned rather than redistributed, reinforcing the
-        network&apos;s deflationary token model. See{" "}
+        Slashed TRAY is burned rather than redistributed, so no participant
+        profits from another validator&apos;s penalty. See{" "}
         <a href="/docs/tokenomics">TRAY Tokenomics</a> for details.
       </p>
 

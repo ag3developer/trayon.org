@@ -28,6 +28,19 @@ export const TRAY_TOKEN = {
 
 export const SNAPSHOT_DATE = "2026-11-14";
 
+/**
+ * TRAY is a utility/access token, not an investment product: holding TRAY
+ * unlocks discounts on all TrayOps products and services. Tiers are by
+ * wallet balance (whole TRAY).
+ */
+export const TRAYOPS_URL = "https://trayops.com";
+
+export const TRAYOPS_DISCOUNT_TIERS = [
+  { minTray: 500, discountPct: 10 },
+  { minTray: 2_000, discountPct: 25 },
+  { minTray: 10_000, discountPct: 50 },
+] as const;
+
 export interface AllocationRow {
   key: string;
   name: string;

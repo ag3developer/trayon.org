@@ -102,25 +102,33 @@
   },
   "token": {
     "eyebrow": "TRAY Token",
-    "title": "Economics designed for long-term network security",
-    "description": "TRAY is the Trayon network token: today an ERC-20 on Polygon with a hard cap of 21,000,000, planned to become the native gas and staking token of the Trayon chain through a 1:1 migration.",
+    "title": "A token for access, not speculation",
+    "description": "TRAY is an access token, not an investment product: holding TRAY unlocks discounts on all TrayOps products and services. It is an ERC-20 on Polygon with a fixed supply of 21,000,000.",
     "facts": {
-      "supply": { "label": "Total supply (hard cap)", "value": "21,000,000 TRAY" },
-      "network": { "label": "Network today", "value": "Polygon · ERC-20" },
-      "stake": { "label": "Validator stake (planned)", "value": "32,000 TRAY" },
-      "burn": { "label": "Fee burn (planned)", "value": "20% of gas fees" }
+      "supply": { "label": "Total supply (fixed)", "value": "21,000,000 TRAY" },
+      "network": { "label": "Network", "value": "Polygon · ERC-20" },
+      "discount": { "label": "TrayOps discount", "value": "Up to 50%" },
+      "mint": { "label": "New tokens", "value": "Mint disabled forever" }
     },
     "allocationTitle": "Current on-chain distribution",
     "utilityTitle": "What TRAY actually pays for",
     "utility": {
+      "trayops": { "title": "TrayOps discounts", "description": "Holding TRAY unlocks discounts on all TrayOps products and services — the more TRAY in your wallet, the bigger the discount." },
       "gas": { "title": "Native gas token (planned)", "description": "When the Trayon chain launches, every transaction fee will be paid in TRAY, migrated 1:1 from the Polygon contract." },
       "staking": { "title": "Validator staking", "description": "Running a validator locks a minimum of 32,000 TRAY, aligning long-term incentives with network security." },
       "marketplace": { "title": "Data marketplace access", "description": "Enterprises and governments spend TRAY to query audited datasets and analytical reports." },
       "governance": { "title": "Quadratic governance", "description": "Protocol votes use quadratic weighting, preventing whale-dominated decision-making." }
     },
-    "burnTitle": "Deflationary by design",
-    "burnDescription": "Planned for the Trayon chain: 20% of every transaction fee is permanently burned, creating deflationary pressure that scales with real network usage — not speculation.",
     "ctaLabel": "View full tokenomics",
+    "discounts": {
+      "title": "Discounts on TrayOps",
+      "description": "Holding TRAY gives you a discount on all TrayOps products and services, based on the TRAY balance in your wallet:",
+      "holdLabel": "TRAY in your wallet",
+      "discountLabel": "Discount",
+      "holdValue": "{amount, number}+ TRAY",
+      "note": "TRAY is a utility token for accessing products and services. It is not an investment product and carries no promise of return.",
+      "cta": "Go to TrayOps"
+    },
     "contract": {
       "title": "Official TRAY contract",
       "decimals": "{n} decimals",
@@ -254,8 +262,8 @@
         "title": "4. TRAY Tokenomics",
         "body": [
           "TRAY is the token of the Trayon network — designed as infrastructure cost, not speculation. Total supply is capped at 21,000,000 TRAY by the token contract itself. Today TRAY is an ERC-20 on Polygon; when the Trayon chain launches it is planned to become the native gas token through a 1:1 migration.",
-          "TRAY has three planned core utilities on the Trayon chain: native gas for all transactions; the staking asset required to run a validator (32,000 TRAY minimum); and the governance asset used in quadratic voting, which prevents whale-dominated decision-making.",
-          "The network burns 20% of all gas fees collected, creating a deflationary pressure that scales with network usage rather than speculative activity."
+          "Today, holding TRAY unlocks discounts of up to 50% on all TrayOps products and services. On the Trayon chain, TRAY is also planned to be the native gas, the staking asset required to run a validator (32,000 TRAY minimum), and the governance asset used in quadratic voting.",
+          "On the Trayon chain, transaction fees are planned to be split between validators (70%), a permanent burn (20%), and the treasury (10%)."
         ]
       },
       "roadmap": {

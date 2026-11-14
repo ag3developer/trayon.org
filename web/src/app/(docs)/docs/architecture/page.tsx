@@ -79,14 +79,14 @@ export default function ArchitecturePage() {
         <code>{`Transaction on Trayon L2:
   gasPrice = 10 wei (TRAY)
   gasLimit = 21,000
-  fee      = 210,000 TRAY (paid entirely in TRAY, no ETH required)`}</code>
+  fee      = 210,000 wei of TRAY (a tiny fraction of 1 TRAY; no ETH required)`}</code>
       </pre>
       <p>
         This removes the friction of holding a separate gas asset — a
         government agency or auditing firm can transact on Trayon without
-        ever touching ETH — and ties gas demand directly to TRAY&apos;s
-        deflationary fee-burn mechanics (see{" "}
-        <a href="/docs/tokenomics#deflation">Fee burn &amp; deflation</a>).
+        ever touching ETH (see{" "}
+        <a href="/docs/tokenomics#fee-distribution">Fee distribution</a>).
+        The Trayon chain is planned; today TRAY is an ERC-20 on Polygon.
       </p>
       <pre>
         <code>{`// Simplified custom gas token settlement (Polygon CDK)

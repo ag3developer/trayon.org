@@ -102,25 +102,33 @@
   },
   "token": {
     "eyebrow": "TRAY 代币",
-    "title": "为长期网络安全设计的经济模型",
-    "description": "TRAY 是 Trayon 网络的代币：目前是 Polygon 上的 ERC-20 代币，总量上限为 21,000,000 枚，计划通过 1:1 迁移成为 Trayon 链的原生 gas 和质押代币。",
+    "title": "访问型代币，而非投机工具",
+    "description": "TRAY 是一种访问型代币，而非投资产品：持有 TRAY 即可享受 TrayOps 所有产品和服务的折扣。TRAY 是 Polygon 上的 ERC-20 代币，总量固定为 21,000,000 枚。",
     "facts": {
-      "supply": { "label": "总供应量（上限）", "value": "21,000,000 TRAY" },
-      "network": { "label": "当前网络", "value": "Polygon · ERC-20" },
-      "stake": { "label": "验证节点质押（计划）", "value": "32,000 TRAY" },
-      "burn": { "label": "手续费销毁（计划）", "value": "gas 费的 20%" }
+      "supply": { "label": "总供应量（固定）", "value": "21,000,000 TRAY" },
+      "network": { "label": "网络", "value": "Polygon · ERC-20" },
+      "discount": { "label": "TrayOps 折扣", "value": "最高 50%" },
+      "mint": { "label": "新代币", "value": "铸造已永久关闭" }
     },
     "allocationTitle": "当前链上分布",
     "utilityTitle": "TRAY 的实际用途",
     "utility": {
+      "trayops": { "title": "TrayOps 折扣", "description": "持有 TRAY 即可享受 TrayOps 所有产品和服务的折扣——钱包中的 TRAY 越多，折扣越大。" },
       "gas": { "title": "原生 gas 代币（计划）", "description": "Trayon 链上线后，每笔交易手续费都将以 TRAY 支付，并从 Polygon 合约 1:1 迁移。" },
       "staking": { "title": "验证节点抵押", "description": "运行验证节点需要锁定至少 32,000 TRAY，使长期激励与网络安全保持一致。" },
       "marketplace": { "title": "数据市场访问权限", "description": "企业和政府使用 TRAY 查询经审计的数据集和分析报告。" },
       "governance": { "title": "二次方治理投票", "description": "协议投票采用二次方加权机制，防止大户主导决策。" }
     },
-    "burnTitle": "设计上的通缩机制",
-    "burnDescription": "计划在 Trayon 链上实施：每笔交易手续费的 20% 将被永久销毁，形成随真实网络使用量增长的通缩压力——而非投机。",
     "ctaLabel": "查看完整代币经济学",
+    "discounts": {
+      "title": "TrayOps 折扣",
+      "description": "持有 TRAY 即可根据钱包中的 TRAY 余额，享受 TrayOps 所有产品和服务的折扣：",
+      "holdLabel": "钱包中的 TRAY",
+      "discountLabel": "折扣",
+      "holdValue": "{amount, number}+ TRAY",
+      "note": "TRAY 是用于访问产品和服务的实用型代币，并非投资产品，也不承诺任何收益。",
+      "cta": "前往 TrayOps"
+    },
     "contract": {
       "title": "TRAY 官方合约",
       "decimals": "{n} 位小数",
@@ -252,8 +260,8 @@
         "title": "4. TRAY 代币经济学",
         "body": [
           "TRAY 是 Trayon 网络的代币——定位为基础设施成本，而非投机工具。代币合约本身将总供应量上限设定为 21,000,000 枚 TRAY。目前 TRAY 是 Polygon 上的 ERC-20 代币；Trayon 链上线后，计划通过 1:1 迁移成为原生 gas 代币。",
-          "TRAY 在 Trayon 链上将具备三大核心用途：所有交易的原生 gas；运行验证节点所需的质押资产（最低 32,000 TRAY）；以及用于二次方投票的治理资产，可防止大户主导决策。",
-          "网络将销毁所收取 gas 费用的 20%，产生一种随网络使用而非投机行为而扩展的通缩压力。"
+          "目前，持有 TRAY 可享受 TrayOps 所有产品和服务最高 50% 的折扣。在 Trayon 链上，TRAY 还计划作为原生 gas、运行验证节点所需的质押资产（最低 32,000 TRAY）以及用于二次方投票的治理资产。",
+          "在 Trayon 链上，交易手续费计划分配给验证节点（70%）、永久销毁（20%）和金库（10%）。"
         ]
       },
       "roadmap": {

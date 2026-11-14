@@ -102,25 +102,33 @@
   },
   "token": {
     "eyebrow": "Token TRAY",
-    "title": "Economía diseñada para la seguridad de red a largo plazo",
-    "description": "TRAY es el token de la red Trayon: hoy un ERC-20 en Polygon con un tope de 21.000.000, previsto para convertirse en el token nativo de gas y staking de la cadena Trayon mediante una migración 1:1.",
+    "title": "Un token de acceso, no de especulación",
+    "description": "TRAY es un token de acceso, no un producto de inversión: tener TRAY da descuento en todos los productos y servicios de TrayOps. Es un ERC-20 en Polygon con un suministro fijo de 21.000.000.",
     "facts": {
-      "supply": { "label": "Suministro total (tope)", "value": "21,000,000 TRAY" },
-      "network": { "label": "Red actual", "value": "Polygon · ERC-20" },
-      "stake": { "label": "Stake de validador (previsto)", "value": "32,000 TRAY" },
-      "burn": { "label": "Quema de comisiones (prevista)", "value": "20% de las comisiones de gas" }
+      "supply": { "label": "Suministro total (fijo)", "value": "21,000,000 TRAY" },
+      "network": { "label": "Red", "value": "Polygon · ERC-20" },
+      "discount": { "label": "Descuento en TrayOps", "value": "Hasta 50%" },
+      "mint": { "label": "Nuevos tokens", "value": "Mint desactivado para siempre" }
     },
     "allocationTitle": "Distribución actual on-chain",
     "utilityTitle": "Para qué se usa realmente el TRAY",
     "utility": {
+      "trayops": { "title": "Descuentos en TrayOps", "description": "Tener TRAY da descuento en todos los productos y servicios de TrayOps: cuanto más TRAY en tu billetera, mayor el descuento." },
       "gas": { "title": "Token de gas nativo (previsto)", "description": "Cuando se lance la cadena Trayon, cada comisión de transacción se pagará en TRAY, migrado 1:1 desde el contrato en Polygon." },
       "staking": { "title": "Staking de validadores", "description": "Operar un validador requiere bloquear un mínimo de 32,000 TRAY, alineando los incentivos a largo plazo con la seguridad de la red." },
       "marketplace": { "title": "Acceso al mercado de datos", "description": "Empresas y gobiernos gastan TRAY para consultar conjuntos de datos auditados e informes analíticos." },
       "governance": { "title": "Gobernanza cuadrática", "description": "Las votaciones del protocolo usan ponderación cuadrática, evitando decisiones dominadas por grandes tenedores." }
     },
-    "burnTitle": "Deflacionario por diseño",
-    "burnDescription": "Previsto para la cadena Trayon: el 20% de cada comisión de transacción se quema de forma permanente, generando una presión deflacionaria que escala con el uso real de la red, no con la especulación.",
     "ctaLabel": "Ver tokenomics completo",
+    "discounts": {
+      "title": "Descuentos en TrayOps",
+      "description": "Tener TRAY da descuento en todos los productos y servicios de TrayOps, según el saldo de TRAY en tu billetera:",
+      "holdLabel": "TRAY en tu billetera",
+      "discountLabel": "Descuento",
+      "holdValue": "{amount, number}+ TRAY",
+      "note": "TRAY es un token de utilidad para acceder a productos y servicios. No es un producto de inversión y no hay promesa de rendimiento.",
+      "cta": "Ir a TrayOps"
+    },
     "contract": {
       "title": "Contrato oficial de TRAY",
       "decimals": "{n} decimales",
@@ -250,8 +258,8 @@
         "title": "4. Tokenomics de TRAY",
         "body": [
           "TRAY es el token de la red Trayon, diseñado como costo de infraestructura, no como especulación. El suministro total está limitado a 21.000.000 de TRAY por el propio contrato. Hoy TRAY es un ERC-20 en Polygon; cuando se lance la cadena Trayon, está previsto que se convierta en el token nativo de gas mediante una migración 1:1.",
-          "TRAY tendrá tres utilidades principales en la cadena Trayon: gas nativo para todas las transacciones; el activo de staking necesario para operar un validador (mínimo de 32,000 TRAY); y el activo de gobernanza usado en la votación cuadrática, que evita decisiones dominadas por grandes tenedores.",
-          "La red quema el 20% de todas las comisiones de gas recaudadas, creando una presión deflacionaria que escala con el uso de la red y no con la actividad especulativa."
+          "Hoy, tener TRAY da hasta un 50% de descuento en todos los productos y servicios de TrayOps. En la cadena Trayon, está previsto que TRAY también sea el gas nativo, el activo de staking necesario para operar un validador (mínimo de 32,000 TRAY) y el activo de gobernanza usado en la votación cuadrática.",
+          "En la cadena Trayon, está previsto que las comisiones de transacción se repartan entre validadores (70%), quema permanente (20%) y tesorería (10%)."
         ]
       },
       "roadmap": {

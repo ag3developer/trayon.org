@@ -1,12 +1,19 @@
 import type { Metadata } from "next";
 import { DocsShell } from "@/components/docs/DocsShell";
 import { SupplyDistributionChart } from "@/components/docs/charts";
-import { SNAPSHOT_DATE, TRAY_ALLOCATION, TRAY_TOKEN, shortAddress } from "@/lib/token";
+import {
+  SNAPSHOT_DATE,
+  TRAYOPS_DISCOUNT_TIERS,
+  TRAYOPS_URL,
+  TRAY_ALLOCATION,
+  TRAY_TOKEN,
+  shortAddress,
+} from "@/lib/token";
 
 export const metadata: Metadata = {
   title: "TRAY Tokenomics",
   description:
-    "TRAY token supply (21,000,000 hard cap), official contract on Polygon, on-chain distribution, planned utility, and migration to the native Trayon chain.",
+    "TRAY is an access token: holding it unlocks discounts on TrayOps products and services. Official contract, fixed 21,000,000 supply, on-chain distribution, and planned utility on the Trayon chain.",
 };
 
 const CATEGORY_DETAIL: Record<string, string> = {
@@ -16,7 +23,6 @@ const CATEGORY_DETAIL: Record<string, string> = {
   timelock: "Reserve released only through time-delayed proposals",
   vesting: "Locked allocations released on a vesting schedule",
   ecosystem: "Partnerships, integrations, and community distribution",
-  referral: "Legacy referral registry; it has no function to move tokens, so this balance is effectively out of circulation",
   circulating: "Held by community wallets",
 };
 
@@ -25,12 +31,43 @@ export default function TokenomicsPage() {
     <DocsShell currentHref="/docs/tokenomics">
       <h1>TRAY Tokenomics</h1>
       <p>
-        TRAY is the token of the Trayon network. Today it is an ERC-20 on
-        Polygon PoS with a hard cap of <strong>21,000,000 TRAY</strong>,
-        enforced by the token contract itself. When the Trayon chain
-        launches, TRAY is planned to become its native gas and staking
+        TRAY is an <strong>access token, not an investment product</strong>.
+        Holding TRAY unlocks discounts on all{" "}
+        <a href={TRAYOPS_URL} target="_blank" rel="noopener noreferrer">TrayOps</a>{" "}
+        products and services (see <a href="#trayops-discounts">TrayOps
+        discounts</a>). Today it is an ERC-20 on Polygon PoS with a fixed
+        supply of <strong>21,000,000 TRAY</strong>. When the Trayon chain
+        launches, TRAY is planned to also become its native gas and staking
         token through a 1:1 migration.
       </p>
+      <p>
+        <em>
+          TRAY carries no promise of return, profit, or price appreciation.
+          It is used to access products and services.
+        </em>
+      </p>
+
+      <h2 id="trayops-discounts">TrayOps discounts</h2>
+      <p>
+        Holding TRAY gives a discount on all TrayOps products and services,
+        based on the TRAY balance of your wallet:
+      </p>
+      <table>
+        <thead>
+          <tr>
+            <th>TRAY in your wallet</th>
+            <th>Discount on TrayOps</th>
+          </tr>
+        </thead>
+        <tbody>
+          {TRAYOPS_DISCOUNT_TIERS.map((tier) => (
+            <tr key={tier.minTray}>
+              <td>{tier.minTray.toLocaleString("en-US")}+ TRAY</td>
+              <td>{tier.discountPct}%</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
 
       <h2 id="official-contract">Official contract</h2>
       <table>
@@ -148,6 +185,10 @@ export default function TokenomicsPage() {
 
       <h2 id="utility">Utility</h2>
       <p>
+        <strong>Active today:</strong> discounts on all TrayOps products and
+        services (see <a href="#trayops-discounts">TrayOps discounts</a>).
+      </p>
+      <p>
         The utilities below describe TRAY on the Trayon chain. They are{" "}
         <strong>planned</strong> and become active as each part of the
         network launches.
@@ -196,14 +237,13 @@ export default function TokenomicsPage() {
         </li>
       </ul>
 
-      <h2 id="deflation">Fee burn &amp; deflation (planned)</h2>
+      <h2 id="fee-distribution">Fee distribution (planned)</h2>
       <p>
         On the Trayon chain, every transaction fee is planned to be split
         three ways: <strong>70%</strong> to validators (rewards),{" "}
         <strong>20%</strong> permanently burned, and <strong>10%</strong> to
         the treasury. Slashed stake is also burned rather than
-        redistributed, creating deflationary pressure that scales with
-        actual network usage rather than speculative activity.
+        redistributed.
       </p>
 
       <h2 id="migration">Migration to the native chain</h2>

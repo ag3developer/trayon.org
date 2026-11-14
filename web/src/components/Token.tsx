@@ -1,8 +1,9 @@
 "use client";
 
-import { ArrowRight, Flame } from "lucide-react";
+import { ArrowRight, BadgePercent } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { getIcon } from "@/lib/icons";
+import { TRAYOPS_DISCOUNT_TIERS, TRAYOPS_URL } from "@/lib/token";
 import { SectionHeader } from "./SectionHeader";
 import { StaggerGrid, StaggerItem } from "./StaggerGrid";
 import { RevealOnScroll } from "./RevealOnScroll";
@@ -10,20 +11,20 @@ import { TokenAllocationChart, TOKEN_ALLOCATION } from "./TokenAllocationChart";
 import { OfficialContract } from "./OfficialContract";
 import { useChartColors } from "./docs/charts/useChartColors";
 
-const ALLOCATION_COLOR_KEYS = ["accent", "violet", "blue", "gold", "rose", "signal", "danger", "muted"] as const;
+const ALLOCATION_COLOR_KEYS = ["accent", "violet", "blue", "gold", "rose", "signal", "muted"] as const;
 
 const FACTS = [
   { key: "supply", iconKey: "coins" },
   { key: "network", iconKey: "databaseZap" },
-  { key: "stake", iconKey: "lock" },
-  { key: "burn", iconKey: "flame" },
+  { key: "discount", iconKey: "receipt" },
+  { key: "mint", iconKey: "lock" },
 ] as const;
 
 const UTILITY = [
+  { key: "trayops", iconKey: "candlestickChart" },
   { key: "gas", iconKey: "databaseZap" },
   { key: "staking", iconKey: "shieldCheck" },
   { key: "marketplace", iconKey: "scanSearch" },
-  { key: "governance", iconKey: "vote" },
 ] as const;
 
 export function Token() {
@@ -127,26 +128,55 @@ export function Token() {
 
             <RevealOnScroll
               delay={0.2}
-              className="flex flex-1 flex-col justify-between gap-4 rounded-lg border border-danger/30 bg-danger/5 p-6 sm:p-8"
+              className="flex flex-1 flex-col justify-between gap-4 rounded-lg border border-accent/30 bg-accent/5 p-6 sm:p-8"
             >
               <div>
                 <div className="flex items-center gap-2">
-                  <Flame className="h-5 w-5 text-danger" strokeWidth={1.75} />
-                  <h3 className="text-sm font-semibold uppercase tracking-wide text-danger">
-                    {t("burnTitle")}
+                  <BadgePercent className="h-5 w-5 text-accent" strokeWidth={1.75} />
+                  <h3 className="text-sm font-semibold uppercase tracking-wide text-accent">
+                    {t("discounts.title")}
                   </h3>
                 </div>
                 <p className="mt-3 text-sm leading-relaxed text-muted">
-                  {t("burnDescription")}
+                  {t("discounts.description")}
                 </p>
+                <table className="mt-4 w-full text-sm">
+                  <thead>
+                    <tr className="border-b border-border text-xs uppercase tracking-wide text-muted">
+                      <th className="py-2 text-left font-semibold">{t("discounts.holdLabel")}</th>
+                      <th className="py-2 text-right font-semibold">{t("discounts.discountLabel")}</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {TRAYOPS_DISCOUNT_TIERS.map((tier) => (
+                      <tr key={tier.minTray} className="border-b border-border/60 last:border-0">
+                        <td className="py-2 font-mono text-foreground">
+                          {t("discounts.holdValue", { amount: tier.minTray })}
+                        </td>
+                        <td className="py-2 text-right font-mono font-semibold text-accent">{tier.discountPct}%</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+                <p className="mt-3 text-xs leading-relaxed text-muted">{t("discounts.note")}</p>
               </div>
-              <a
-                href="/docs/tokenomics"
-                className="inline-flex items-center gap-2 text-sm font-semibold text-accent transition-colors hover:text-accent-strong"
-              >
-                {t("ctaLabel")}
-                <ArrowRight className="h-4 w-4" strokeWidth={1.75} />
-              </a>
+              <div className="flex flex-wrap gap-x-6 gap-y-2">
+                <a
+                  href={TRAYOPS_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 text-sm font-semibold text-accent transition-colors hover:text-accent-strong"
+                >
+                  {t("discounts.cta")}
+                  <ArrowRight className="h-4 w-4" strokeWidth={1.75} />
+                </a>
+                <a
+                  href="/docs/tokenomics"
+                  className="inline-flex items-center gap-2 text-sm font-semibold text-muted transition-colors hover:text-foreground"
+                >
+                  {t("ctaLabel")}
+                </a>
+              </div>
             </RevealOnScroll>
           </div>
         </div>

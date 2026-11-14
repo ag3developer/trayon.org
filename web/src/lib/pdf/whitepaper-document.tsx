@@ -36,7 +36,7 @@ const color = {
   white: "#ffffff",
 };
 
-const PIE_COLORS = [color.accent, color.violet, color.blue, color.gold, color.rose, "#f87171", color.mutedSoft, color.muted];
+const PIE_COLORS = [color.accent, color.violet, color.blue, color.gold, color.rose, "#f87171", color.muted];
 
 const styles = StyleSheet.create({
   page: {
@@ -566,14 +566,14 @@ const dictionaries: Record<Locale, any> = {
     tokenomics: {
       section: "TRAY Tokenomics",
       eyebrow: "07 — TRAY Tokenomics",
-      title: "Economics designed for long-term network security",
+      title: "A token for access, not speculation",
       intro:
-        `TRAY is the token of the Trayon network — engineered as an infrastructure cost, not a speculative instrument. Total supply is capped at 21,000,000 TRAY by the token contract itself. Today TRAY is an ERC-20 on Polygon PoS (official contract ${TRAY_TOKEN.address}); when the Trayon chain launches it is planned to become the native gas token through a 1:1 migration.`,
+        `TRAY is an access token, not an investment product: holding TRAY unlocks discounts of up to 50% on all TrayOps products and services, and it carries no promise of return. Supply is fixed at 21,000,000 TRAY and minting is permanently disabled. Today TRAY is an ERC-20 on Polygon PoS (official contract ${TRAY_TOKEN.address}); when the Trayon chain launches it is planned to also become the native gas token through a 1:1 migration.`,
       facts: [
-        { value: "21M TRAY", label: "Total supply (hard cap)" },
-        { value: "Polygon", label: "Network today (ERC-20)" },
-        { value: "32,000 TRAY", label: "Validator stake (planned)" },
-        { value: "20%", label: "Gas fee burn (planned)" },
+        { value: "21M TRAY", label: "Total supply (fixed)" },
+        { value: "Polygon", label: "Network (ERC-20)" },
+        { value: "Up to 50%", label: "TrayOps discount" },
+        { value: "Disabled", label: "Minting (forever)" },
       ],
       allocationTitle: `On-chain distribution — 21,000,000 TRAY (snapshot ${SNAPSHOT_DATE})`,
       allocation: [
@@ -583,20 +583,19 @@ const dictionaries: Record<Locale, any> = {
         { key: "timelock", label: "Timelock reserve", detail: "Released only through time-delayed proposals" },
         { key: "vesting", label: "Vesting", detail: "Locked allocations released on a vesting schedule" },
         { key: "ecosystem", label: "Ecosystem distribution", detail: "Partnerships, integrations, and community distribution" },
-        { key: "referral", label: "Referral contract (locked)", detail: "Legacy referral registry with no function to move tokens" },
         { key: "circulating", label: "Circulating (holders)", detail: "Held by community wallets" },
       ],
-      utilitiesTitle: "Token utility (planned on the Trayon chain)",
+      utilitiesTitle: "Token utility",
       utilities: [
-        { title: "Native gas token", body: "Planned: all Trayon chain transaction fees paid in TRAY, migrated 1:1 from the Polygon contract." },
-        { title: "Validator staking", body: "Planned: operating a validator requires locking 32,000 TRAY, aligning incentives with network security." },
-        { title: "Data marketplace access", body: "Enterprises and agencies spend TRAY to query audited datasets and analytical reports." },
-        { title: "Quadratic governance", body: "Protocol votes use quadratic weighting, preventing whale-dominated decision-making." },
+        { title: "TrayOps discounts (active)", body: "Holding TRAY gives 10% (500+), 25% (2,000+) or 50% (10,000+) off all TrayOps products and services." },
+        { title: "Native gas token (planned)", body: "All Trayon chain transaction fees paid in TRAY, migrated 1:1 from the Polygon contract." },
+        { title: "Validator staking (planned)", body: "Operating a validator requires locking 32,000 TRAY, aligning incentives with network security." },
+        { title: "Data marketplace (planned)", body: "Enterprises and agencies spend TRAY to query audited datasets and analytical reports." },
       ],
-      burnTitle: "Fee distribution per transaction",
+      burnTitle: "Planned fee distribution per transaction (Trayon chain)",
       burnSplit: [
         { label: "Validators (rewards)", pct: 70, color: color.accent },
-        { label: "Fee burn (deflation)", pct: 20, color: color.rose },
+        { label: "Permanent burn", pct: 20, color: color.rose },
         { label: "DAO treasury", pct: 10, color: color.violet },
       ],
     },
@@ -766,14 +765,14 @@ const dictionaries: Record<Locale, any> = {
     tokenomics: {
       section: "Tokenomics do TRAY",
       eyebrow: "07 — Tokenomics do TRAY",
-      title: "Economia desenhada para segurança de rede de longo prazo",
+      title: "Um token de acesso, não de especulação",
       intro:
-        `O TRAY é o token da rede Trayon — concebido como custo de infraestrutura, e não como instrumento especulativo. O fornecimento total é limitado a 21.000.000 de TRAY pelo próprio contrato. Hoje o TRAY é um ERC-20 na Polygon PoS (contrato oficial ${TRAY_TOKEN.address}); quando a chain Trayon for lançada, está planejado que ele se torne o token nativo de gas por meio de uma migração 1:1.`,
+        `O TRAY é um token de acesso, não um produto de investimento: ter TRAY dá até 50% de desconto em todos os produtos e serviços da TrayOps, sem nenhuma promessa de rendimento. O fornecimento é fixo em 21.000.000 de TRAY e o mint está desativado para sempre. Hoje o TRAY é um ERC-20 na Polygon PoS (contrato oficial ${TRAY_TOKEN.address}); quando a chain Trayon for lançada, está planejado que ele também se torne o token nativo de gas por meio de uma migração 1:1.`,
       facts: [
-        { value: "21M TRAY", label: "Fornecimento total (teto)" },
-        { value: "Polygon", label: "Rede atual (ERC-20)" },
-        { value: "32.000 TRAY", label: "Stake de validador (planejado)" },
-        { value: "20%", label: "Queima de gas (planejada)" },
+        { value: "21M TRAY", label: "Fornecimento total (fixo)" },
+        { value: "Polygon", label: "Rede (ERC-20)" },
+        { value: "Até 50%", label: "Desconto na TrayOps" },
+        { value: "Desativado", label: "Mint (para sempre)" },
       ],
       allocationTitle: `Distribuição on-chain — 21.000.000 TRAY (posição em ${SNAPSHOT_DATE})`,
       allocation: [
@@ -783,20 +782,19 @@ const dictionaries: Record<Locale, any> = {
         { key: "timelock", label: "Reserva com timelock", detail: "Liberada apenas por propostas com prazo de espera" },
         { key: "vesting", label: "Vesting", detail: "Alocações bloqueadas, liberadas por cronograma de vesting" },
         { key: "ecosystem", label: "Distribuição do ecossistema", detail: "Parcerias, integrações e distribuição à comunidade" },
-        { key: "referral", label: "Contrato de indicação (travado)", detail: "Registro antigo de indicações, sem função para mover tokens" },
         { key: "circulating", label: "Em circulação (holders)", detail: "Em carteiras da comunidade" },
       ],
-      utilitiesTitle: "Utilidade do token (planejada na chain Trayon)",
+      utilitiesTitle: "Utilidade do token",
       utilities: [
-        { title: "Token de gas nativo", body: "Planejado: todas as taxas da chain Trayon pagas em TRAY, migrado 1:1 do contrato na Polygon." },
-        { title: "Staking de validadores", body: "Planejado: operar um validador exige o bloqueio de 32.000 TRAY, alinhando incentivos à segurança da rede." },
-        { title: "Acesso ao marketplace de dados", body: "Empresas e órgãos gastam TRAY para consultar datasets auditados e relatórios analíticos." },
-        { title: "Governança quadrática", body: "As votações do protocolo usam peso quadrático, evitando decisões dominadas por grandes detentores." },
+        { title: "Descontos na TrayOps (ativo)", body: "Ter TRAY dá 10% (500+), 25% (2.000+) ou 50% (10.000+) de desconto em todos os produtos e serviços da TrayOps." },
+        { title: "Token de gas nativo (planejado)", body: "Todas as taxas da chain Trayon pagas em TRAY, migrado 1:1 do contrato na Polygon." },
+        { title: "Staking de validadores (planejado)", body: "Operar um validador exige o bloqueio de 32.000 TRAY, alinhando incentivos à segurança da rede." },
+        { title: "Marketplace de dados (planejado)", body: "Empresas e órgãos gastam TRAY para consultar datasets auditados e relatórios analíticos." },
       ],
-      burnTitle: "Distribuição de taxas por transação",
+      burnTitle: "Distribuição planejada de taxas por transação (chain Trayon)",
       burnSplit: [
         { label: "Validadores (recompensa)", pct: 70, color: color.accent },
-        { label: "Queima de taxa (deflação)", pct: 20, color: color.rose },
+        { label: "Queima permanente", pct: 20, color: color.rose },
         { label: "Tesouro DAO", pct: 10, color: color.violet },
       ],
     },
